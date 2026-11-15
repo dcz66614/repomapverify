@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    {
+      "id": "WRONG_ENTRYPOINT",
+      "from": "ghost.py"
+    }
+  ],
+  "expectedSnapshotStatus": "MATCH"
+}

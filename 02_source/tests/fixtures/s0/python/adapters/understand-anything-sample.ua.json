@@ -1,0 +1,17 @@
+{
+  "map_id": "ua-sample-1",
+  "repo": "billing-service",
+  "agent": "understand-anything-0.9",
+  "completeness": "FULL_GRAPH",
+  "repo_snapshot_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "nodes": [
+    {"id": "n1", "path": "billing/api.py"},
+    {"id": "n2", "path": "billing/auth.py"},
+    {"id": "n3", "path": "billing/refunds.py"}
+  ],
+  "edges": [
+    {"from": "n1", "to": "n2", "origin": "static"},
+    {"from": "n1", "to": "n3", "origin": "llm"},
+    {"from": "n2", "to": "n3"}
+  ]
+}

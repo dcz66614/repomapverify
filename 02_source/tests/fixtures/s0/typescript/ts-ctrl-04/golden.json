@@ -1,0 +1,184 @@
+{
+  "fixture": "ts-ctrl-04",
+  "language": "typescript",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/helper.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/helper.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/legacy.d.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": true,
+        "files": [
+          {
+            "relativePath": "src/legacy.d.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/runner.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/runner.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/shapes.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/shapes.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/types.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/types.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/legacy.d.ts",
+        "conditional": false,
+        "typeOnly": true,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./legacy",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/runner.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "./runner",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/types.ts",
+        "conditional": false,
+        "typeOnly": true,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./types",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/runner.ts",
+        "to": "src/helper.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./helper",
+          "file": "src/runner.ts"
+        }
+      },
+      {
+        "from": "src/runner.ts",
+        "to": "src/shapes.ts",
+        "conditional": false,
+        "typeOnly": true,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./shapes",
+          "file": "src/runner.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "src/helper.ts",
+      "src/legacy.d.ts",
+      "src/main.ts",
+      "src/runner.ts",
+      "src/shapes.ts",
+      "src/types.ts"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

@@ -1,0 +1,169 @@
+{
+  "fixture": "ts-ext-completion",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/a.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/b.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/c.tsx",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/d/index.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/e/index.tsx",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/a.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/b.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/c.tsx",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/d/index.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/e/index.tsx",
+        "typeOnly": false,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "reason": "TARGET_NOT_FOUND",
+        "specifier": "./nope"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "src/a.ts",
+      "src/b.ts",
+      "src/c.tsx",
+      "src/d/index.ts",
+      "src/e/index.tsx",
+      "src/main.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/a.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/b.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/c.tsx"
+      ],
+      [
+        "src/main.ts",
+        "src/d/index.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/e/index.tsx"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/a.ts",
+      "src/b.ts",
+      "src/c.tsx",
+      "src/d/index.ts",
+      "src/e/index.tsx",
+      "src/main.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/a.ts",
+        "src/b.ts",
+        "src/c.tsx",
+        "src/d/index.ts",
+        "src/e/index.tsx",
+        "src/main.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/a.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/b.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/c.tsx"
+        ],
+        [
+          "src/main.ts",
+          "src/d/index.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/e/index.tsx"
+        ]
+      ]
+    },
+    "status": "INCOMPLETE",
+    "findings": []
+  }
+}

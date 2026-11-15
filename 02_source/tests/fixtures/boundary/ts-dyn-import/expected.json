@@ -1,0 +1,107 @@
+{
+  "fixture": "ts-dyn-import",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/lazy.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/ondemand.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/lazy.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/ondemand.ts",
+        "typeOnly": false,
+        "kind": "dynamic-import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "reason": "DYNAMIC_IMPORT_UNKNOWN",
+        "specifier": "name"
+      },
+      {
+        "from": "src/main.ts",
+        "reason": "DYNAMIC_IMPORT_UNKNOWN",
+        "specifier": "`./${name}`"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "src/lazy.ts",
+      "src/main.ts",
+      "src/ondemand.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/lazy.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/ondemand.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/lazy.ts",
+      "src/main.ts",
+      "src/ondemand.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/lazy.ts",
+        "src/main.ts",
+        "src/ondemand.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/lazy.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/ondemand.ts"
+        ]
+      ]
+    },
+    "status": "INCOMPLETE",
+    "findings": [
+      {
+        "id": "DYNAMIC_IMPORT_UNKNOWN",
+        "from": "src/main.ts"
+      }
+    ]
+  }
+}

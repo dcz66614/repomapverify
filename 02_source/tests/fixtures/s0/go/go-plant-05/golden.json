@@ -1,0 +1,165 @@
+{
+  "fixture": "go-plant-05",
+  "language": "go",
+  "kind": "planted",
+  "plantedClass": "name-collision",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/a/svc",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "svc",
+        "files": [
+          {
+            "relativePath": "internal/a/svc/svc.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/a/util",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "util",
+        "files": [
+          {
+            "relativePath": "internal/a/util/util.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/b/svc",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "svc",
+        "files": [
+          {
+            "relativePath": "internal/b/svc/svc.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/b/util",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "util",
+        "files": [
+          {
+            "relativePath": "internal/b/util/util.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "internal/a/svc",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 4,
+          "statement": null,
+          "specifier": "example.com/demo/internal/a/svc",
+          "file": "cmd/main.go"
+        }
+      },
+      {
+        "from": "cmd",
+        "to": "internal/b/svc",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/demo/internal/b/svc",
+          "file": "cmd/main.go"
+        }
+      },
+      {
+        "from": "internal/a/svc",
+        "to": "internal/a/util",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "example.com/demo/internal/a/util",
+          "file": "internal/a/svc/svc.go"
+        }
+      },
+      {
+        "from": "internal/b/svc",
+        "to": "internal/b/util",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "example.com/demo/internal/b/util",
+          "file": "internal/b/svc/svc.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd",
+      "internal/a/svc",
+      "internal/a/util",
+      "internal/b/svc",
+      "internal/b/util"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "HALLUCINATED_EDGE",
+    "MISSING_EDGE",
+    "NAME_COLLISION_CONFUSION",
+    "UNCLAIMED_REACHABLE_MODULE"
+  ]
+}

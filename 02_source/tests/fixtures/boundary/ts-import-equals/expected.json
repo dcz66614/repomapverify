@@ -1,0 +1,91 @@
+{
+  "fixture": "ts-import-equals",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/helper.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/util.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/helper.ts",
+        "typeOnly": false,
+        "kind": "import-equals"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/util.ts",
+        "typeOnly": false,
+        "kind": "import-equals"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": []
+  },
+  "graph": {
+    "modules": [
+      "src/helper.ts",
+      "src/main.ts",
+      "src/util.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/helper.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/util.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/helper.ts",
+      "src/main.ts",
+      "src/util.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/helper.ts",
+        "src/main.ts",
+        "src/util.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/helper.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/util.ts"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

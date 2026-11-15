@@ -1,0 +1,2 @@
+[entrypoints]
+paths = ["src/main.py"]

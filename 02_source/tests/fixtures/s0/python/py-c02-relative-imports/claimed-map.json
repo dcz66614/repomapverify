@@ -1,0 +1,81 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "shop/cart.py"
+    },
+    {
+      "from": "main.py",
+      "to": "shop/__init__.py"
+    },
+    {
+      "from": "main.py",
+      "to": "shop/checkout.py"
+    },
+    {
+      "from": "shop/__init__.py",
+      "to": "shop/cart.py"
+    },
+    {
+      "from": "shop/__init__.py",
+      "to": "shop/checkout.py"
+    },
+    {
+      "from": "shop/cart.py",
+      "to": "shop/items.py"
+    },
+    {
+      "from": "shop/cart.py",
+      "to": "shared/__init__.py"
+    },
+    {
+      "from": "shop/checkout.py",
+      "to": "shop/cart.py"
+    },
+    {
+      "from": "shop/items.py",
+      "to": "shared/__init__.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-c02-relative-imports",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "main.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "shared/__init__.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "shop/__init__.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "shop/cart.py"
+    },
+    {
+      "id": "m5",
+      "kind": "module",
+      "path": "shop/checkout.py"
+    },
+    {
+      "id": "m6",
+      "kind": "module",
+      "path": "shop/items.py"
+    }
+  ],
+  "repo": "py-c02-relative-imports",
+  "repoSnapshotSha256": "e5ca115c61a4f7c86a871d080d30c45b2778031a0be55a9e873ac6ead7ee9ffb",
+  "schema": "repomapverify.claimed-map/v1"
+}

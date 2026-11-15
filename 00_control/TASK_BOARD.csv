@@ -1,0 +1,16 @@
+task,stage,status,owner_commit,note
+SPEC,S0,SPEC_FROZEN,,规格 v1.1.0 已冻结（PROJECT_BOOK + IMPLEMENTATION_PLAN），Muse 亲自核实见 00_control/P024_SPEC_VERIFICATION.md；S0 进行中
+T001,S0,PASS,eecdd4b,环境探测、工程骨架与接口契约（3h）— 2026-11-14 核实通过：Node 24.22.1，Go 未安装，Tree-sitter WASM 15/15 验证，运行时依赖冻结 MIT
+T002,S0,PASS,2c47bc8,Python import 提取 PoC（4h）— 2026-11-14 核实通过并提交：构建 exit 0，37/37 测试，8/8 控制 PASS，8/8 植入检出，阴性对照已验证
+T003,S0,PASS,8f50003,TypeScript 与 Go 提取 PoC（5h）— 2026-11-14 核实通过并提交：构建 exit 0，32/32 parity，16/16 控制 PASS，16/16 植入检出，13/13 样本；Go 1.25.5 已安装（~/workspace/.local/go）
+T004,S0,PASS,a19e391,独立 Python Oracle、48 例 S0 Gate 与确定性重放（5h）— 2026-11-14 核实通过并提交：48/48 parity，24/24 植入检出，0/24 控制误报，100 次重放 1 hash 7d4efa1d…，外部请求 0，源目录写操作 0；阴性对照（改 golden 即 FAIL 47/48）已验证；gate hash 三次独立重跑一致
+T005,S1,PASS,a1231ec,模块身份规范化与真实图（5h）— 2026-11-14 核实通过并提交：67/67 测试，S0 门重跑仍 PASS（hash 7d4efa1d… 不变）；符号链接用真实文件系统测试；alias 感知的 __init__ 闭包 bug 已修
+T006,S1,PASS,7d758c4,比较引擎、策略比较与 Finding 分类（4h）— 2026-11-14 核实通过并提交：103/103 测试，golden 48/48，S0 门重跑仍 PASS（hash 7d4efa1d…）；12 类 finding 齐全；ISOLATED/ENTRYPOINT_CANDIDATE/DUPLICATE_CONTENT 在 infoFindings 分表——T009 报告须渲染
+T007,S2,PASS,cc0ea5c,TypeScript / Go 适配完整化（6h）— 2026-11-14 核实通过并提交：128/128 测试，20/20 边界审计，3 个真实提取器 bug 已修（Go 生成/手写边去重、TS exports types 穿透、Go replace ../），S0 门重跑仍 PASS（hash 7d4efa1d…）
+T008,S2,PASS,0995518,地图 I/O、隐私脱敏与规范化哈希（4h）— 2026-11-14 核实通过并提交：193/193 测试，S0 门重跑仍 PASS（hash 7d4efa1d…）；可选 generated 断言已入 schema（向后兼容）；snake_case/camelCase 未决张力已记录（validator 接受别名+警告）
+T009,S3,PASS,bf0be92,CLI 主流程与静态 HTML 报告（7h）— 2026-11-14 核实通过并提交：226/226 测试，四种退出码我亲手跑过（0 PASS / 1 FAIL / 2 INCOMPLETE / 3 用法错误），HTML 零外部引用，infoFindings 单独成节，S0 门重跑仍 PASS（hash 7d4efa1d…）
+T010,S3,PASS,74faaca,CI 模式、退出码、README 与开箱 Demo（5h）— 2026-11-14 核实通过并提交：demo 我亲手跑过（0.84s，exit 1，FAIL 样例与 README 逐字一致），workflow YAML 解析通过（Node 24），226/226 测试，S0 门重跑仍 PASS（hash 7d4efa1d…）；workflow 文件以后走网页传（App 403）
+T011,S4,PASS,44d7fae,Golden / Property / Mutation 回归（7h）— 2026-11-14 核实通过并提交：golden 68/68，property 480/480（种子 20261114），变异 25/25（三语言全检出），238/238 测试，S0 门重跑仍 PASS（hash 7d4efa1d…）
+T012,S4,PASS,f975bb4,端到端、离线、性能与发布预演（5h）— 2026-11-14 核实通过并提交：E2E 全链路、离线 unshare -n（hash 一致）、性能 1,000 模块/5,000 边提取 ~1–2 秒、核验 ~3–8 秒、RSS ≤238 MB（目标 30/60 秒/512 MB），预演包 SHAs 已核对，254/254 测试，S0 门重跑仍 PASS（hash 7d4efa1d…）
+T013,S5,PASS,,独立代码、规则与证据复核（8h）— 首轮 FAIL（0/3/20），经 FIX + 重审 R2/R3/R4/R5 后 R5 结论 T013 PASS（0 P0 / 0 P1 / 1 新 P2 R5-P2-01）；T014 NO-GO 后 FIX T014 提交 89b580c，第六轮重审（范围收窄）结论 T013 PASS 确认（0/0/0，报告 04_review/REVIEW_REPORT_R6.md）
+T014,S5,PASS,,正式冻结、发布包与 SHA-256 清单（4h）— 首轮 NO-GO（打包缺陷）后 FIX T014 冻结提交 89b580c 经 T013 第六轮重审确认，重做 PASS：source.zip 608,520 B sha 1ef7ffa4…、dist.zip 174,480 B sha af632859…、SHA256SUMS.txt + RELEASE_MANIFEST.json；全新解压独立重算全过（文件清单 814 == 814、vitest 277/277、S0 门 hash 7d4efa1d… 不变、重建 zip 逐字节相同、dist CLI 演示 exit 1 / 对照 exit 0）；四产物已上传 Drive 04_release 文件夹并经大小 + MD5 核对逐字节相同

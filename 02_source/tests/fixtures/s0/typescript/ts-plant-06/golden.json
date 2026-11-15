@@ -1,0 +1,95 @@
+{
+  "fixture": "ts-plant-06",
+  "language": "typescript",
+  "kind": "planted",
+  "plantedClass": "dynamic-import-misread",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/other.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/other.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/real.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/real.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/real.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./real",
+          "file": "src/main.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "specifier": "modName",
+        "reason": "DYNAMIC_IMPORT_UNKNOWN",
+        "line": 3
+      }
+    ],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "src/main.ts",
+      "src/real.ts"
+    ],
+    "isolatedModules": [
+      "src/other.ts"
+    ],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "DYNAMIC_IMPORT_UNKNOWN",
+    "HALLUCINATED_EDGE"
+  ]
+}

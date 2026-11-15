@@ -1,0 +1,78 @@
+{
+  "fixture": "go-replace",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": ".",
+        "packageName": "main",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "local/a",
+        "packageName": "a",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "local/a/a.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": ".",
+        "to": "local/a"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 2,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      ".",
+      "local/a"
+    ],
+    "edges": [
+      [
+        ".",
+        "local/a"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      ".",
+      "local/a"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        ".",
+        "local/a"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          ".",
+          "local/a"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

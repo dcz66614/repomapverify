@@ -1,0 +1,17 @@
+{
+  "map_id": "graphify-sample-1",
+  "repo": "billing-service",
+  "agent": "graphify-1.2.3",
+  "completeness": "FULL_GRAPH",
+  "repo_snapshot_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "nodes": [
+    {"id": "n1", "path": "billing/api.py", "kind": "module"},
+    {"id": "n2", "path": "billing/auth.py", "kind": "module"},
+    {"id": "n3", "path": "billing/refunds.py", "kind": "module"}
+  ],
+  "edges": [
+    {"from": "n1", "to": "n2", "type": "EXTRACTED"},
+    {"from": "n1", "to": "n3", "type": "INFERRED"},
+    {"from": "n2", "to": "n3", "type": "EXTRACTED"}
+  ]
+}

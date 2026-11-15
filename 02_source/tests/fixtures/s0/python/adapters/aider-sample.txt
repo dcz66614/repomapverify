@@ -1,0 +1,6 @@
+# Aider Repo Map (synthetic sample)
+billing/api.py:
+  def get_invoice(...)
+  class Api
+billing/auth.py:
+  def login(...)

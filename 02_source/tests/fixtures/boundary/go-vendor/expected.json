@@ -1,0 +1,78 @@
+{
+  "fixture": "go-vendor",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": ".",
+        "packageName": "main",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "vendor/example.com/dep/sub",
+        "packageName": "sub",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "vendor/example.com/dep/sub/s.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": ".",
+        "to": "vendor/example.com/dep/sub"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      ".",
+      "vendor/example.com/dep/sub"
+    ],
+    "edges": [
+      [
+        ".",
+        "vendor/example.com/dep/sub"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      ".",
+      "vendor/example.com/dep/sub"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        ".",
+        "vendor/example.com/dep/sub"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          ".",
+          "vendor/example.com/dep/sub"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

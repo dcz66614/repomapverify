@@ -1,0 +1,73 @@
+{
+  "fixture": "ts-exports-types",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "dist/types.d.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": true
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "dist/types.d.ts",
+        "typeOnly": true,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "reason": "OUT_OF_SCOPE",
+        "specifier": "example.com/self"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "dist/types.d.ts",
+      "src/main.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "dist/types.d.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "dist/types.d.ts",
+      "src/main.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "dist/types.d.ts",
+        "src/main.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "dist/types.d.ts"
+        ]
+      ]
+    },
+    "status": "INCOMPLETE",
+    "findings": []
+  }
+}

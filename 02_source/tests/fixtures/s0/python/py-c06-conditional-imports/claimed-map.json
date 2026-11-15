@@ -1,0 +1,43 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "billing/types.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-c06-conditional-imports",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "billing/types.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "main.py"
+    }
+  ],
+  "repo": "py-c06-conditional-imports",
+  "repoSnapshotSha256": "9de129435ec853b75f85973f99991bf4d8cae5f54b9fd2d6ff6ba18700601ac8",
+  "schema": "repomapverify.claimed-map/v1"
+}

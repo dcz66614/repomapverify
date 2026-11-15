@@ -1,0 +1,47 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "src/app/api.py",
+      "to": "src/app/db.py"
+    },
+    {
+      "from": "src/main.py",
+      "to": "src/app/api.py"
+    },
+    {
+      "from": "src/main.py",
+      "to": "src/app/db.py"
+    }
+  ],
+  "entrypoints": [
+    "src/main.py"
+  ],
+  "map_id": "synthetic-py-c04-src-layout",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "src/app/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "src/app/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "src/app/db.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "src/main.py"
+    }
+  ],
+  "repo": "py-c04-src-layout",
+  "repoSnapshotSha256": "28876f710bb58a8608b58e326e167e4551106c61dc6c10b28e8be11c47560585",
+  "schema": "repomapverify.claimed-map/v1"
+}

@@ -1,0 +1,95 @@
+{
+  "fixture": "go-plant-08",
+  "language": "go",
+  "kind": "planted",
+  "plantedClass": "build-tag-misread",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/plat",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "plat",
+        "files": [
+          {
+            "relativePath": "internal/plat/linux.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/winonly",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "winonly",
+        "files": [
+          {
+            "relativePath": "internal/winonly/winonly.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "internal/plat",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/demo/internal/plat",
+          "file": "cmd/main.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 2,
+    "unknowns": [],
+    "excludedFiles": [
+      {
+        "relativePath": "internal/plat/windows.go",
+        "reason": "BUILD_EXCLUDED"
+      }
+    ],
+    "reachableFromEntrypoints": [
+      "cmd",
+      "internal/plat"
+    ],
+    "isolatedModules": [
+      "internal/winonly"
+    ],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "HALLUCINATED_EDGE"
+  ]
+}

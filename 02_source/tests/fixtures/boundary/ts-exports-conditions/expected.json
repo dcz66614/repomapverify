@@ -1,0 +1,111 @@
+{
+  "fixture": "ts-exports-conditions",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "dist/fallback.js",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "dist/index.js",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "dist/lib/thing.js",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "dist/types.d.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": true
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "dist/index.js",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "dist/lib/thing.js",
+        "typeOnly": false,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": []
+  },
+  "graph": {
+    "modules": [
+      "dist/fallback.js",
+      "dist/index.js",
+      "dist/lib/thing.js",
+      "dist/types.d.ts",
+      "src/main.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "dist/index.js"
+      ],
+      [
+        "src/main.ts",
+        "dist/lib/thing.js"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "dist/fallback.js",
+      "dist/index.js",
+      "dist/lib/thing.js",
+      "dist/types.d.ts",
+      "src/main.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "dist/fallback.js",
+        "dist/index.js",
+        "dist/lib/thing.js",
+        "dist/types.d.ts",
+        "src/main.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "dist/index.js"
+        ],
+        [
+          "src/main.ts",
+          "dist/lib/thing.js"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

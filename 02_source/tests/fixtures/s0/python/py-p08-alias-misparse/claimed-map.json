@@ -1,0 +1,52 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "utils.py"
+    },
+    {
+      "from": "main.py",
+      "to": "pkg/__init__.py"
+    },
+    {
+      "from": "main.py",
+      "to": "pkg/helpers.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-p08-alias-misparse",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "main.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "pkg/__init__.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "pkg/helpers.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "pkg/utils.py"
+    },
+    {
+      "id": "m5",
+      "kind": "module",
+      "path": "utils.py"
+    }
+  ],
+  "repo": "py-p08-alias-misparse",
+  "repoSnapshotSha256": "d87a402b662761142c9e861a248de8bd2d743f3525456c505e96b5b0e0e9f492",
+  "schema": "repomapverify.claimed-map/v1"
+}

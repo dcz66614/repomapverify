@@ -1,0 +1,47 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "t013-snake-snap",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "billing/auth.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "main.py"
+    }
+  ],
+  "repo": "py-c01-basic-imports",
+  "schema": "repomapverify.claimed-map/v1",
+  "repo_snapshot_sha256": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404"
+}

@@ -1,0 +1,34 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-c07-external-and-stdlib",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "main.py"
+    }
+  ],
+  "repo": "py-c07-external-and-stdlib",
+  "repoSnapshotSha256": "0a537cee953259a5e6f77f9df29de6d4bfa7f16380d569ac0ad820e65a2a116b",
+  "schema": "repomapverify.claimed-map/v1"
+}

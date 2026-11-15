@@ -1,0 +1,121 @@
+{
+  "fixture": "ts-tsconfig-paths",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/lib/exact.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/lib/plain.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/lib/util.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/lib/exact.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/lib/plain.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/lib/util.ts",
+        "typeOnly": false,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "reason": "ALIAS_NOT_RESOLVED",
+        "specifier": "@/gone"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "src/lib/exact.ts",
+      "src/lib/plain.ts",
+      "src/lib/util.ts",
+      "src/main.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/lib/exact.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/lib/plain.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/lib/util.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/lib/exact.ts",
+      "src/lib/plain.ts",
+      "src/lib/util.ts",
+      "src/main.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/lib/exact.ts",
+        "src/lib/plain.ts",
+        "src/lib/util.ts",
+        "src/main.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/lib/exact.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/lib/plain.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/lib/util.ts"
+        ]
+      ]
+    },
+    "status": "INCOMPLETE",
+    "findings": []
+  }
+}

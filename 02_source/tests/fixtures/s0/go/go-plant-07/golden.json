@@ -1,0 +1,103 @@
+{
+  "fixture": "go-plant-07",
+  "language": "go",
+  "kind": "planted",
+  "plantedClass": "re-export-misread",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/a",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "a",
+        "files": [
+          {
+            "relativePath": "internal/a/a.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/b",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "b",
+        "files": [
+          {
+            "relativePath": "internal/b/b.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "internal/a",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "example.com/demo/internal/a",
+          "file": "cmd/main.go"
+        }
+      },
+      {
+        "from": "internal/a",
+        "to": "internal/b",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "example.com/demo/internal/b",
+          "file": "internal/a/a.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd",
+      "internal/a",
+      "internal/b"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "HALLUCINATED_EDGE",
+    "MISSING_EDGE"
+  ]
+}

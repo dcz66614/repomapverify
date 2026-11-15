@@ -1,0 +1,1 @@
+{"name": "example.com/self", "exports": {".": {"types": "./dist/types.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs", "default": "./dist/fallback.js"}, "./lib/*": {"import": "./dist/lib/*.js", "default": "./dist/lib/*.js"}}}

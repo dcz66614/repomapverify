@@ -1,0 +1,180 @@
+{
+  "fixture": "go-ctrl-03",
+  "language": "go",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd/server",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/server/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/gen",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "gen",
+        "files": [
+          {
+            "relativePath": "internal/gen/gen.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "internal/gen/gen.pb.go",
+            "isGenerated": true,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/native",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "native",
+        "files": [
+          {
+            "relativePath": "internal/native/native.go",
+            "isGenerated": false,
+            "isCgo": true
+          }
+        ],
+        "hasCgo": true
+      },
+      {
+        "relativePath": "internal/onlygen",
+        "nodeKind": "package",
+        "isGenerated": true,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "onlygen",
+        "files": [
+          {
+            "relativePath": "internal/onlygen/only.pb.go",
+            "isGenerated": true,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/store",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "store",
+        "files": [
+          {
+            "relativePath": "internal/store/store.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd/server",
+        "to": "internal/gen",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/demo/internal/gen",
+          "file": "cmd/server/main.go"
+        }
+      },
+      {
+        "from": "cmd/server",
+        "to": "internal/native",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 6,
+          "statement": null,
+          "specifier": "example.com/demo/internal/native",
+          "file": "cmd/server/main.go"
+        }
+      },
+      {
+        "from": "cmd/server",
+        "to": "internal/onlygen",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 7,
+          "statement": null,
+          "specifier": "example.com/demo/internal/onlygen",
+          "file": "cmd/server/main.go"
+        }
+      }
+    ],
+    "generatedEdges": [
+      {
+        "from": "internal/gen",
+        "to": "internal/store",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 4,
+          "statement": null,
+          "specifier": "example.com/demo/internal/store",
+          "file": "internal/gen/gen.pb.go"
+        }
+      },
+      {
+        "from": "internal/onlygen",
+        "to": "internal/store",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 4,
+          "statement": null,
+          "specifier": "example.com/demo/internal/store",
+          "file": "internal/onlygen/only.pb.go"
+        }
+      }
+    ],
+    "externalImportCount": 4,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd/server",
+      "internal/gen",
+      "internal/native",
+      "internal/onlygen"
+    ],
+    "isolatedModules": [
+      "internal/store"
+    ],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

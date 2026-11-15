@@ -1,0 +1,35 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "loader.py",
+      "to": "plugins/alpha.py"
+    }
+  ],
+  "entrypoints": [
+    "loader.py",
+    "plugins/alpha.py"
+  ],
+  "map_id": "synthetic-py-p06-dynamic-import-misread",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "loader.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "plugins/__init__.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "plugins/alpha.py"
+    }
+  ],
+  "repo": "py-p06-dynamic-import-misread",
+  "repoSnapshotSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "schema": "repomapverify.claimed-map/v1"
+}

@@ -1,0 +1,110 @@
+{
+  "fixture": "go-buildtags",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "pkg",
+        "packageName": "pkg",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "pkg/both.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "pkg/lin.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "pkg/old.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "target",
+        "packageName": "target",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "target/t.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "pkg",
+        "to": "target"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "pkg",
+        "reason": "UNDECIDABLE_BUILD_CONSTRAINT"
+      }
+    ],
+    "excludedFiles": [
+      {
+        "relativePath": "pkg/mystery.go",
+        "reason": "UNDECIDABLE_BUILD_CONSTRAINT"
+      },
+      {
+        "relativePath": "pkg/new.go",
+        "reason": "BUILD_EXCLUDED"
+      },
+      {
+        "relativePath": "pkg/notamd.go",
+        "reason": "BUILD_EXCLUDED"
+      },
+      {
+        "relativePath": "pkg/win.go",
+        "reason": "BUILD_EXCLUDED"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "pkg",
+      "target"
+    ],
+    "edges": [
+      [
+        "pkg",
+        "target"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "pkg",
+      "target"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "pkg",
+        "target"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "pkg",
+          "target"
+        ]
+      ]
+    },
+    "status": "INCOMPLETE",
+    "findings": []
+  }
+}

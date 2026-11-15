@@ -1,0 +1,91 @@
+{
+  "fixture": "go-plant-06",
+  "language": "go",
+  "kind": "planted",
+  "plantedClass": "alias-misparse",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "third_party/shared",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "shared",
+        "files": [
+          {
+            "relativePath": "third_party/shared/shared.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "third_party/shared/util",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "util",
+        "files": [
+          {
+            "relativePath": "third_party/shared/util/util.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "third_party/shared/util",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/shared/util",
+          "file": "cmd/main.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 2,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd",
+      "third_party/shared/util"
+    ],
+    "isolatedModules": [
+      "third_party/shared"
+    ],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "HALLUCINATED_EDGE",
+    "MISSING_EDGE"
+  ]
+}

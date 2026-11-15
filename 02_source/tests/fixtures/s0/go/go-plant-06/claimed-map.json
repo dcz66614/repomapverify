@@ -1,0 +1,34 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-go-plant-06",
+  "repo": "go-plant-06",
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "8a138b4a187a6149b31b7dbac164d7204b2d124edf14bf9ac95e9832be1b5ce7",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "cmd",
+      "kind": "package"
+    },
+    {
+      "id": "m2",
+      "path": "third_party/shared",
+      "kind": "package"
+    },
+    {
+      "id": "m3",
+      "path": "third_party/shared/util",
+      "kind": "package"
+    }
+  ],
+  "entrypoints": [
+    "cmd"
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "third_party/shared"
+    }
+  ]
+}

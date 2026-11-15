@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "INCOMPLETE",
+  "expectedFindings": [],
+  "expectedSnapshotStatus": "MATCH",
+  "expectedEntrypoints": [
+    "cmd/server"
+  ],
+  "expectedUnresolvedEntrypoints": [
+    "cmd/ghost/main.go"
+  ]
+}

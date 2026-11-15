@@ -1,0 +1,56 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-ts-ctrl-05",
+  "repo": "ts-ctrl-05",
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "7e61566de2fa555c41636cb06ff16dc94b7d1454d4417a7fe86f99171ff30754",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "src/cfg.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "src/lazy.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "src/main.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m4",
+      "path": "src/plain.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m5",
+      "path": "src/side.ts",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "src/main.ts"
+  ],
+  "edges": [
+    {
+      "from": "src/main.ts",
+      "to": "src/cfg.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/lazy.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/plain.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/side.ts"
+    }
+  ]
+}

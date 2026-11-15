@@ -1,0 +1,141 @@
+{
+  "fixture": "go-package-nodes",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "cmd",
+        "packageName": "main",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "lib1",
+        "packageName": "lib1",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "lib1/x.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "lib2",
+        "packageName": "lib2",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "lib2/y.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "pkg",
+        "packageName": "pkg",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "pkg/a.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "pkg/b.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "pkg"
+      },
+      {
+        "from": "pkg",
+        "to": "lib1"
+      },
+      {
+        "from": "pkg",
+        "to": "lib2"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      "cmd",
+      "lib1",
+      "lib2",
+      "pkg"
+    ],
+    "edges": [
+      [
+        "cmd",
+        "pkg"
+      ],
+      [
+        "pkg",
+        "lib1"
+      ],
+      [
+        "pkg",
+        "lib2"
+      ]
+    ],
+    "reachable": [
+      "cmd",
+      "lib1",
+      "lib2",
+      "pkg"
+    ],
+    "isolated": []
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "cmd",
+        "lib1",
+        "lib2",
+        "pkg"
+      ],
+      "entrypoints": [
+        "cmd/main.go"
+      ],
+      "edges": [
+        [
+          "cmd",
+          "pkg"
+        ],
+        [
+          "pkg",
+          "lib1"
+        ],
+        [
+          "pkg",
+          "lib2"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

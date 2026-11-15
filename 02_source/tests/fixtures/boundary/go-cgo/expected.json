@@ -1,0 +1,80 @@
+{
+  "fixture": "go-cgo",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "cmd",
+        "packageName": "main",
+        "isGenerated": false,
+        "hasCgo": true,
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": true
+          }
+        ]
+      },
+      {
+        "relativePath": "lib",
+        "packageName": "lib",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "lib/l.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "lib"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      "cmd",
+      "lib"
+    ],
+    "edges": [
+      [
+        "cmd",
+        "lib"
+      ]
+    ],
+    "reachable": [
+      "cmd",
+      "lib"
+    ],
+    "isolated": []
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "cmd",
+        "lib"
+      ],
+      "entrypoints": [
+        "cmd/main.go"
+      ],
+      "edges": [
+        [
+          "cmd",
+          "lib"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

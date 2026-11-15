@@ -1,0 +1,57 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "shop/cart.py"
+    },
+    {
+      "from": "main.py",
+      "to": "lib/utils.py"
+    },
+    {
+      "from": "shop/cart.py",
+      "to": "lib/utils.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-p05-name-collision",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "lib/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "lib/utils.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "main.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "shop/__init__.py"
+    },
+    {
+      "id": "m5",
+      "kind": "module",
+      "path": "shop/cart.py"
+    },
+    {
+      "id": "m6",
+      "kind": "module",
+      "path": "shop/utils.py"
+    }
+  ],
+  "repo": "py-p05-name-collision",
+  "repoSnapshotSha256": "045b410b8b49da2cf58584218039c39f281ed4582d9c9a1fc9c672660f1c2e05",
+  "schema": "repomapverify.claimed-map/v1"
+}

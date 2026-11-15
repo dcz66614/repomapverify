@@ -1,0 +1,143 @@
+{
+  "fixture": "go-generated",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "color",
+        "packageName": "color",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "color/color.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "color/color_string.go",
+            "isGenerated": true,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "gen",
+        "packageName": "gen",
+        "isGenerated": true,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "gen/g.pb.go",
+            "isGenerated": true,
+            "isCgo": false
+          },
+          {
+            "relativePath": "gen/m.mock.go",
+            "isGenerated": true,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "solo",
+        "packageName": "solo",
+        "isGenerated": true,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "solo/s.pb.go",
+            "isGenerated": true,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "target",
+        "packageName": "target",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "target/t.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [],
+    "generatedEdges": [
+      {
+        "from": "color",
+        "to": "target"
+      },
+      {
+        "from": "gen",
+        "to": "target"
+      },
+      {
+        "from": "solo",
+        "to": "target"
+      }
+    ],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      "color",
+      "gen",
+      "solo",
+      "target"
+    ],
+    "edges": [],
+    "reachable": [],
+    "isolated": [
+      "color",
+      "gen",
+      "solo",
+      "target"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "color",
+        "gen",
+        "solo",
+        "target"
+      ],
+      "entrypoints": [],
+      "edges": []
+    },
+    "status": "PASS",
+    "findings": []
+  },
+  "audit2": {
+    "claimed": {
+      "modules": [
+        "color",
+        "gen",
+        "solo",
+        "target"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "gen",
+          "target"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": [
+      {
+        "id": "GENERATED_MISMATCH",
+        "from": "gen",
+        "to": "target"
+      }
+    ]
+  }
+}

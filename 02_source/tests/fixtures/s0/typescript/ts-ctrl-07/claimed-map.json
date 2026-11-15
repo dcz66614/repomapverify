@@ -1,0 +1,60 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-ts-ctrl-07",
+  "repo": "ts-ctrl-07",
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "5d494ce96668a7d64cdfa23e2a6048269037ca47944fc178586d276b133c028e",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "src/App.tsx",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "src/Button.tsx",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "src/hooks/useList.jsx",
+      "kind": "module"
+    },
+    {
+      "id": "m4",
+      "path": "src/main.tsx",
+      "kind": "module"
+    },
+    {
+      "id": "m5",
+      "path": "src/util.ts",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "src/main.tsx"
+  ],
+  "edges": [
+    {
+      "from": "src/App.tsx",
+      "to": "src/Button.tsx"
+    },
+    {
+      "from": "src/App.tsx",
+      "to": "src/hooks/useList.jsx"
+    },
+    {
+      "from": "src/Button.tsx",
+      "to": "src/util.ts"
+    },
+    {
+      "from": "src/hooks/useList.jsx",
+      "to": "src/util.ts"
+    },
+    {
+      "from": "src/main.tsx",
+      "to": "src/App.tsx"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "r4-ghost-ctrl",
+  "repo": "x",
+  "agent": "r4",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+  "modules": [
+    {
+      "id": "m0",
+      "path": "billing/__init__.py",
+      "kind": "module"
+    },
+    {
+      "id": "m1",
+      "path": "billing/api.py",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "billing/auth.py",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "main.py",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "main.py",
+    "ghost.py"
+  ],
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py"
+    }
+  ]
+}

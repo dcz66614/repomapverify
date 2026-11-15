@@ -1,0 +1,105 @@
+{
+  "fixture": "ts-dts",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/cfg.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/types.d.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": true
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/cfg.ts",
+        "typeOnly": false,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/types.d.ts",
+        "typeOnly": true,
+        "kind": "import"
+      },
+      {
+        "from": "src/types.d.ts",
+        "to": "src/cfg.ts",
+        "typeOnly": true,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": []
+  },
+  "graph": {
+    "modules": [
+      "src/cfg.ts",
+      "src/main.ts",
+      "src/types.d.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/cfg.ts"
+      ],
+      [
+        "src/main.ts",
+        "src/types.d.ts"
+      ],
+      [
+        "src/types.d.ts",
+        "src/cfg.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/cfg.ts",
+      "src/main.ts",
+      "src/types.d.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/cfg.ts",
+        "src/main.ts",
+        "src/types.d.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/cfg.ts"
+        ],
+        [
+          "src/main.ts",
+          "src/types.d.ts"
+        ],
+        [
+          "src/types.d.ts",
+          "src/cfg.ts"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

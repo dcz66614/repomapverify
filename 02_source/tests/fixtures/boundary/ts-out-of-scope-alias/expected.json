@@ -1,0 +1,56 @@
+{
+  "fixture": "ts-out-of-scope-alias",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/util.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [
+      {
+        "from": "src/main.ts",
+        "reason": "ALIAS_NOT_RESOLVED",
+        "specifier": "@/util"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "src/main.ts",
+      "src/util.ts"
+    ],
+    "edges": [],
+    "reachable": [],
+    "isolated": [
+      "src/main.ts",
+      "src/util.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/main.ts",
+        "src/util.ts"
+      ],
+      "entrypoints": [],
+      "edges": []
+    },
+    "status": "INCOMPLETE",
+    "findings": []
+  }
+}

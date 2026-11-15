@@ -1,0 +1,126 @@
+{
+  "fixture": "ts-ctrl-03",
+  "language": "typescript",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/barrel/a.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/barrel/a.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/barrel/b.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/barrel/b.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/barrel/index.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/barrel/index.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/barrel/index.ts",
+        "to": "src/barrel/a.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "export-from",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./a",
+          "file": "src/barrel/index.ts"
+        }
+      },
+      {
+        "from": "src/barrel/index.ts",
+        "to": "src/barrel/b.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "export-from",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./b",
+          "file": "src/barrel/index.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/barrel/index.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./barrel",
+          "file": "src/main.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "src/barrel/a.ts",
+      "src/barrel/b.ts",
+      "src/barrel/index.ts",
+      "src/main.ts"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

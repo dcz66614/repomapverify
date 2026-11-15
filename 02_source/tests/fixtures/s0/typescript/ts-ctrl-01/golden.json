@@ -1,0 +1,152 @@
+{
+  "fixture": "ts-ctrl-01",
+  "language": "typescript",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/app.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/app.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/services/api.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/services/api.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/util.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/util.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/app.ts",
+        "to": "src/services/api.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./services/api",
+          "file": "src/app.ts"
+        }
+      },
+      {
+        "from": "src/app.ts",
+        "to": "src/util.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./util",
+          "file": "src/app.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/app.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./app",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/util.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./util",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/services/api.ts",
+        "to": "src/util.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "../util",
+          "file": "src/services/api.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "src/app.ts",
+      "src/main.ts",
+      "src/services/api.ts",
+      "src/util.ts"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

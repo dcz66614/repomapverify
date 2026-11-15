@@ -1,0 +1,2 @@
+[entrypoints]
+paths = ["main.go", "cmd/tool/main.go"]

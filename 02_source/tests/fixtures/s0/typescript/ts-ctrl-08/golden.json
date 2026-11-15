@@ -1,0 +1,97 @@
+{
+  "fixture": "ts-ctrl-08",
+  "language": "typescript",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/app.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/app.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/util.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/util.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/app.ts",
+        "to": "src/util.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./util",
+          "file": "src/app.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/app.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./app",
+          "file": "src/main.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 2,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [],
+    "isolatedModules": [
+      "src/app.ts",
+      "src/main.ts",
+      "src/util.ts"
+    ],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

@@ -1,0 +1,38 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "pkg/core.py"
+    },
+    {
+      "from": "pkg/__init__.py",
+      "to": "pkg/core.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-p07-reexport-misread",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "main.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "pkg/__init__.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "pkg/core.py"
+    }
+  ],
+  "repo": "py-p07-reexport-misread",
+  "repoSnapshotSha256": "019502b67b7ed7ebcb803ed6d03a56197c6ff43aba4a184e1e556f50d9549db1",
+  "schema": "repomapverify.claimed-map/v1"
+}

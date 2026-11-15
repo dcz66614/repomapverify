@@ -1,0 +1,49 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "fix-t013-py-generated-assert",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "billing/auth.py",
+      "generated": true
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "main.py",
+      "generated": false
+    }
+  ],
+  "repo": "py-c01-basic-imports",
+  "repoSnapshotSha256": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+  "schema": "repomapverify.claimed-map/v1"
+}

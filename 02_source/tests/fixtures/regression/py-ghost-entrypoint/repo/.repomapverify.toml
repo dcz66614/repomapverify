@@ -1,0 +1,2 @@
+[entrypoints]
+paths = ["main.py", "ghost.py"]

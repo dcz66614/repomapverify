@@ -1,0 +1,39 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "r4fix-go-ghost",
+  "repo": "go-ghost-entrypoint",
+  "agent": "r4fix",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "0b54cbd8bb577df83a1ae9b5b871423390b642b9451fd7d48b494427c2b3722d",
+  "modules": [
+    {
+      "id": "m0",
+      "path": "cmd/server",
+      "kind": "module"
+    },
+    {
+      "id": "m1",
+      "path": "internal/app",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "internal/store",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "cmd/server/main.go",
+    "cmd/ghost/main.go"
+  ],
+  "edges": [
+    {
+      "from": "cmd/server",
+      "to": "internal/app"
+    },
+    {
+      "from": "internal/app",
+      "to": "internal/store"
+    }
+  ]
+}

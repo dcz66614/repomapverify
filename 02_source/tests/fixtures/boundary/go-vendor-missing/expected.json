@@ -1,0 +1,47 @@
+{
+  "fixture": "go-vendor-missing",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": ".",
+        "packageName": "main",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [],
+    "generatedEdges": [],
+    "externalImportCount": 2,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      "."
+    ],
+    "edges": [],
+    "reachable": [],
+    "isolated": [
+      "."
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "."
+      ],
+      "entrypoints": [],
+      "edges": []
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

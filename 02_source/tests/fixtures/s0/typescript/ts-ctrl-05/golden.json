@@ -1,0 +1,155 @@
+{
+  "fixture": "ts-ctrl-05",
+  "language": "typescript",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "src/cfg.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/cfg.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/lazy.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/lazy.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/main.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/main.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/plain.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/plain.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "src/side.ts",
+        "nodeKind": "module",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false,
+        "files": [
+          {
+            "relativePath": "src/side.ts",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/cfg.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "require",
+        "evidence": {
+          "line": 2,
+          "statement": null,
+          "specifier": "./cfg",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/lazy.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "dynamic-import",
+        "evidence": {
+          "line": 1,
+          "statement": null,
+          "specifier": "./lazy",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/plain.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 4,
+          "statement": null,
+          "specifier": "./plain.js",
+          "file": "src/main.ts"
+        }
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/side.ts",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": "import",
+        "evidence": {
+          "line": 3,
+          "statement": null,
+          "specifier": "./side",
+          "file": "src/main.ts"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "src/cfg.ts",
+      "src/lazy.ts",
+      "src/main.ts",
+      "src/plain.ts",
+      "src/side.ts"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

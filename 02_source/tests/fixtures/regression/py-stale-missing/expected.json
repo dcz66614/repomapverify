@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "INCOMPLETE",
+  "expectedFindings": [],
+  "expectedSnapshotStatus": "STALE_SNAPSHOT"
+}

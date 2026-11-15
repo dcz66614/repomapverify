@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "INCOMPLETE",
+  "expectedFindings": [],
+  "expectedSnapshotStatus": "MATCH",
+  "expectedEntrypoints": [
+    "main.py"
+  ],
+  "expectedUnresolvedEntrypoints": [
+    "ghost.py"
+  ]
+}

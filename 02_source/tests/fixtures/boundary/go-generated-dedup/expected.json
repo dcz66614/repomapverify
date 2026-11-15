@@ -1,0 +1,88 @@
+{
+  "fixture": "go-generated-dedup",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "pkg",
+        "packageName": "pkg",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "pkg/a.pb.go",
+            "isGenerated": true,
+            "isCgo": false
+          },
+          {
+            "relativePath": "pkg/z.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "target",
+        "packageName": "target",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "target/t.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "pkg",
+        "to": "target"
+      }
+    ],
+    "generatedEdges": [
+      {
+        "from": "pkg",
+        "to": "target"
+      }
+    ],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": []
+  },
+  "graph": {
+    "modules": [
+      "pkg",
+      "target"
+    ],
+    "edges": [
+      [
+        "pkg",
+        "target"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "pkg",
+      "target"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "pkg",
+        "target"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "pkg",
+          "target"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

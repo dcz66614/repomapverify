@@ -1,0 +1,115 @@
+{
+ "_note": "T011 hand-written demo expectation. Authored by reasoning from the demo repo SOURCES (02_source/demo/repo/*.py), the entrypoint declaration (02_source/demo/repo/.repomapverify.toml: paths=[\"main.py\"]), and the demo claimed map (02_source/demo/claimed-map.json) \u2014 NOT copied from production output. Real edges read from the sources: main.py imports api, cart; api.py imports auth, cart; cart.py imports pricing; auth.py and pricing.py import nothing. main.py is the declared entrypoint, so all five modules are reachable from it, none is isolated, and main.py (the only in-degree-0 module) is the entrypoint candidate. The claimed map adds one invented edge (auth.py -> pricing.py) and omits one real edge (cart.py -> pricing.py); the T010 demo record confirms the intended outcome is FAIL with exactly those two findings. Coverage is derived from the frozen T006 rule (totalClaims = dedup claimed modules + edges + entrypoints = 5 + 5 + 1 = 11; verifiedClaims subtracts the one hallucinated edge = 10). Snapshot MATCH is the T010-recorded outcome: a stale snapshot would short-circuit to INCOMPLETE with no findings, which contradicts the recorded FAIL.",
+ "audit": {
+  "claimed": {
+   "edges": 5,
+   "modules": 5
+  },
+  "coverage": {
+   "totalClaims": 11,
+   "verifiedClaims": 10
+  },
+  "findings": [
+   {
+    "from": "auth.py",
+    "id": "HALLUCINATED_EDGE",
+    "to": "pricing.py"
+   },
+   {
+    "from": "cart.py",
+    "id": "MISSING_EDGE",
+    "to": "pricing.py"
+   }
+  ],
+  "groundTruth": {
+   "edges": 5,
+   "modules": 5
+  },
+  "snapshotStatus": "MATCH",
+  "status": "FAIL"
+ },
+ "dynamicUnknown": [],
+ "edges": [
+  {
+   "from": "api.py",
+   "to": "auth.py"
+  },
+  {
+   "from": "api.py",
+   "to": "cart.py"
+  },
+  {
+   "from": "cart.py",
+   "to": "pricing.py"
+  },
+  {
+   "from": "main.py",
+   "to": "api.py"
+  },
+  {
+   "from": "main.py",
+   "to": "cart.py"
+  }
+ ],
+ "entrypointCandidates": [
+  "main.py"
+ ],
+ "entrypoints": [
+  "main.py"
+ ],
+ "externalImportCount": 0,
+ "fixture": "demo-shop",
+ "isolatedModules": [],
+ "kind": "demo",
+ "language": "python",
+ "modules": [
+  {
+   "isEntrypoint": false,
+   "isGenerated": false,
+   "language": "python",
+   "nodeKind": "module",
+   "parseStatus": "OK",
+   "relativePath": "api.py"
+  },
+  {
+   "isEntrypoint": false,
+   "isGenerated": false,
+   "language": "python",
+   "nodeKind": "module",
+   "parseStatus": "OK",
+   "relativePath": "auth.py"
+  },
+  {
+   "isEntrypoint": false,
+   "isGenerated": false,
+   "language": "python",
+   "nodeKind": "module",
+   "parseStatus": "OK",
+   "relativePath": "cart.py"
+  },
+  {
+   "isEntrypoint": true,
+   "isGenerated": false,
+   "language": "python",
+   "nodeKind": "module",
+   "parseStatus": "OK",
+   "relativePath": "main.py"
+  },
+  {
+   "isEntrypoint": false,
+   "isGenerated": false,
+   "language": "python",
+   "nodeKind": "module",
+   "parseStatus": "OK",
+   "relativePath": "pricing.py"
+  }
+ ],
+ "reachableFromEntrypoints": [
+  "api.py",
+  "auth.py",
+  "cart.py",
+  "main.py",
+  "pricing.py"
+ ],
+ "unknownImports": []
+}

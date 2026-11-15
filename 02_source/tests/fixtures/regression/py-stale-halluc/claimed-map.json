@@ -1,0 +1,56 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py"
+    },
+    {
+      "from": "billing/api.py",
+      "to": "billing/nonexistent.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-c01-basic-imports",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "billing/auth.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "main.py"
+    },
+    {
+      "id": "mX",
+      "kind": "module",
+      "path": "billing/nonexistent.py"
+    }
+  ],
+  "repo": "py-c01-basic-imports",
+  "repoSnapshotSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "schema": "repomapverify.claimed-map/v1"
+}

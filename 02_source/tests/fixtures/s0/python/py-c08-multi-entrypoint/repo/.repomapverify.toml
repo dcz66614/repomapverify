@@ -1,0 +1,2 @@
+[entrypoints]
+paths = ["cli.py", "worker.py"]

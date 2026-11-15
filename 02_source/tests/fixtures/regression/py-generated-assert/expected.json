@@ -1,0 +1,9 @@
+{
+  "expectedStatus": "PASS",
+  "expectedFindings": [
+    {
+      "id": "GENERATED_MISMATCH",
+      "from": "billing/auth.py"
+    }
+  ]
+}

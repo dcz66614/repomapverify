@@ -1,0 +1,38 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-ts-ctrl-08",
+  "repo": "ts-ctrl-08",
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "334e8835b41239b2d6ce9f6a9fd21cb9aa532600cb50aa5b674e70a1b1ddb366",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "src/app.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "src/main.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "src/util.ts",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "src/main.ts"
+  ],
+  "edges": [
+    {
+      "from": "src/app.ts",
+      "to": "src/util.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/app.ts"
+    }
+  ]
+}

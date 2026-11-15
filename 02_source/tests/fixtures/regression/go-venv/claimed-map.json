@@ -1,0 +1,38 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "cmd/server",
+      "to": "internal/app"
+    },
+    {
+      "from": "internal/app",
+      "to": "internal/store"
+    }
+  ],
+  "entrypoints": [
+    "cmd/server"
+  ],
+  "mapId": "synthetic-go-ctrl-01",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "cmd/server"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "internal/app"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "internal/store"
+    }
+  ],
+  "repo": "go-ctrl-01",
+  "repoSnapshotSha256": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+  "schema": "repomapverify.claimed-map/v1"
+}

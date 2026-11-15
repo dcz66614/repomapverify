@@ -1,0 +1,100 @@
+{
+  "fixture": "go-ctrl-07",
+  "language": "go",
+  "kind": "control",
+  "plantedClass": null,
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/app",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "app",
+        "files": [
+          {
+            "relativePath": "internal/app/app.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "vendor/github.com/foo/bar",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "bar",
+        "files": [
+          {
+            "relativePath": "vendor/github.com/foo/bar/bar.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd",
+        "to": "internal/app",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 6,
+          "statement": null,
+          "specifier": "example.com/demo/internal/app",
+          "file": "cmd/main.go"
+        }
+      },
+      {
+        "from": "cmd",
+        "to": "vendor/github.com/foo/bar",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "github.com/foo/bar",
+          "file": "cmd/main.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 3,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd",
+      "internal/app",
+      "vendor/github.com/foo/bar"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "PASS",
+  "expectedFindings": []
+}

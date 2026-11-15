@@ -1,0 +1,108 @@
+{
+  "fixture": "go-plant-04",
+  "language": "go",
+  "kind": "planted",
+  "plantedClass": "unclaimed-reachable-module",
+  "expected": {
+    "modules": [
+      {
+        "relativePath": "cmd/server",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": true,
+        "parseStatus": "OK",
+        "packageName": "main",
+        "files": [
+          {
+            "relativePath": "cmd/server/main.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/app",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "app",
+        "files": [
+          {
+            "relativePath": "internal/app/app.go",
+            "isGenerated": false,
+            "isCgo": false
+          },
+          {
+            "relativePath": "internal/app/app2.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      },
+      {
+        "relativePath": "internal/store",
+        "nodeKind": "package",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "packageName": "store",
+        "files": [
+          {
+            "relativePath": "internal/store/store.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ],
+        "hasCgo": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "cmd/server",
+        "to": "internal/app",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/demo/internal/app",
+          "file": "cmd/server/main.go"
+        }
+      },
+      {
+        "from": "internal/app",
+        "to": "internal/store",
+        "conditional": false,
+        "typeOnly": false,
+        "kind": null,
+        "evidence": {
+          "line": 5,
+          "statement": null,
+          "specifier": "example.com/demo/internal/store",
+          "file": "internal/app/app.go"
+        }
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 4,
+    "unknowns": [],
+    "excludedFiles": [],
+    "reachableFromEntrypoints": [
+      "cmd/server",
+      "internal/app",
+      "internal/store"
+    ],
+    "isolatedModules": [],
+    "externalImports": [],
+    "dynamicUnknown": []
+  },
+  "expectedStatus": "FAIL",
+  "expectedFindings": [
+    "MISSING_EDGE",
+    "UNCLAIMED_REACHABLE_MODULE"
+  ]
+}

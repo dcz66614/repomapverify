@@ -1,0 +1,73 @@
+{
+  "fixture": "ts-type-imports",
+  "language": "typescript",
+  "extractor": {
+    "modules": [
+      {
+        "relativePath": "src/foo.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      },
+      {
+        "relativePath": "src/main.ts",
+        "isGenerated": false,
+        "isEntrypoint": false,
+        "parseStatus": "OK",
+        "isDeclarationFile": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "src/main.ts",
+        "to": "src/foo.ts",
+        "typeOnly": true,
+        "kind": "import"
+      },
+      {
+        "from": "src/main.ts",
+        "to": "src/foo.ts",
+        "typeOnly": false,
+        "kind": "import"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": []
+  },
+  "graph": {
+    "modules": [
+      "src/foo.ts",
+      "src/main.ts"
+    ],
+    "edges": [
+      [
+        "src/main.ts",
+        "src/foo.ts"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "src/foo.ts",
+      "src/main.ts"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "src/foo.ts",
+        "src/main.ts"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "src/main.ts",
+          "src/foo.ts"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

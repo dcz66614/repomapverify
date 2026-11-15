@@ -1,0 +1,2 @@
+[entrypoints]
+paths = ["cmd/server/main.go", "cmd/ghost/main.go"]

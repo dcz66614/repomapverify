@@ -1,0 +1,1 @@
+{"name": "example.com/self", "exports": {".": {"types": "./dist/types.d.ts"}}}

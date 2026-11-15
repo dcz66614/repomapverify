@@ -1,0 +1,51 @@
+{
+    "dependencies": {
+        "tree-sitter-go": "0.25.0",
+        "tree-sitter-python": "0.25.0",
+        "tree-sitter-typescript": "0.23.2",
+        "web-tree-sitter": "0.27.2"
+    },
+    "description": "Read-only, local-first auditor for an agent's claimed repo map: static import graph vs claimed map, PASS / FAIL / INCOMPLETE.",
+    "devDependencies": {
+        "@types/node": "^26.6.6",
+        "typescript": "5.9.3",
+        "vitest": "4.0.18"
+    },
+    "engines": {
+        "node": ">=24"
+    },
+    "files": [
+        ".github",
+        "LICENSE",
+        "demo/claimed-map.json",
+        "demo/README.md",
+        "demo/repo",
+        "dist",
+        "docs",
+        "oracle/python/oracle.py",
+        "package-lock.json",
+        "scripts",
+        "src",
+        "tests",
+        "tsconfig.build.json",
+        "tsconfig.json"
+    ],
+    "license": "MIT",
+    "name": "repomapverify",
+    "bin": {
+        "repomapverify": "dist/cli.js"
+    },
+    "scripts": {
+        "audit": "node dist/cli.js audit",
+        "build": "tsc -p tsconfig.build.json",
+        "demo": "node scripts/demo.mjs",
+        "ground-truth": "node dist/cli.js ground-truth",
+        "release:build": "node scripts/release-build.mjs",
+        "release:verify": "node scripts/release-verify.mjs",
+        "s0:gate": "node scripts/s0-gate.mjs",
+        "test": "vitest run",
+        "verify:all": "node scripts/verify-all.mjs"
+    },
+    "type": "module",
+    "version": "0.1.0"
+}

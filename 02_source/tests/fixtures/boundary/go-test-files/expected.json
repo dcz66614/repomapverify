@@ -1,0 +1,99 @@
+{
+  "fixture": "go-test-files",
+  "language": "go",
+  "extractor": {
+    "packages": [
+      {
+        "relativePath": "other",
+        "packageName": "other",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "other/o.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "pkg",
+        "packageName": "pkg",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "pkg/p.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      },
+      {
+        "relativePath": "target",
+        "packageName": "target",
+        "isGenerated": false,
+        "hasCgo": false,
+        "files": [
+          {
+            "relativePath": "target/t.go",
+            "isGenerated": false,
+            "isCgo": false
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "pkg",
+        "to": "target"
+      }
+    ],
+    "generatedEdges": [],
+    "externalImportCount": 0,
+    "unknowns": [],
+    "excludedFiles": [
+      {
+        "relativePath": "pkg/p_test.go",
+        "reason": "TEST_FILE"
+      }
+    ]
+  },
+  "graph": {
+    "modules": [
+      "other",
+      "pkg",
+      "target"
+    ],
+    "edges": [
+      [
+        "pkg",
+        "target"
+      ]
+    ],
+    "reachable": [],
+    "isolated": [
+      "other",
+      "pkg",
+      "target"
+    ]
+  },
+  "audit": {
+    "claimed": {
+      "modules": [
+        "other",
+        "pkg",
+        "target"
+      ],
+      "entrypoints": [],
+      "edges": [
+        [
+          "pkg",
+          "target"
+        ]
+      ]
+    },
+    "status": "PASS",
+    "findings": []
+  }
+}

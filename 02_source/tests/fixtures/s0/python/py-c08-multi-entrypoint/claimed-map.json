@@ -1,0 +1,62 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "cli.py",
+      "to": "core/api.py"
+    },
+    {
+      "from": "core/api.py",
+      "to": "core/db.py"
+    },
+    {
+      "from": "core/jobs.py",
+      "to": "core/db.py"
+    },
+    {
+      "from": "worker.py",
+      "to": "core/jobs.py"
+    }
+  ],
+  "entrypoints": [
+    "cli.py",
+    "worker.py"
+  ],
+  "map_id": "synthetic-py-c08-multi-entrypoint",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "cli.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "core/__init__.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "core/api.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "core/db.py"
+    },
+    {
+      "id": "m5",
+      "kind": "module",
+      "path": "core/jobs.py"
+    },
+    {
+      "id": "m6",
+      "kind": "module",
+      "path": "worker.py"
+    }
+  ],
+  "repo": "py-c08-multi-entrypoint",
+  "repoSnapshotSha256": "1698c5bb0697ab8acbf0cb2e427603a7d6b0f8be783d22f4d41037678eb47b87",
+  "schema": "repomapverify.claimed-map/v1"
+}

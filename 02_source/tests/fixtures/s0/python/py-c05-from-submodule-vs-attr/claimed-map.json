@@ -1,0 +1,56 @@
+{
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "billing/__init__.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/reports/__init__.py"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/reports/monthly.py"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "map_id": "synthetic-py-c05-from-submodule-vs-attr",
+  "modules": [
+    {
+      "id": "m1",
+      "kind": "module",
+      "path": "billing/__init__.py"
+    },
+    {
+      "id": "m2",
+      "kind": "module",
+      "path": "billing/api.py"
+    },
+    {
+      "id": "m3",
+      "kind": "module",
+      "path": "billing/reports/__init__.py"
+    },
+    {
+      "id": "m4",
+      "kind": "module",
+      "path": "billing/reports/monthly.py"
+    },
+    {
+      "id": "m5",
+      "kind": "module",
+      "path": "main.py"
+    }
+  ],
+  "repo": "py-c05-from-submodule-vs-attr",
+  "repoSnapshotSha256": "1cc19ae452208b9ccb569819f2576eeb461fee7e9544a8d9c6828985abfecfaa",
+  "schema": "repomapverify.claimed-map/v1"
+}

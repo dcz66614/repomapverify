@@ -1,0 +1,15 @@
+# T014: `npm pack` exclusions (packaging only — no src/oracle change).
+# NOTE (npm rule, verified this round): files listed in package.json
+# `files` CANNOT be excluded by .npmignore, so the allowlist itself
+# omits the generated paths — `demo` is listed as its three shippable
+# entries (claimed-map.json, README.md, repo/) and `oracle` as
+# oracle/python/oracle.py, leaving out demo/out/ and the compiled
+# oracle .pyc. This file is defense-in-depth for anything packed by
+# default (no `files` entry): if the `files` field is ever removed,
+# these exclusions apply again. Do NOT blanket-exclude `__pycache__/` —
+# the regression fixtures under tests/fixtures/regression/ deliberately
+# contain `__pycache__` dirs holding source files
+# (e.g. go-pycache/repo/__pycache__/x.go); only compiled bytecode is junk.
+demo/out/
+.tmp/
+*.pyc

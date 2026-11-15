@@ -1,0 +1,65 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-ts-ctrl-04",
+  "repo": "ts-ctrl-04",
+  "agent": "synthetic-agent-0.1",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "8e1ff967917779d60b27262bf3303ab226e501c8375a616193f43123c09aee3a",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "src/helper.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "src/legacy.d.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "src/main.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m4",
+      "path": "src/runner.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m5",
+      "path": "src/shapes.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m6",
+      "path": "src/types.ts",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "src/main.ts"
+  ],
+  "edges": [
+    {
+      "from": "src/main.ts",
+      "to": "src/legacy.d.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/runner.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/types.ts"
+    },
+    {
+      "from": "src/runner.ts",
+      "to": "src/helper.ts"
+    },
+    {
+      "from": "src/runner.ts",
+      "to": "src/shapes.ts"
+    }
+  ]
+}
