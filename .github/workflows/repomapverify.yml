@@ -1,0 +1,96 @@
+# RepoMapVerify CI example — copy this file into your own repo as
+# `.github/workflows/repomapverify.yml` and point REPO_PATH / MAP_PATH at
+# your repo and your agent's claimed map.
+#
+# What it does: installs the tool from this checkout (npm ci + build, no
+# download of the tool itself from a registry), then runs
+# `npx repomapverify audit`. The audit step FAILS the build on any
+# non-PASS map: exit 1 (FAIL) and exit 2 (INCOMPLETE) both fail the step,
+# exit 3 (usage / input error) fails it too. The only exception is the
+# documented allow-incomplete option below: set ALLOW_INCOMPLETE to
+# 'true' and an INCOMPLETE result (exit 2) is accepted, e.g. while a repo
+# still has dynamic imports the static checker cannot resolve. FAIL is
+# never allowed through.
+#
+# The defaults below audit the bundled demo repo against the bundled
+# demo claimed map. That map is INTENTIONALLY WRONG (it claims an edge
+# auth.py -> pricing.py that does not exist, and omits the real edge
+# cart.py -> pricing.py), so with the defaults this workflow FAILS with
+# exit 1 — that is the fail-closed behaviour working as designed. Replace
+# MAP_PATH with your agent's real map before relying on it.
+#
+# Once the package is published to npm, the install step can instead be
+# `npm install -g repomapverify` and the audit step stays the same
+# (`npx repomapverify audit ...`).
+#
+# NOTE FOR THIS REPO'S MAINTAINERS: the GitHub App used for uploads
+# cannot create `.github/workflows/*` files via the API (403, proven
+# twice on other projects). This file is written correctly in the repo
+# but must be uploaded to GitHub via the web UI, not via the API.
+
+name: repomapverify
+
+"on":
+  push:
+  pull_request:
+
+env:
+  # Path of the repo to audit, relative to the 02_source package
+  # directory (the audit step's working directory).
+  REPO_PATH: demo/repo
+  # Path of the agent's claimed map (repomapverify.claimed-map/v1 JSON),
+  # relative to the same directory. FIX T013 (P2-12): this variable was
+  # referenced by the audit step but never defined, so the step passed
+  # --map "" and exited 3. The default points at the bundled demo map,
+  # which is intentionally wrong, so the workflow FAILS with exit 1 --
+  # the fail-closed demonstration documented at the top of this file.
+  MAP_PATH: demo/claimed-map.json
+  # 'false' (default): INCOMPLETE (exit 2) fails the build.
+  # 'true': INCOMPLETE is accepted; FAIL (exit 1) still fails the build.
+  ALLOW_INCOMPLETE: 'false'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: 02_source/package-lock.json
+
+      - name: Install dependencies
+        working-directory: 02_source
+        run: npm ci
+
+      - name: Build
+        working-directory: 02_source
+        run: npm run build
+
+      - name: Audit claimed repo map
+        working-directory: 02_source
+        run: |
+          set +e
+          npx repomapverify audit --repo "$REPO_PATH" --map "$MAP_PATH" --out repomapverify-report
+          code=$?
+          set -e
+          echo "repomapverify exit code: $code (0 PASS, 1 FAIL, 2 INCOMPLETE, 3 usage/input error)"
+          if [ "$code" -eq 0 ]; then
+            echo "Map verified: PASS."
+          elif [ "$code" -eq 2 ] && [ "$ALLOW_INCOMPLETE" = 'true' ]; then
+            echo "Map INCOMPLETE, accepted because ALLOW_INCOMPLETE=true."
+          else
+            echo "::error::repomapverify: claimed map is not PASS (exit $code). See repomapverify-report/repomapverify-report.html."
+            exit "$code"
+          fi
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repomapverify-report
+          path: 02_source/repomapverify-report/
