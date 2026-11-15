@@ -1,0 +1,1 @@
+{"compilerOptions":{"declaration":true,"declarationMap":false,"outDir":"dist","rootDir":"src","sourceMap":false},"exclude":["node_modules","dist","tests"],"extends":"./tsconfig.json","include":["src"]}

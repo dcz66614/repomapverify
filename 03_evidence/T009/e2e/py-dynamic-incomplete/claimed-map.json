@@ -1,0 +1,37 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "synthetic-dynamic-incomplete",
+  "repo": "e2e-incomplete",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "a3651309c594e39bc84de939ce653fcd63bc9570092ebf0ea26b8d42aef33694",
+  "modules": [
+    {
+      "id": "m1",
+      "path": "main.py",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "loader.py",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "util.py",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "loader.py"
+    },
+    {
+      "from": "main.py",
+      "to": "util.py"
+    }
+  ]
+}

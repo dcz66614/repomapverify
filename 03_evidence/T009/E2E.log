@@ -1,0 +1,277 @@
+$ cd /home/hatch/workspace/p024-repomapverify/02_source
+exit: 0
+
+$ node dist/cli.js --help
+repomapverify — verify an agent's claimed repo map against the real static import graph
+
+Usage:
+  repomapverify audit --repo <path> --map <claimed-map.json> [--out <dir>] [--format json|html]
+  repomapverify ground-truth --repo <path> [--lang python|typescript|go]
+  repomapverify --help
+
+audit: one command runs end-to-end (validate map, build ground truth, compare, write report).
+  --repo <path>     repo to audit (must exist and be a directory)
+  --map <file>      claimed map JSON (repomapverify.claimed-map/v1)
+  --out <dir>       report directory (default: current directory)
+  --format <fmt>    json | html (default: both files are written)
+  Exit codes: PASS 0, FAIL 1, INCOMPLETE 2, usage/input error 3.
+
+ground-truth: print only the ground-truth JSON (debugging / Oracle comparison).
+  --repo <path>     repo to scan
+  --lang <lang>     python | typescript | go (default: all languages)
+  Exit code: 0 on success, 3 on usage/input error.
+exit: 0
+
+$ node dist/cli.js
+repomapverify — verify an agent's claimed repo map against the real static import graph
+
+Usage:
+  repomapverify audit --repo <path> --map <claimed-map.json> [--out <dir>] [--format json|html]
+  repomapverify ground-truth --repo <path> [--lang python|typescript|go]
+  repomapverify --help
+
+audit: one command runs end-to-end (validate map, build ground truth, compare, write report).
+  --repo <path>     repo to audit (must exist and be a directory)
+  --map <file>      claimed map JSON (repomapverify.claimed-map/v1)
+  --out <dir>       report directory (default: current directory)
+  --format <fmt>    json | html (default: both files are written)
+  Exit codes: PASS 0, FAIL 1, INCOMPLETE 2, usage/input error 3.
+
+ground-truth: print only the ground-truth JSON (debugging / Oracle comparison).
+  --repo <path>     repo to scan
+  --lang <lang>     python | typescript | go (default: all languages)
+  Exit code: 0 on success, 3 on usage/input error.
+exit: 0
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-c01-basic-imports/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-c01-basic-imports/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-c01-basic-imports/out
+
+RESULT: PASS
+Ground truth: 4 modules, 3 edges
+Claimed: 4 modules, 3 edges
+Coverage: 8 / 8 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-c01-basic-imports/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-c01-basic-imports/out/repomapverify-report.html
+exit: 0
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-p01-hallucinated-edge/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-p01-hallucinated-edge/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p01-hallucinated-edge/out
+
+RESULT: FAIL
+Ground truth: 4 modules, 3 edges
+Claimed: 5 modules, 4 edges
+Coverage: 8 / 10 (80.0%)
+Findings: 2 (P1: 2, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+  P1 HALLUCINATED_EDGE: billing/api.py -> billing/refunds.py
+  P1 HALLUCINATED_MODULE: billing/refunds.py
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p01-hallucinated-edge/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p01-hallucinated-edge/out/repomapverify-report.html
+exit: 1
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/typescript/ts-plant-01/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/typescript/ts-plant-01/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-plant-01/out
+
+RESULT: FAIL
+Ground truth: 4 modules, 5 edges
+Claimed: 4 modules, 6 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: src/main.ts -> src/services/api.ts
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-plant-01/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-plant-01/out/repomapverify-report.html
+exit: 1
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/go/go-plant-01/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/go/go-plant-01/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/go-plant-01/out
+
+RESULT: FAIL
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 3 edges
+Coverage: 6 / 7 (85.7%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: cmd/server -> internal/store
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/go-plant-01/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/go-plant-01/out/repomapverify-report.html
+exit: 1
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/typescript/ts-ctrl-08/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/typescript/ts-ctrl-08/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-ctrl-08/out
+
+RESULT: PASS
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 2 edges
+Coverage: 6 / 6 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 1 informational
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-ctrl-08/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-ctrl-08/out/repomapverify-report.html
+exit: 0
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-p05-name-collision/repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-p05-name-collision/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p05-name-collision/out
+
+RESULT: FAIL
+Ground truth: 6 modules, 3 edges
+Claimed: 6 modules, 3 edges
+Coverage: 9 / 10 (90.0%)
+Findings: 3 (P1: 2, P2: 1) + 1 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+  P1 HALLUCINATED_EDGE: shop/cart.py -> lib/utils.py
+  P2 MISSING_EDGE: shop/cart.py -> shop/utils.py
+  P1 NAME_COLLISION_CONFUSION: shop/cart.py -> lib/utils.py
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p05-name-collision/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p05-name-collision/out/repomapverify-report.html
+exit: 1
+
+$ ground-truth snapshot for INCOMPLETE fixture: a3651309c594e39bc84de939ce653fcd63bc9570092ebf0ea26b8d42aef33694
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/repo --map /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/out
+
+RESULT: INCOMPLETE
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 2 edges
+Coverage: 6 / 6 (100.0%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 DYNAMIC_IMPORT_UNKNOWN: loader.py
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/out/repomapverify-report.html
+exit: 2
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/no-such-repo --map /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-c01-basic-imports/claimed-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/out-err
+Error: repo path does not exist: "/home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/no-such-repo"
+Run `repomapverify --help` for usage.
+exit: 3
+
+$ node dist/cli.js audit --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-c01-basic-imports/repo --map /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/bad-map.json --out /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/out-err
+Error: invalid claimed map: schema: must be exactly repomapverify.claimed-map/v1, got not-a-claimed-map; repo: missing required field repo; completeness: missing required field completeness (FULL_GRAPH | PARTIAL_SUBGRAPH) — never guessed; repoSnapshotSha256: missing required field repoSnapshotSha256 (full working-tree snapshot SHA-256) — never guessed; modules: missing required field modules; entrypoints: missing required field entrypoints; edges: missing required field edges
+Run `repomapverify --help` for usage.
+exit: 3
+
+$ node dist/cli.js ground-truth --repo /home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0/python/py-c01-basic-imports/repo --lang python
+{
+  "schema": "repomapverify.ground-truth/v1",
+  "modules": [
+    {
+      "moduleId": "6ae1bdc28948cd38972272507d17ceb576042064929436f2502725a09736653f",
+      "language": "python",
+      "nodeKind": "module",
+      "relativePath": "billing/__init__.py",
+      "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e",
+      "language": "python",
+      "nodeKind": "module",
+      "relativePath": "billing/api.py",
+      "contentSha256": "83f41a741280971637212c98575f628974e4a384e5365526092d0f1ec315b37e",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861",
+      "language": "python",
+      "nodeKind": "module",
+      "relativePath": "billing/auth.py",
+      "contentSha256": "abf8ecca3a0383f9ed65c07d9c6777bf341f2db761ec1fd336d5c6d5592d759e",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "language": "python",
+      "nodeKind": "module",
+      "relativePath": "main.py",
+      "contentSha256": "64ecea1f0afdf4506083bf5447a0281e76ce82a54270b51a7ba39267f18a73ac",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py",
+      "fromModuleId": "a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e",
+      "toModuleId": "42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py",
+      "fromModuleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "toModuleId": "a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py",
+      "fromModuleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "toModuleId": "42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861",
+      "conditional": false,
+      "typeOnly": false
+    }
+  ],
+  "entrypoints": [
+    "main.py"
+  ],
+  "reachableFromEntrypoints": [
+    "billing/__init__.py",
+    "billing/api.py",
+    "billing/auth.py",
+    "main.py"
+  ],
+  "isolatedModules": [],
+  "entrypointCandidates": [
+    "billing/__init__.py",
+    "main.py"
+  ],
+  "duplicateContent": [],
+  "externalImportCount": 0,
+  "repoSnapshotSha256": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404"
+}
+exit: 0
+
+== offline proof (emitted HTML) ==
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/go-plant-01/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-c01-basic-imports/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-dynamic-incomplete/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p01-hallucinated-edge/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/py-p05-name-collision/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-ctrl-08/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+--- /home/hatch/workspace/p024-repomapverify/03_evidence/T009/e2e/ts-plant-01/out/repomapverify-report.html
+  external-scheme matches: 0
+  script/src=/external-href matches: 0
+
+== snapshot hashes ==
+5d63a7a26bbed44fcae6bbd7fec1c08c32b970553e2bbf8e807e06b37024488a  go-plant-01/out/repomapverify-report.json
+87e430f8b7a536afcc9f238071ca765bdcb537171039e07baacbbdd97cd53f6e  py-c01-basic-imports/out/repomapverify-report.json
+054f3568d07e7f8680181cabcb6ae2e26ac61298cdd9275a7398e59099b5eae6  py-dynamic-incomplete/out/repomapverify-report.json
+b6131e34831e66e4cb30def56b720f515e00be6b7c695b7508fe8931c450eecd  py-p01-hallucinated-edge/out/repomapverify-report.json
+990a41fecaf3232e9f445c08d50059a41abf51586139a68f930fa7aec95d169a  py-p05-name-collision/out/repomapverify-report.json
+c0297f140e837300bc4487a826840bf1175e4f8467bf83005d818512abe37e47  ts-ctrl-08/out/repomapverify-report.json
+848bfbf4b890a5ba4ed89f23dea5972a123caf241d0e3e333e68ccfa5f0c09f5  ts-plant-01/out/repomapverify-report.json
+3d61f80aae5fb526e32ff5b10e40e237b7c26c6ea14b1320d051a92dd6278856  go-plant-01/out/repomapverify-report.html
+d928552d14bba56b38a2f57c5b97dfc8193abc8a9d01ae45453e82a7e906cc48  py-c01-basic-imports/out/repomapverify-report.html
+a42250934d3c73a6a7a2a8926cfa30773f9dd909ba0c8da6fd5787abc629db6f  py-dynamic-incomplete/out/repomapverify-report.html
+4c6d02bc45a83269ab5888a454eb47f4b127e13e610cb75ce2ba4698851998cc  py-p01-hallucinated-edge/out/repomapverify-report.html
+8f982ed348005c1fd3aa13a0d9d595c288384a3ad5448df9b349229ca1721e0f  py-p05-name-collision/out/repomapverify-report.html
+65d60f24f5b7c59f5dbd34247d88d116168cc803dc18cb97eff8208bb1448393  ts-ctrl-08/out/repomapverify-report.html
+f75d3320446f145c87b785530459ea94827f7dfdd9ea2a74a86b24020e44404c  ts-plant-01/out/repomapverify-report.html

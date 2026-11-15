@@ -1,0 +1,675 @@
+{
+  "total": 48,
+  "matched": 48,
+  "controlPass": 24,
+  "plantedDetected": 24,
+  "results": [
+    {
+      "fixture": "py-c01-basic-imports",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c02-relative-imports",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c03-init-reexport",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c04-src-layout",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c05-from-submodule-vs-attr",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c06-conditional-imports",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c07-external-and-stdlib",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-c08-multi-entrypoint",
+      "language": "python",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p01-hallucinated-edge",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE\u0000billing/api.py\u0000billing/refunds.py",
+        "HALLUCINATED_MODULE\u0000billing/refunds.py\u0000"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000billing/api.py\u0000billing/refunds.py",
+        "HALLUCINATED_MODULE\u0000billing/refunds.py\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p02-wrong-entrypoint",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "WRONG_ENTRYPOINT\u0000billing/api.py\u0000"
+      ],
+      "gotFindings": [
+        "WRONG_ENTRYPOINT\u0000billing/api.py\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p03-missing-edge",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE\u0000billing/api.py\u0000billing/auth.py"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000billing/api.py\u0000billing/auth.py"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p04-unclaimed-reachable",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE\u0000billing/api.py\u0000billing/migrations.py",
+        "UNCLAIMED_REACHABLE_MODULE\u0000billing/migrations.py\u0000"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000billing/api.py\u0000billing/migrations.py",
+        "UNCLAIMED_REACHABLE_MODULE\u0000billing/migrations.py\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p05-name-collision",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE\u0000shop/cart.py\u0000lib/utils.py",
+        "MISSING_EDGE\u0000shop/cart.py\u0000shop/utils.py",
+        "NAME_COLLISION_CONFUSION\u0000shop/cart.py\u0000lib/utils.py"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000shop/cart.py\u0000lib/utils.py",
+        "MISSING_EDGE\u0000shop/cart.py\u0000shop/utils.py",
+        "NAME_COLLISION_CONFUSION\u0000shop/cart.py\u0000lib/utils.py"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p06-dynamic-import-misread",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN\u0000loader.py\u0000",
+        "HALLUCINATED_EDGE\u0000loader.py\u0000plugins/alpha.py"
+      ],
+      "gotFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN\u0000loader.py\u0000",
+        "HALLUCINATED_EDGE\u0000loader.py\u0000plugins/alpha.py"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p07-reexport-misread",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE\u0000main.py\u0000pkg/core.py",
+        "MISSING_EDGE\u0000main.py\u0000pkg/__init__.py"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000main.py\u0000pkg/core.py",
+        "MISSING_EDGE\u0000main.py\u0000pkg/__init__.py"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "py-p08-alias-misparse",
+      "language": "python",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE\u0000main.py\u0000utils.py",
+        "HALLUCINATED_MODULE\u0000utils.py\u0000",
+        "MISSING_EDGE\u0000main.py\u0000pkg/utils.py"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000main.py\u0000utils.py",
+        "HALLUCINATED_MODULE\u0000utils.py\u0000",
+        "MISSING_EDGE\u0000main.py\u0000pkg/utils.py"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-01",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-02",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-03",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-04",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-05",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-06",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-07",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-ctrl-08",
+      "language": "typescript",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-01",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000src/main.ts\u0000src/services/api.ts"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-02",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "gotFindings": [
+        "WRONG_ENTRYPOINT\u0000src/app.ts\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-03",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000src/app.ts\u0000src/util.ts"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-04",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000src/app.ts\u0000src/services/api.ts",
+        "MISSING_EDGE\u0000src/services/api.ts\u0000src/util.ts",
+        "UNCLAIMED_REACHABLE_MODULE\u0000src/services/api.ts\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-05",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000src/b/worker.ts\u0000src/a/util.ts",
+        "MISSING_EDGE\u0000src/b/worker.ts\u0000src/b/util.ts",
+        "NAME_COLLISION_CONFUSION\u0000src/b/worker.ts\u0000src/a/util.ts",
+        "UNCLAIMED_REACHABLE_MODULE\u0000src/b/util.ts\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-06",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN",
+        "HALLUCINATED_EDGE"
+      ],
+      "gotFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN\u0000src/main.ts\u0000",
+        "HALLUCINATED_EDGE\u0000src/main.ts\u0000src/other.ts"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-07",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000src/main.ts\u0000src/barrel/a.ts",
+        "MISSING_EDGE\u0000src/main.ts\u0000src/barrel/index.ts"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "ts-plant-08",
+      "language": "typescript",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000src/main.ts\u0000src/lib/other.ts",
+        "MISSING_EDGE\u0000src/main.ts\u0000src/lib/util.ts"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-01",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-02",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-03",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-04",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-05",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-06",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-07",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-ctrl-08",
+      "language": "go",
+      "kind": "control",
+      "expectedStatus": "PASS",
+      "gotStatus": "PASS",
+      "expectedFindings": [],
+      "gotFindings": [],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-01",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000cmd/server\u0000internal/store"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-02",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "gotFindings": [
+        "WRONG_ENTRYPOINT\u0000internal/app\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-03",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000internal/app\u0000internal/store"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-04",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "gotFindings": [
+        "MISSING_EDGE\u0000internal/app\u0000internal/store",
+        "UNCLAIMED_REACHABLE_MODULE\u0000internal/store\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-05",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000internal/b/svc\u0000internal/a/util",
+        "MISSING_EDGE\u0000internal/b/svc\u0000internal/b/util",
+        "NAME_COLLISION_CONFUSION\u0000internal/b/svc\u0000internal/a/util",
+        "UNCLAIMED_REACHABLE_MODULE\u0000internal/b/util\u0000"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-06",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000cmd\u0000third_party/shared",
+        "MISSING_EDGE\u0000cmd\u0000third_party/shared/util"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-07",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000cmd\u0000internal/b",
+        "MISSING_EDGE\u0000cmd\u0000internal/a"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    },
+    {
+      "fixture": "go-plant-08",
+      "language": "go",
+      "kind": "planted",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "gotFindings": [
+        "HALLUCINATED_EDGE\u0000internal/plat\u0000internal/winonly"
+      ],
+      "snapshotStatus": "MATCH",
+      "match": true
+    }
+  ]
+}

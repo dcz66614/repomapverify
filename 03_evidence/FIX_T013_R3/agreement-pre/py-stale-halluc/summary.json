@@ -1,0 +1,25 @@
+{
+ "production": {
+  "exit": 2,
+  "status": "INCOMPLETE",
+  "findings": [],
+  "snapshotStatus": "STALE_SNAPSHOT"
+ },
+ "oracle": {
+  "status": "FAIL",
+  "snapshotStatus": "STALE_SNAPSHOT",
+  "findings": [
+   [
+    "HALLUCINATED_EDGE",
+    "billing/api.py",
+    "billing/nonexistent.py"
+   ],
+   [
+    "HALLUCINATED_MODULE",
+    "billing/nonexistent.py",
+    null
+   ]
+  ],
+  "unknownImportsPresent": false
+ }
+}

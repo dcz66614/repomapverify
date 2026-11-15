@@ -1,0 +1,64 @@
+{
+  "workDir": "/home/hatch/workspace/p024-repomapverify/.tmp/rehearsal",
+  "packages": {
+    "sourceZip": {
+      "file": "source.zip",
+      "sha256": "1f3eafd5e94aeb04e11fb72c76a401c1cb541f1eb505c6b04fcd4d5a76af97af"
+    },
+    "distZip": {
+      "file": "dist.zip",
+      "sha256": "ba2681ba61497ae155b40049335fb05e060c25b78a845565d680ae4eea1c5148"
+    },
+    "sumsFile": "SHA256SUMS.txt"
+  },
+  "baseline": {
+    "demo": {
+      "exitCode": 1,
+      "status": "FAIL",
+      "findings": 2,
+      "canonicalSemanticHash": "dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369"
+    },
+    "control py-c01": {
+      "exitCode": 0,
+      "status": "PASS",
+      "findings": 0,
+      "canonicalSemanticHash": "1dab7bc51fce7578b1aa54386b981a0fedd3435c94986bce0d5c5fab7d1e5a55"
+    },
+    "planted py-p01": {
+      "exitCode": 1,
+      "status": "FAIL",
+      "findings": 2,
+      "canonicalSemanticHash": "88a4d7f9c753567b82b8004c120f079986132315cfcfec60c162f23027ef4397"
+    }
+  },
+  "verifySourceZip": {
+    "demo": {
+      "exitCode": 1,
+      "status": "FAIL",
+      "findings": 2,
+      "canonicalSemanticHash": "dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369"
+    },
+    "control py-c01": {
+      "exitCode": 0,
+      "status": "PASS",
+      "findings": 0,
+      "canonicalSemanticHash": "1dab7bc51fce7578b1aa54386b981a0fedd3435c94986bce0d5c5fab7d1e5a55"
+    },
+    "planted py-p01": {
+      "exitCode": 1,
+      "status": "FAIL",
+      "findings": 2,
+      "canonicalSemanticHash": "88a4d7f9c753567b82b8004c120f079986132315cfcfec60c162f23027ef4397"
+    }
+  },
+  "verifyDistZip": {
+    "demo": {
+      "exitCode": 1,
+      "status": "FAIL",
+      "findings": 2,
+      "canonicalSemanticHash": "dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369"
+    }
+  },
+  "identicalExitCodesAndHashes": true,
+  "failures": []
+}

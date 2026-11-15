@@ -1,0 +1,249 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "synthetic-py-p01-hallucinated-edge",
+  "map_id": "synthetic-py-p01-hallucinated-edge",
+  "status": "FAIL",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 4,
+    "edges": 3
+  },
+  "ground_truth": {
+    "modules": 4,
+    "edges": 3
+  },
+  "claimed": {
+    "modules": 5,
+    "edges": 4
+  },
+  "coverage": {
+    "verifiedClaims": 8,
+    "totalClaims": 10,
+    "verified_claims": 8,
+    "total_claims": 10
+  },
+  "findings": [
+    {
+      "id": "HALLUCINATED_EDGE",
+      "severity": "P1",
+      "from": "billing/api.py",
+      "to": "billing/refunds.py",
+      "detail": "claimed edge billing/api.py -> billing/refunds.py does not exist in the ground-truth graph",
+      "claimedJsonPath": "edges[1]"
+    },
+    {
+      "id": "HALLUCINATED_MODULE",
+      "severity": "P1",
+      "from": "billing/refunds.py",
+      "detail": "claimed module billing/refunds.py does not exist in the repository",
+      "claimedJsonPath": "modules[3]"
+    }
+  ],
+  "infoFindings": [],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+    "modules": [
+      {
+        "path": "billing/__init__.py",
+        "moduleId": "6ae1bdc28948cd38972272507d17ceb576042064929436f2502725a09736653f",
+        "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "billing/api.py",
+        "moduleId": "a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e",
+        "contentSha256": "83f41a741280971637212c98575f628974e4a384e5365526092d0f1ec315b37e"
+      },
+      {
+        "path": "billing/auth.py",
+        "moduleId": "42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861",
+        "contentSha256": "abf8ecca3a0383f9ed65c07d9c6777bf341f2db761ec1fd336d5c6d5592d759e"
+      },
+      {
+        "path": "main.py",
+        "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+        "contentSha256": "64ecea1f0afdf4506083bf5447a0281e76ce82a54270b51a7ba39267f18a73ac"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": []
+  },
+  "modules": [
+    {
+      "path": "billing/__init__.py",
+      "moduleId": "6ae1bdc28948cd38972272507d17ceb576042064929436f2502725a09736653f",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "billing/api.py",
+      "moduleId": "a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "83f41a741280971637212c98575f628974e4a384e5365526092d0f1ec315b37e",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [
+        "billing/auth.py"
+      ],
+      "inEdgesClaimed": [
+        "main.py"
+      ],
+      "outEdgesClaimed": [
+        "billing/auth.py",
+        "billing/refunds.py"
+      ]
+    },
+    {
+      "path": "billing/auth.py",
+      "moduleId": "42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "abf8ecca3a0383f9ed65c07d9c6777bf341f2db761ec1fd336d5c6d5592d759e",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "billing/api.py",
+        "main.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "billing/api.py",
+        "main.py"
+      ],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "billing/refunds.py",
+      "moduleId": null,
+      "language": null,
+      "nodeKind": null,
+      "contentSha256": null,
+      "isGenerated": null,
+      "isEntrypoint": false,
+      "parseStatus": null,
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": false,
+      "reachable": false,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "billing/api.py"
+      ],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "main.py",
+      "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "64ecea1f0afdf4506083bf5447a0281e76ce82a54270b51a7ba39267f18a73ac",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "billing/api.py",
+        "billing/auth.py"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "billing/api.py",
+        "billing/auth.py"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "billing/api.py",
+      "to": "billing/auth.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "billing/api.py",
+        "line": 1,
+        "statement": "from billing.auth import login"
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "billing/api.py",
+      "to": "billing/refunds.py",
+      "claimed": true,
+      "real": false,
+      "status": "hallucinated",
+      "claimedJsonPath": "edges[1]"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/api.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 1,
+        "statement": "import billing.api"
+      },
+      "claimedJsonPath": "edges[2]"
+    },
+    {
+      "from": "main.py",
+      "to": "billing/auth.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 2,
+        "statement": "from billing.auth import login"
+      },
+      "claimedJsonPath": "edges[3]"
+    }
+  ],
+  "mapWarnings": [
+    "map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)"
+  ],
+  "canonicalSemanticHash": "88a4d7f9c753567b82b8004c120f079986132315cfcfec60c162f23027ef4397"
+}

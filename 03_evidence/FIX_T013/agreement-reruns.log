@@ -1,0 +1,52 @@
+P024 FIX T013 -- P1 agreement re-runs (production CLI vs independent Oracle)
+Date: 2026-11-14T16:38:31Z
+
+=== E1 Go literal entrypoint (P1-01, reviewer map) (expect PASS) ===
+fixture dir: /home/hatch/workspace/p024-repomapverify/.tmp/fix-t013/baseline/e1/go-lit-fixture
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: 2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08
+AGREE
+
+=== E2 snake_case snapshot (P1-02, reviewer map) (expect PASS) ===
+fixture dir: /home/hatch/workspace/p024-repomapverify/.tmp/fix-t013/baseline/e2/py-snake-fixture
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404
+AGREE
+
+=== E4 symlink snapshot (P1-03, reviewer repo+map) (expect PASS) ===
+fixture dir: /home/hatch/workspace/p024-repomapverify/.tmp/fix-t013/baseline/e4/py-symlink-fixture
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: 429867e5e376d9c009fc8fb54e7b126b95c750235aa359bd5cb3ed328930ff0a
+AGREE
+
+=== REGRESSION go-literal-entrypoint (P1-01) (expect PASS) ===
+fixture dir: tests/fixtures/regression/go-literal-entrypoint
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: 2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08
+AGREE
+
+=== REGRESSION py-snake-snapshot (P1-02) (expect PASS) ===
+fixture dir: tests/fixtures/regression/py-snake-snapshot
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404
+AGREE
+
+=== REGRESSION py-symlink-snapshot (P1-03) (expect PASS) ===
+fixture dir: tests/fixtures/regression/py-symlink-snapshot
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings []
+oracle snapshot: 429867e5e376d9c009fc8fb54e7b126b95c750235aa359bd5cb3ed328930ff0a
+AGREE
+
+=== REGRESSION py-generated-assert (P2-01) (expect PASS) ===
+fixture dir: tests/fixtures/regression/py-generated-assert
+production CLI: exit 0 -> PASS (snapshot: see report)
+oracle:         status PASS, snapshotStatus MATCH, findings [{'from': 'billing/auth.py', 'id': 'GENERATED_MISMATCH'}]
+oracle snapshot: a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404
+AGREE
+

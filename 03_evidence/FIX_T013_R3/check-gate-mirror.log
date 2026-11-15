@@ -1,0 +1,4 @@
+PASS a stale+halluc: status=INCOMPLETE snapshotStatus=STALE_SNAPSHOT findings=[] unknownImportsPresent=false
+PASS b stale+dynamic: status=INCOMPLETE snapshotStatus=STALE_SNAPSHOT findings=[] unknownImportsPresent=false
+PASS c match+halluc: status=FAIL snapshotStatus=MATCH findings=[{"id":"HALLUCINATED_EDGE","from":"a.py","to":"c.py"},{"id":"HALLUCINATED_MODULE","from":"c.py"}] unknownImportsPresent=false
+PASS d match clean: status=PASS snapshotStatus=MATCH findings=[] unknownImportsPresent=false

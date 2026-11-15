@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RepoMapVerify report — synthetic-dynamic-incomplete — INCOMPLETE</title>
+<style>
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;margin:2em auto;max-width:1100px;padding:0 1em;color:#1a1a1a;background:#fff;line-height:1.5}
+h1{font-size:1.6em}h2{font-size:1.25em;margin-top:2em;border-bottom:1px solid #ddd;padding-bottom:.2em}h3{font-size:1.05em;margin-top:1.5em}
+table{border-collapse:collapse;width:100%;margin:.5em 0}
+th,td{border:1px solid #ccc;padding:.35em .6em;text-align:left;vertical-align:top;font-size:.92em}
+th{background:#f2f2f2}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;word-break:break-all}
+.badge{display:inline-block;padding:.15em .7em;border-radius:1em;color:#fff;font-weight:700}
+.status-PASS{background:#2e7d32}.status-FAIL{background:#c62828}.status-INCOMPLETE{background:#e65100}
+.sev-P1{background:#c62828;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-P2{background:#ef6c00;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-INFO{background:#1565c0;color:#fff;padding:.05em .5em;border-radius:.8em}
+.verified{color:#2e7d32;font-weight:700}
+.hallucinated{color:#c62828;font-weight:700}
+.missing{color:#c62828;font-weight:700}
+.unknown{color:#e65100;font-weight:700}
+.gen-mismatch{color:#e65100;font-weight:700}
+.ok{color:#2e7d32}.bad{color:#c62828}.warn{color:#e65100}
+tr.verified-row{background:#e8f5e9}tr.hallucinated-row{background:#ffebee}tr.missing-row{background:#ffebee}tr.unknown-row{background:#fff8e1}tr.gen-row{background:#fff8e1}
+details{margin:.2em 0}summary{cursor:pointer;font-weight:600}
+.detail{margin:.4em 0 .4em 1.2em;font-size:.92em}
+.muted{color:#666;font-size:.9em}
+nav{margin:1em 0}nav a{margin-right:1em}
+</style>
+</head>
+<body>
+<h1>RepoMapVerify audit report</h1>
+<p><span class="badge status-INCOMPLETE">INCOMPLETE</span> &nbsp; map <code>synthetic-dynamic-incomplete</code></p>
+<nav>
+<a href="#summary">Summary</a><a href="#findings">Findings</a><a href="#info-findings">Informational findings</a><a href="#modules">Modules</a><a href="#edges">Edges</a><a href="#wrong-entrypoints">Wrong entrypoints</a><a href="#unclaimed-reachable">Unclaimed reachable</a><a href="#isolated">Isolated modules</a><a href="#evidence">Evidence</a>
+</nav>
+
+<section id="summary">
+<h2>Summary</h2>
+<table>
+<tr><th>Ground-truth graph (real)</th><td>3 modules, 2 import edges</td></tr>
+<tr><th>Claimed map</th><td>3 modules, 2 edges</td></tr>
+<tr><th>Coverage</th><td>6 / 6 (100.0%)</td></tr>
+<tr><th>Findings by severity</th><td>P1: 1, P2: 0, INFO: 0 (main findings: 1, informational: 0)</td></tr>
+<tr><th>Completeness mode</th><td>FULL_GRAPH</td></tr>
+<tr><th>Snapshot status</th><td>MATCH</td></tr>
+<tr><th>Canonical semantic hash</th><td><code>65e55c645f38090cc5ea6fb1171eff80937ee4b7df0acf9d585991644aa032f4</code></td></tr>
+</table>
+<p class="muted">Colors: green = verified, red = fabricated or wrong, yellow = undetermined (dynamic import, unknown, or generated-code only). Click a module or an edge to see its detail.</p>
+</section>
+
+<section id="findings">
+<h2>Findings</h2>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td><code>DYNAMIC_IMPORT_UNKNOWN</code></td><td><span class="sev-P1">P1</span></td><td><code>loader.py</code></td><td><code></code></td><td>module loader.py has a dynamic import whose target cannot be determined statically [IMPORTLIB_VARIABLE] (line 5: importlib.import_module(name)); the audit is INCOMPLETE, not PASS</td></tr>
+</table>
+</section>
+
+<section id="info-findings">
+<h2>Informational findings</h2>
+<p class="muted">These findings never change the audit status and are never mixed into the findings list above: isolated modules, entrypoint candidates, and duplicate content are properties of the repo, reported here in their own clearly-labeled section.</p>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td colspan="5" class="muted">No informational findings.</td></tr>
+</table>
+</section>
+
+<section id="modules">
+<h2>Modules — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Module</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>loader.py</code></summary><div class="detail"><p>Normalized path: <code>loader.py</code></p>
+<p>Content SHA-256: <code>3d45b50be6b78b1a957e13ced3f9242e40c7bf28f1b58742454d761e9712e29f</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>main.py</code></p>
+<p>In-edges (claimed): <code>main.py</code></p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>main.py</code></summary><div class="detail"><p>Normalized path: <code>main.py</code></p>
+<p>Content SHA-256: <code>1e479974b28a76f5cf4fcf4c97322af2478563995167a8076ffc126b053379de</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): (none)</p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): <code>loader.py</code>, <code>util.py</code></p>
+<p>Out-edges (claimed): <code>loader.py</code>, <code>util.py</code></p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>util.py</code></summary><div class="detail"><p>Normalized path: <code>util.py</code></p>
+<p>Content SHA-256: <code>05b9499b763b5403d24d4f93ef9c208bfb1dbb34056eab0dbd1b1ddf8fd54d67</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>main.py</code></p>
+<p>In-edges (claimed): <code>main.py</code></p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+</table>
+</section>
+
+<section id="edges">
+<h2>Edges — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Edge</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>main.py → loader.py</code></summary><div class="detail"><p>Source file: <code>main.py</code></p>
+<p>Line: <code>1</code></p>
+<p>Import statement: <code>import loader</code></p>
+<p>Claimed-map evidence: <code>edges[0]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>main.py → util.py</code></summary><div class="detail"><p>Source file: <code>main.py</code></p>
+<p>Line: <code>2</code></p>
+<p>Import statement: <code>import util</code></p>
+<p>Claimed-map evidence: <code>edges[1]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+</table>
+</section>
+
+<section id="wrong-entrypoints"><h2>Wrong entrypoints</h2><p class="muted">Claimed entrypoints that are not declared entrypoints. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="unclaimed-reachable"><h2>Unclaimed reachable modules</h2><p class="muted">Real modules reachable from a declared entrypoint that the claimed map never mentions (FULL_GRAPH only). Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="isolated"><h2>Isolated modules</h2><p class="muted">Real modules reachable from no declared entrypoint and unclaimed. Report information only; does not trigger FAIL. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="entrypoint-candidates"><h2>Entrypoint candidates</h2><p class="muted">Graph roots (in-degree 0) when no entrypoint is declared. Hints only — never WRONG_ENTRYPOINT evidence.</p><p class="muted">None.</p></section>
+<section id="duplicate-content">
+<h2>Duplicate content</h2>
+<p class="muted">Distinct modules sharing one content SHA-256. Same content does not imply the same module or the same semantics.</p>
+<p class="muted">None.</p>
+</section>
+
+<section id="evidence">
+<h2>SHA-256 evidence</h2>
+<p>Repo snapshot SHA-256: <code>a3651309c594e39bc84de939ce653fcd63bc9570092ebf0ea26b8d42aef33694</code></p>
+<table>
+<tr><th>Module</th><th>Module ID</th><th>Content SHA-256</th></tr>
+<tr><td><code>loader.py</code></td><td><code>2f012ad5e438eb366998aad409881c6d05c8ddf23565f88aed78d08c738c76f0</code></td><td><code>3d45b50be6b78b1a957e13ced3f9242e40c7bf28f1b58742454d761e9712e29f</code></td></tr>
+<tr><td><code>main.py</code></td><td><code>1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118</code></td><td><code>1e479974b28a76f5cf4fcf4c97322af2478563995167a8076ffc126b053379de</code></td></tr>
+<tr><td><code>util.py</code></td><td><code>c35dc9ad75d0cb0b5afe93dd2ef1b436ca11a607d498c416f6b1dbe9a5bfadee</code></td><td><code>05b9499b763b5403d24d4f93ef9c208bfb1dbb34056eab0dbd1b1ddf8fd54d67</code></td></tr>
+</table>
+</section>
+
+<footer><p class="muted">RepoMapVerify — local static report. This file is self-contained and readable offline; it makes no external requests. Canonical semantic hash: <code>65e55c645f38090cc5ea6fb1171eff80937ee4b7df0acf9d585991644aa032f4</code></p></footer>
+</body>
+</html>

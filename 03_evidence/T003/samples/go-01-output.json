@@ -1,0 +1,295 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd/server",
+      "moduleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "contentSha256": "74deb05578d797860a1eacb5dc4bd644901e7672cf4a654855014ff0cef9b32c",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/server/main.go",
+          "contentSha256": "f2ca88a526f85a7c362a6671e79d67538ebe20616e946358bbfef436dccb7554",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/app",
+      "moduleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "contentSha256": "440aaf9f2fe978c4abf7f756dabe029284ca15b960e8fb8a76344ae194784a59",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "app",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/app/app.go",
+          "contentSha256": "3f7fddfa1c7c07b848b73daca5f6c23afcb5f0e672348efd9ad16130859a9971",
+          "isGenerated": false,
+          "isCgo": false
+        },
+        {
+          "relativePath": "internal/app/app2.go",
+          "contentSha256": "837704498a5fe6b03dd0ddcf052f812eb1229439643d05d7587cf55eff79ed2e",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/gen",
+      "moduleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "contentSha256": "48aca6c4d2c90764efeecc336e1b84604c9cd4a69a225369b87487c891d33cd4",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "gen",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/gen/gen.go",
+          "contentSha256": "08323afe66b3e640debc4661e778d91ab344073d7de8db1b5402cba03817ac62",
+          "isGenerated": false,
+          "isCgo": false
+        },
+        {
+          "relativePath": "internal/gen/gen.pb.go",
+          "contentSha256": "a9adaf553946e46a59b5ed6a16f286344c8decfee6f4eff23486b4ce60055ef6",
+          "isGenerated": true,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/native",
+      "moduleId": "3e559839793d472ae0d4da67fc8d2a25ae5c5bc889a951037f9d9f3e2e2f6ebf",
+      "contentSha256": "dc29e5a0648c1c00380d88b0ba9804ce0a2a4456d4adde56b0fe5e237d146b2b",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "native",
+      "hasCgo": true,
+      "files": [
+        {
+          "relativePath": "internal/native/native.go",
+          "contentSha256": "9a9fb863a9518161fbf7f98bcd2c4c117b8e4794ca2d3f34e2e2d9cd6eecd0c0",
+          "isGenerated": false,
+          "isCgo": true
+        }
+      ]
+    },
+    {
+      "path": "internal/onlygen",
+      "moduleId": "b69ffcd02621f55db344c1b584cef619d7c6e5df7cd741f881f7753884003ce8",
+      "contentSha256": "a4998a9d1d07ed3dc57933645769df0ca5cb4a472ddc7c57a666ec41aa88bb56",
+      "nodeKind": "package",
+      "isGenerated": true,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "onlygen",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/onlygen/only.pb.go",
+          "contentSha256": "e0cea59159846c989f073e1c2cbee5ef854fcc8b169bcf88a3586adaf6f802a9",
+          "isGenerated": true,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/plat",
+      "moduleId": "0a84db4a6bc6c9c44a286eee058c5280fe5c1110f49b1dcd32fffe8dd029538d",
+      "contentSha256": "e0e075738906a5a207a5dccebe9a8085e01cfcb4713f1fede75a6f5610a967f2",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "plat",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/plat/linux.go",
+          "contentSha256": "36d8223425a7a953f9d4882d2dbe1b7785a24bd1f9a59fadbfee96d15c9d4bb5",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/store",
+      "moduleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+      "contentSha256": "edf514b6c154443df40557c3c4bc839bfd55052143b6782985fb2f989aa1b067",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "store",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/store/store.go",
+          "contentSha256": "069ed1119c2336f53555a3ce7d34a7bfaaca9f1011a8bf7ac29bb83ff9551911",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/winonly",
+      "moduleId": "d53eb7af2d001ffe21569d47a1e9735b13e3d49c7a99b3e1e04b48b49751c4c4",
+      "contentSha256": "41140686d7d3431f4f6ebdf4637f72e9c86f2c386a9c6fd07da2156a1eaf3837",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "winonly",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/winonly/winonly.go",
+          "contentSha256": "752f87546fa6cbddb55415e40a2a5525e916c9110e5fdd5c67bb8f4307c4830a",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "third_party/shared/util",
+      "moduleId": "d2ffc497c60354a38b4eff2da8ba5978e04ce57d5ea64bd5ddc3f357ca50be4d",
+      "contentSha256": "2e8b1c89904c9698e7850b509ebece98fdba1afd240c94ae9055f57ee79a50fe",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "util",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "third_party/shared/util/util.go",
+          "contentSha256": "b6010764d01dfc4b5748d14bdeb84a17243e7f53cc43cc0baf9a8e2c83079411",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd/server",
+      "to": "internal/app",
+      "fromModuleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "toModuleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 5,
+        "importPath": "example.com/demo/internal/app"
+      }
+    },
+    {
+      "from": "cmd/server",
+      "to": "internal/gen",
+      "fromModuleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "toModuleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 6,
+        "importPath": "example.com/demo/internal/gen"
+      }
+    },
+    {
+      "from": "cmd/server",
+      "to": "internal/native",
+      "fromModuleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "toModuleId": "3e559839793d472ae0d4da67fc8d2a25ae5c5bc889a951037f9d9f3e2e2f6ebf",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 7,
+        "importPath": "example.com/demo/internal/native"
+      }
+    },
+    {
+      "from": "cmd/server",
+      "to": "internal/onlygen",
+      "fromModuleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "toModuleId": "b69ffcd02621f55db344c1b584cef619d7c6e5df7cd741f881f7753884003ce8",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 8,
+        "importPath": "example.com/demo/internal/onlygen"
+      }
+    },
+    {
+      "from": "cmd/server",
+      "to": "third_party/shared/util",
+      "fromModuleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "toModuleId": "d2ffc497c60354a38b4eff2da8ba5978e04ce57d5ea64bd5ddc3f357ca50be4d",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 9,
+        "importPath": "example.com/shared/util"
+      }
+    },
+    {
+      "from": "internal/app",
+      "to": "internal/store",
+      "fromModuleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "toModuleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+      "evidence": {
+        "file": "internal/app/app.go",
+        "line": 5,
+        "importPath": "example.com/demo/internal/store"
+      }
+    }
+  ],
+  "generatedEdges": [
+    {
+      "from": "internal/gen",
+      "to": "internal/store",
+      "fromModuleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "toModuleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+      "evidence": {
+        "file": "internal/gen/gen.pb.go",
+        "line": 4,
+        "importPath": "example.com/demo/internal/store"
+      }
+    },
+    {
+      "from": "internal/onlygen",
+      "to": "internal/store",
+      "fromModuleId": "b69ffcd02621f55db344c1b584cef619d7c6e5df7cd741f881f7753884003ce8",
+      "toModuleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+      "evidence": {
+        "file": "internal/onlygen/only.pb.go",
+        "line": 4,
+        "importPath": "example.com/demo/internal/store"
+      }
+    }
+  ],
+  "externalImportCount": 8,
+  "unknowns": [],
+  "excludedFiles": [
+    {
+      "relativePath": "internal/app/app_test.go",
+      "reason": "TEST_FILE",
+      "detail": "test files are excluded from the build graph"
+    },
+    {
+      "relativePath": "internal/plat/windows.go",
+      "reason": "BUILD_EXCLUDED",
+      "detail": "excluded by build constraints under GOOS=linux/GOARCH=amd64"
+    }
+  ],
+  "modulePath": "example.com/demo"
+}

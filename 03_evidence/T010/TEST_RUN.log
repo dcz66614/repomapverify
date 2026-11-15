@@ -1,0 +1,48 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/hatch/workspace/p024-repomapverify/02_source[39m
+
+ [32m✓[39m tests/graph/graph.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1893[2mms[22m[39m
+     [33m[2m✓[22m[39m python fixtures (16): modules, edges, reachable/isolated, snapshot [33m 877[2mms[22m[39m
+     [33m[2m✓[22m[39m typescript fixtures (16): modules, edges, reachable/isolated vs golden BFS [33m 599[2mms[22m[39m
+     [33m[2m✓[22m[39m go fixtures (16): packages, edges, reachable/isolated vs golden BFS [33m 319[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2012[2mms[22m[39m
+     [33m[2m✓[22m[39m python fixtures (16): exact status + exact finding sets [33m 899[2mms[22m[39m
+     [33m[2m✓[22m[39m typescript fixtures (16): exact status + exact finding classes [33m 614[2mms[22m[39m
+     [33m[2m✓[22m[39m go fixtures (16): exact status + exact finding classes [33m 400[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 899[2mms[22m[39m
+ [32m✓[39m tests/report/report.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 917[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical-t008.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 796[2mms[22m[39m
+     [33m[2m✓[22m[39m canonical snapshot == extractor snapshot == graph snapshot on all 16 Python fixtures [33m 716[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 800[2mms[22m[39m
+     [33m[2m✓[22m[39m py-c01-basic-imports [33m 311[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 498[2mms[22m[39m
+ [32m✓[39m tests/io/claimed-map-validation.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 93[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 97[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/adapters/adapters-t008.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 85[2mms[22m[39m
+ [32m✓[39m tests/privacy/redact.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/cli/cli.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 12928[2mms[22m[39m
+     [33m[2m✓[22m[39m --help exits 0 and prints usage [33m 504[2mms[22m[39m
+     [33m[2m✓[22m[39m no args prints usage, exit 0 [33m 316[2mms[22m[39m
+     [33m[2m✓[22m[39m unknown command exits 3 with a clear message, no stack trace [33m 709[2mms[22m[39m
+     [33m[2m✓[22m[39m audit without --repo exits 3 [33m 464[2mms[22m[39m
+     [33m[2m✓[22m[39m audit without --map exits 3 [33m 428[2mms[22m[39m
+     [33m[2m✓[22m[39m unknown flag exits 3 [33m 497[2mms[22m[39m
+     [33m[2m✓[22m[39m bad --format exits 3 [33m 392[2mms[22m[39m
+     [33m[2m✓[22m[39m bad --lang exits 3 [33m 323[2mms[22m[39m
+     [33m[2m✓[22m[39m control fixture py-c01: exit 0 + PASS [33m 758[2mms[22m[39m
+     [33m[2m✓[22m[39m planted python py-p01: exit 1 + FAIL with the golden findings [33m 914[2mms[22m[39m
+     [33m[2m✓[22m[39m planted typescript ts-plant-01: exit 1 + FAIL [33m 1021[2mms[22m[39m
+     [33m[2m✓[22m[39m planted go go-plant-01: exit 1 + FAIL [33m 1461[2mms[22m[39m
+     [33m[2m✓[22m[39m INCOMPLETE: dynamic import with a matching map -> exit 2 [33m 1330[2mms[22m[39m
+     [33m[2m✓[22m[39m input errors exit 3: missing repo, missing map, bad schema [33m 1289[2mms[22m[39m
+     [33m[2m✓[22m[39m prints only the ground-truth JSON, exit 0 [33m 411[2mms[22m[39m
+     [33m[2m✓[22m[39m ts-ctrl-08 (no toml): ENTRYPOINT_CANDIDATE in JSON + HTML own section [33m 303[2mms[22m[39m
+     [33m[2m✓[22m[39m py-p05: DUPLICATE_CONTENT lives in infoFindings, not main findings [33m 357[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m      Tests [22m [1m[32m226 passed[39m[22m[90m (226)[39m
+[2m   Start at [22m 15:48:22
+[2m   Duration [22m 13.88s[2m (transform 3.52s, setup 0ms, import 5.77s, tests 21.19s, environment 3ms)[22m
+

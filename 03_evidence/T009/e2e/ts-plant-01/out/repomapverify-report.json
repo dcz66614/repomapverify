@@ -1,0 +1,258 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "synthetic-ts-plant-01",
+  "map_id": "synthetic-ts-plant-01",
+  "status": "FAIL",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 4,
+    "edges": 5
+  },
+  "ground_truth": {
+    "modules": 4,
+    "edges": 5
+  },
+  "claimed": {
+    "modules": 4,
+    "edges": 6
+  },
+  "coverage": {
+    "verifiedClaims": 10,
+    "totalClaims": 11,
+    "verified_claims": 10,
+    "total_claims": 11
+  },
+  "findings": [
+    {
+      "id": "HALLUCINATED_EDGE",
+      "severity": "P1",
+      "from": "src/main.ts",
+      "to": "src/services/api.ts",
+      "detail": "claimed edge src/main.ts -> src/services/api.ts does not exist in the ground-truth graph",
+      "claimedJsonPath": "edges[3]"
+    }
+  ],
+  "infoFindings": [],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+    "modules": [
+      {
+        "path": "src/app.ts",
+        "moduleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+        "contentSha256": "118ea75fd335f4401b97974aae88417a6548375ee8e9beca83d3aff4acce5572"
+      },
+      {
+        "path": "src/main.ts",
+        "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+        "contentSha256": "c30307062d47dcd6f434487ad17cf07d2656242d6a9b81b7b63cea72ee0275c8"
+      },
+      {
+        "path": "src/services/api.ts",
+        "moduleId": "ffb1203f5339b60d2916d77e7866acb05fd2b1225a75d6d300791868f2a9eb14",
+        "contentSha256": "7ef5f24ddf569314b56617336e0253bf0ba8dc02caa444927070bb8258930f03"
+      },
+      {
+        "path": "src/util.ts",
+        "moduleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+        "contentSha256": "173f17c5be78828c89fdce90e0530dfbbc7f644242f141aa43819db70873b254"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": []
+  },
+  "modules": [
+    {
+      "path": "src/app.ts",
+      "moduleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+      "language": "typescript",
+      "nodeKind": "module",
+      "contentSha256": "118ea75fd335f4401b97974aae88417a6548375ee8e9beca83d3aff4acce5572",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "src/main.ts"
+      ],
+      "outEdgesReal": [
+        "src/services/api.ts",
+        "src/util.ts"
+      ],
+      "inEdgesClaimed": [
+        "src/main.ts"
+      ],
+      "outEdgesClaimed": [
+        "src/services/api.ts",
+        "src/util.ts"
+      ]
+    },
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "language": "typescript",
+      "nodeKind": "module",
+      "contentSha256": "c30307062d47dcd6f434487ad17cf07d2656242d6a9b81b7b63cea72ee0275c8",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "src/app.ts",
+        "src/util.ts"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "src/app.ts",
+        "src/services/api.ts",
+        "src/util.ts"
+      ]
+    },
+    {
+      "path": "src/services/api.ts",
+      "moduleId": "ffb1203f5339b60d2916d77e7866acb05fd2b1225a75d6d300791868f2a9eb14",
+      "language": "typescript",
+      "nodeKind": "module",
+      "contentSha256": "7ef5f24ddf569314b56617336e0253bf0ba8dc02caa444927070bb8258930f03",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "src/app.ts"
+      ],
+      "outEdgesReal": [
+        "src/util.ts"
+      ],
+      "inEdgesClaimed": [
+        "src/app.ts",
+        "src/main.ts"
+      ],
+      "outEdgesClaimed": [
+        "src/util.ts"
+      ]
+    },
+    {
+      "path": "src/util.ts",
+      "moduleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "language": "typescript",
+      "nodeKind": "module",
+      "contentSha256": "173f17c5be78828c89fdce90e0530dfbbc7f644242f141aa43819db70873b254",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "src/app.ts",
+        "src/main.ts",
+        "src/services/api.ts"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "src/app.ts",
+        "src/main.ts",
+        "src/services/api.ts"
+      ],
+      "outEdgesClaimed": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/app.ts",
+      "to": "src/services/api.ts",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "src/app.ts",
+        "line": 1,
+        "statement": "import ... from \".<redacted-absolute-path>\""
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "src/app.ts",
+      "to": "src/util.ts",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "src/app.ts",
+        "line": 2,
+        "statement": "import ... from \".<redacted-absolute-path>\""
+      },
+      "claimedJsonPath": "edges[1]"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/app.ts",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 1,
+        "statement": "import ... from \".<redacted-absolute-path>\""
+      },
+      "claimedJsonPath": "edges[2]"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/services/api.ts",
+      "claimed": true,
+      "real": false,
+      "status": "hallucinated",
+      "claimedJsonPath": "edges[3]"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/util.ts",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 2,
+        "statement": "import ... from \".<redacted-absolute-path>\""
+      },
+      "claimedJsonPath": "edges[4]"
+    },
+    {
+      "from": "src/services/api.ts",
+      "to": "src/util.ts",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "src/services/api.ts",
+        "line": 1,
+        "statement": "import ... from \"..<redacted-absolute-path>\""
+      },
+      "claimedJsonPath": "edges[5]"
+    }
+  ],
+  "mapWarnings": [],
+  "canonicalSemanticHash": "25cbfb0a329b30c8a31ece7c8f20cdffb328057e88a8e52e2dc4ce526df4c3f6"
+}

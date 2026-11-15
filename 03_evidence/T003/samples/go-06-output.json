@@ -1,0 +1,121 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "c3b5c6eb72c7fa12641c8628277f8b54f3d11bbf1651b96f83efe0ff91de27c5",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "6d08338fb817edbb8d6f58aa98aa3f8d9144f26998b499028c06f052c126d14e",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/gen",
+      "moduleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "contentSha256": "16ad2e3ea33a7325b62db0da39e1c3e690f6ccf8cdbd1a2355f9088b05744a00",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "gen",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/gen/gen.go",
+          "contentSha256": "304c5ea8c9887dfb55cb7f95c6c82f00fbcdbf267d5a3b3942c8b579e9a7a832",
+          "isGenerated": false,
+          "isCgo": false
+        },
+        {
+          "relativePath": "internal/gen/gen.mock.go",
+          "contentSha256": "4f71a5b6de7b107ceff683b2816083cbd465d7e7be209f19c096b62ec3f95d8f",
+          "isGenerated": true,
+          "isCgo": false
+        },
+        {
+          "relativePath": "internal/gen/stringer.go",
+          "contentSha256": "2c9fe7cd69ebccbdaaa5b67940b529c00bf620067ab4ff4308517083f7b1b1fa",
+          "isGenerated": true,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/svc",
+      "moduleId": "62634904083bee82ce447a031a5d508f664c8826903827068646bae6c1226b3a",
+      "contentSha256": "f9ad239dad232ef1ae1e98c0a74e5fa915118ee9ec659afc85a954791f26d86b",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "svc",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/svc/svc.go",
+          "contentSha256": "0b5e82c55e2ab88084e8bb3bccd8b08b8d76c362dc8ab0475564820446094d7c",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "internal/gen",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 5,
+        "importPath": "example.com/demo/internal/gen"
+      }
+    },
+    {
+      "from": "cmd",
+      "to": "internal/svc",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "62634904083bee82ce447a031a5d508f664c8826903827068646bae6c1226b3a",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 4,
+        "importPath": "example.com/demo/internal/svc"
+      }
+    }
+  ],
+  "generatedEdges": [
+    {
+      "from": "internal/gen",
+      "to": "internal/svc",
+      "fromModuleId": "0b23b71cddad1cb5a0e0b393dafa9ada11b65f2204ecc2f99acfc1f1d3f32f38",
+      "toModuleId": "62634904083bee82ce447a031a5d508f664c8826903827068646bae6c1226b3a",
+      "evidence": {
+        "file": "internal/gen/gen.mock.go",
+        "line": 4,
+        "importPath": "example.com/demo/internal/svc"
+      }
+    }
+  ],
+  "externalImportCount": 0,
+  "unknowns": [],
+  "excludedFiles": [
+    {
+      "relativePath": "internal/svc/svc_test.go",
+      "reason": "TEST_FILE",
+      "detail": "test files are excluded from the build graph"
+    }
+  ],
+  "modulePath": "example.com/demo"
+}

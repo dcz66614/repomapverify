@@ -1,0 +1,165 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "synthetic-dynamic-incomplete",
+  "map_id": "synthetic-dynamic-incomplete",
+  "status": "INCOMPLETE",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 3,
+    "edges": 2
+  },
+  "ground_truth": {
+    "modules": 3,
+    "edges": 2
+  },
+  "claimed": {
+    "modules": 3,
+    "edges": 2
+  },
+  "coverage": {
+    "verifiedClaims": 6,
+    "totalClaims": 6,
+    "verified_claims": 6,
+    "total_claims": 6
+  },
+  "findings": [
+    {
+      "id": "DYNAMIC_IMPORT_UNKNOWN",
+      "severity": "P1",
+      "from": "loader.py",
+      "detail": "module loader.py has a dynamic import whose target cannot be determined statically [IMPORTLIB_VARIABLE] (line 5: importlib.import_module(name)); the audit is INCOMPLETE, not PASS"
+    }
+  ],
+  "infoFindings": [],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "a3651309c594e39bc84de939ce653fcd63bc9570092ebf0ea26b8d42aef33694",
+    "modules": [
+      {
+        "path": "loader.py",
+        "moduleId": "2f012ad5e438eb366998aad409881c6d05c8ddf23565f88aed78d08c738c76f0",
+        "contentSha256": "3d45b50be6b78b1a957e13ced3f9242e40c7bf28f1b58742454d761e9712e29f"
+      },
+      {
+        "path": "main.py",
+        "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+        "contentSha256": "1e479974b28a76f5cf4fcf4c97322af2478563995167a8076ffc126b053379de"
+      },
+      {
+        "path": "util.py",
+        "moduleId": "c35dc9ad75d0cb0b5afe93dd2ef1b436ca11a607d498c416f6b1dbe9a5bfadee",
+        "contentSha256": "05b9499b763b5403d24d4f93ef9c208bfb1dbb34056eab0dbd1b1ddf8fd54d67"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": []
+  },
+  "modules": [
+    {
+      "path": "loader.py",
+      "moduleId": "2f012ad5e438eb366998aad409881c6d05c8ddf23565f88aed78d08c738c76f0",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "3d45b50be6b78b1a957e13ced3f9242e40c7bf28f1b58742454d761e9712e29f",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "main.py"
+      ],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "main.py",
+      "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "1e479974b28a76f5cf4fcf4c97322af2478563995167a8076ffc126b053379de",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "loader.py",
+        "util.py"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "loader.py",
+        "util.py"
+      ]
+    },
+    {
+      "path": "util.py",
+      "moduleId": "c35dc9ad75d0cb0b5afe93dd2ef1b436ca11a607d498c416f6b1dbe9a5bfadee",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "05b9499b763b5403d24d4f93ef9c208bfb1dbb34056eab0dbd1b1ddf8fd54d67",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "main.py"
+      ],
+      "outEdgesClaimed": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "loader.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 1,
+        "statement": "import loader"
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "main.py",
+      "to": "util.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 2,
+        "statement": "import util"
+      },
+      "claimedJsonPath": "edges[1]"
+    }
+  ],
+  "mapWarnings": [],
+  "canonicalSemanticHash": "65e55c645f38090cc5ea6fb1171eff80937ee4b7df0acf9d585991644aa032f4"
+}

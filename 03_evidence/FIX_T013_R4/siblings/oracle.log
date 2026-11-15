@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/r4fix-nobody/oracle.py", line 1865, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/tmp/r4fix-nobody/oracle.py", line 1831, in main
+    result = run_fixture(args.fixture_dir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/r4fix-nobody/oracle.py", line 1803, in run_fixture
+    gt = oracle.extract()
+         ^^^^^^^^^^^^^^^^
+  File "/tmp/r4fix-nobody/oracle.py", line 951, in extract
+    data = open(full, "rb").read()
+           ^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/tmp/r4fix-nobody/ts-unreadable/repo/src/secret.ts'

@@ -1,0 +1,55 @@
+{
+  "schema": "repomapverify.claimed-map/v1",
+  "mapId": "r4fix-unreadable-clean",
+  "repo": "ts-unreadable",
+  "agent": "r4fix",
+  "completeness": "FULL_GRAPH",
+  "repoSnapshotSha256": "999625e22775f14a9d98c5b85dbc2f10ccd904fa6a91d1bbda8d98ca46972e21",
+  "modules": [
+    {
+      "id": "m0",
+      "path": "src/app.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m1",
+      "path": "src/main.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m2",
+      "path": "src/services/api.ts",
+      "kind": "module"
+    },
+    {
+      "id": "m3",
+      "path": "src/util.ts",
+      "kind": "module"
+    }
+  ],
+  "entrypoints": [
+    "src/main.ts"
+  ],
+  "edges": [
+    {
+      "from": "src/app.ts",
+      "to": "src/services/api.ts"
+    },
+    {
+      "from": "src/app.ts",
+      "to": "src/util.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/app.ts"
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/util.ts"
+    },
+    {
+      "from": "src/services/api.ts",
+      "to": "src/util.ts"
+    }
+  ]
+}

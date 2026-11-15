@@ -1,0 +1,11 @@
+PASS a stale+halluc: status=INCOMPLETE snapshotStatus=STALE_SNAPSHOT findings=[] unresolvedEntrypoints=null
+PASS b stale+dynamic: status=INCOMPLETE snapshotStatus=STALE_SNAPSHOT findings=[] unresolvedEntrypoints=null
+PASS c match+halluc: status=FAIL snapshotStatus=MATCH findings=[{"id":"HALLUCINATED_EDGE","from":"main.py","to":"ghost.py"},{"id":"HALLUCINATED_MODULE","from":"ghost.py"}] unresolvedEntrypoints=null
+PASS d match clean: status=PASS snapshotStatus=MATCH findings=[] unresolvedEntrypoints=null
+PASS e ghost-declared: status=INCOMPLETE snapshotStatus=MATCH findings=[] unresolvedEntrypoints=["ghost.py"]
+PASS f ghost-in-map-only: status=FAIL snapshotStatus=MATCH findings=[{"id":"WRONG_ENTRYPOINT","from":"ghost.py"}] unresolvedEntrypoints=null
+PASS g ghost-in-neither: status=PASS snapshotStatus=MATCH findings=[] unresolvedEntrypoints=null
+PASS h go-ghost-declared: status=INCOMPLETE snapshotStatus=MATCH findings=[] unresolvedEntrypoints=["cmd/ghost/main.go"]
+PASS i go-literal-resolvable: status=PASS snapshotStatus=MATCH findings=[] unresolvedEntrypoints=null
+PASS j not-checked+halluc: status=FAIL snapshotStatus=NOT_CHECKED findings=[{"id":"HALLUCINATED_EDGE","from":"main.py","to":"ghost.py"},{"id":"HALLUCINATED_MODULE","from":"ghost.py"}] unresolvedEntrypoints=null
+PASS k stale+ghost: status=INCOMPLETE snapshotStatus=STALE_SNAPSHOT findings=[] unresolvedEntrypoints=["ghost.py"]

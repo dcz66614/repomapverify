@@ -1,0 +1,56 @@
+### T012 performance run — 2026-11-14T16:11:29Z
+### machine facts:
+node: v24.22.1
+uname: Linux htch-runtime 7.0.0-44-generic #1 SMP PREEMPT_DYNAMIC Fri Nov  6 01:23:31 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+cpus: 4 (AMD EPYC 9D25 126-Core Processor)
+               total        used        free      shared  buff/cache   available
+Mem:            7934        6791         343          92        1150        1142
+Swap:           1023          72         951
+### vitest performance suite (generates repo, measures, writes PERF_RESULTS.json)
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/hatch/workspace/p024-repomapverify/02_source[39m
+
+ [32m✓[39m tests/performance/performance.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 3926[2mms[22m[39m
+     [33m[2m✓[22m[39m extraction ≤ 30 s, audit ≤ 60 s, peak RSS ≤ 512 MB [33m 3924[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 16:11:29
+[2m   Duration [22m 4.31s[2m (transform 126ms, setup 0ms, import 154ms, tests 3.93s, environment 0ms)[22m
+
+vitest performance exit code: 0
+### PERF_RESULTS.json:
+{
+  "repo": "synthetic 1,000 modules / 5,000 edges (py 400 / ts 300 / go 300)",
+  "generator": "tests/performance/generate-perf-repo.mjs (deterministic, fixed offsets)",
+  "machine": {
+    "node": "v24.22.1",
+    "platform": "linux/x64",
+    "cpus": 4,
+    "cpuModel": "AMD EPYC 9D25 126-Core Processor",
+    "totalMemMb": 7934
+  },
+  "groundTruth": {
+    "modules": 1000,
+    "edges": 5000,
+    "wallSec": 0.908,
+    "peakRssMb": 141.2,
+    "peakRssSource": "VmHWM",
+    "targetSec": 30,
+    "withinTarget": true
+  },
+  "audit": {
+    "status": "PASS",
+    "findings": 0,
+    "wallSec": 2.888,
+    "peakRssMb": 228.5,
+    "peakRssSource": "VmHWM",
+    "targetSec": 60,
+    "withinTarget": true
+  },
+  "rssTargetMb": 512,
+  "rssWithinTarget": true
+}
+### formatting PERFORMANCE.md
+wrote /home/hatch/workspace/p024-repomapverify/03_evidence/T012/PERFORMANCE.md
+### T012 performance run done. Log: /home/hatch/workspace/p024-repomapverify/03_evidence/T012/PERFORMANCE_RUN.log

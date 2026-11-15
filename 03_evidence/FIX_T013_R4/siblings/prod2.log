@@ -1,0 +1,10 @@
+
+RESULT: FAIL
+Ground truth: 4 modules, 5 edges
+Claimed: 5 modules, 6 edges
+Coverage: 10 / 12 (83.3%)
+Findings: 2 (P1: 2, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: src/util.ts -> src/secret.ts
+  P1 HALLUCINATED_MODULE: src/secret.ts
+Report: /tmp/r4fix-nobody/out/prod-out2/repomapverify-report.json
+Report: /tmp/r4fix-nobody/out/prod-out2/repomapverify-report.html

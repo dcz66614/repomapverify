@@ -1,0 +1,40 @@
+P024 FIX T013 -- P2-12 workflow check + P2-11 script runs
+Date: 2026-11-14T16:38:46Z
+
+--- workflow env parsed from 02_source/.github/workflows/repomapverify.yml ---
+{'REPO_PATH': 'demo/repo', 'MAP_PATH': 'demo/claimed-map.json', 'ALLOW_INCOMPLETE': 'false'}
+MAP_PATH is defined; pre-fix --map "" exited 3 (EISDIR, reviewer E7 + re-confirmed this task)
+
+--- audit step body with the workflow default env values (node dist/cli.js = the binary npx resolves to) ---
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: repomapverify-report/repomapverify-report.json
+Report: repomapverify-report/repomapverify-report.html
+repomapverify exit code: 1 (0 PASS, 1 FAIL, 2 INCOMPLETE, 3 usage/input error)
+workflow step fails the build with exit 1 (expected 1: the documented FAIL demonstration)
+step exit: 1
+
+--- clean-checkout npx check (scratch copy, npm ci + build, then npx) ---
+npm ci exit: 0
+build exit: 0
+npx help exit: 0
+npx audit exit: 1 (expect 1)
+--- clean-checkout npx audit tail ---
+  --lang <lang>     python | typescript | go (default: all languages)
+  Exit code: 0 on success, 3 on usage/input error.
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: ci-out/repomapverify-report.json
+Report: ci-out/repomapverify-report.html

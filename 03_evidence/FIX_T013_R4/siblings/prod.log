@@ -1,0 +1,9 @@
+
+RESULT: INCOMPLETE
+Ground truth: 4 modules, 5 edges
+Claimed: 5 modules, 6 edges
+Coverage: 0 / 12 (0.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Snapshot: STALE_SNAPSHOT — the map describes a different tree; no blame findings reported.
+Report: /tmp/r4fix-nobody/out/prod-out/repomapverify-report.json
+Report: /tmp/r4fix-nobody/out/prod-out/repomapverify-report.html

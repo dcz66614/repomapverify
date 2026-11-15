@@ -1,0 +1,25 @@
+
+> repomapverify@0.1.0 demo
+> node scripts/demo.mjs
+
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.html
+
+demo: audit finished in 0.6s, exit code 1
+demo: report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.json
+demo: report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.html
+demo: expected outcome -- the demo map is intentionally wrong (FAIL).
+demo: to see a PASS, remove the auth.py -> pricing.py edge and add
+demo: the cart.py -> pricing.py edge in demo/claimed-map.json.
+
+
+TOTAL WALL SECONDS: 1.2
+npm run demo exit code: 1 (1 = FAIL, expected)

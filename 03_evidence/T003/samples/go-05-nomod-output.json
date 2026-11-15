@@ -1,0 +1,37 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "b95ed60a82515e2d2ffbb620248b0e14e8bf2c9ee8f957a705ebad62c619d801",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "94cbc541eae72b0cbce2c64d457a6e3e1045464bd38175c11a26bbebdfa46886",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": [
+    {
+      "from": "cmd",
+      "importPath": "example.com/demo/internal/app",
+      "line": 3,
+      "reason": "NO_GO_MOD",
+      "detail": "no go.mod: non-stdlib import example.com/demo/internal/app cannot be resolved"
+    }
+  ],
+  "excludedFiles": []
+}

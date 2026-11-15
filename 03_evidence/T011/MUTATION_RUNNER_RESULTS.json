@@ -1,0 +1,558 @@
+{
+  "suite": "T011 mutation runner (built CLI)",
+  "total": 25,
+  "detected": 25,
+  "undetected": 0,
+  "results": [
+    {
+      "id": "M01",
+      "base": "py-c01-basic-imports",
+      "language": "python",
+      "type": "add-hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "billing/api.py",
+        "id": "HALLUCINATED_EDGE",
+        "to": "main.py"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "billing/api.py",
+          "to": "main.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M02",
+      "base": "ts-ctrl-01",
+      "language": "typescript",
+      "type": "add-hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/util.ts",
+        "id": "HALLUCINATED_EDGE",
+        "to": "src/main.ts"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/util.ts",
+          "to": "src/main.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M03",
+      "base": "go-ctrl-01",
+      "language": "go",
+      "type": "add-hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "internal/store",
+        "id": "HALLUCINATED_EDGE",
+        "to": "cmd/server"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "internal/store",
+          "to": "cmd/server"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M04",
+      "base": "py-c08-multi-entrypoint",
+      "language": "python",
+      "type": "add-hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "core/db.py",
+        "id": "HALLUCINATED_EDGE",
+        "to": "cli.py"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "core/db.py",
+          "to": "cli.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M05",
+      "base": "ts-ctrl-03",
+      "language": "typescript",
+      "type": "add-hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/barrel/a.ts",
+        "id": "HALLUCINATED_EDGE",
+        "to": "src/main.ts"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/barrel/a.ts",
+          "to": "src/main.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M06",
+      "base": "py-c01-basic-imports",
+      "language": "python",
+      "type": "delete-real-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "main.py",
+        "id": "MISSING_EDGE",
+        "to": "billing/auth.py"
+      },
+      "gotFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "main.py",
+          "to": "billing/auth.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M07",
+      "base": "ts-ctrl-01",
+      "language": "typescript",
+      "type": "delete-real-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/main.ts",
+        "id": "MISSING_EDGE",
+        "to": "src/util.ts"
+      },
+      "gotFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/main.ts",
+          "to": "src/util.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M08",
+      "base": "go-ctrl-01",
+      "language": "go",
+      "type": "delete-real-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "internal/app",
+        "id": "MISSING_EDGE",
+        "to": "internal/store"
+      },
+      "gotFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "internal/app",
+          "to": "internal/store"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M09",
+      "base": "py-c02-relative-imports",
+      "language": "python",
+      "type": "delete-real-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "shop/cart.py",
+        "id": "MISSING_EDGE",
+        "to": "shop/items.py"
+      },
+      "gotFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "shop/cart.py",
+          "to": "shop/items.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M10",
+      "base": "ts-ctrl-02",
+      "language": "typescript",
+      "type": "delete-real-edge",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/main.ts",
+        "id": "MISSING_EDGE",
+        "to": "src/lib/util.ts"
+      },
+      "gotFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/main.ts",
+          "to": "src/lib/util.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M11",
+      "base": "py-c01-basic-imports",
+      "language": "python",
+      "type": "change-entrypoint",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "billing/api.py",
+        "id": "WRONG_ENTRYPOINT"
+      },
+      "gotFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "billing/api.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M12",
+      "base": "ts-ctrl-01",
+      "language": "typescript",
+      "type": "change-entrypoint",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/app.ts",
+        "id": "WRONG_ENTRYPOINT"
+      },
+      "gotFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "src/app.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M13",
+      "base": "go-ctrl-01",
+      "language": "go",
+      "type": "change-entrypoint",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "internal/app",
+        "id": "WRONG_ENTRYPOINT"
+      },
+      "gotFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "internal/app"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M14",
+      "base": "py-c08-multi-entrypoint",
+      "language": "python",
+      "type": "change-entrypoint",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "core/api.py",
+        "id": "WRONG_ENTRYPOINT"
+      },
+      "gotFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "core/api.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M15",
+      "base": "ts-ctrl-02",
+      "language": "typescript",
+      "type": "change-entrypoint",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/app.ts",
+        "id": "WRONG_ENTRYPOINT"
+      },
+      "gotFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "src/app.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M16",
+      "base": "py-c01-basic-imports",
+      "language": "python",
+      "type": "rename-module-path",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "billing/auth2.py",
+        "id": "HALLUCINATED_MODULE"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "billing/auth2.py"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "billing/auth.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M17",
+      "base": "ts-ctrl-01",
+      "language": "typescript",
+      "type": "rename-module-path",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/util2.ts",
+        "id": "HALLUCINATED_MODULE"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "src/util2.ts"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "src/util.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M18",
+      "base": "go-ctrl-01",
+      "language": "go",
+      "type": "rename-module-path",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "internal/store2",
+        "id": "HALLUCINATED_MODULE"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "internal/store2"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "internal/store"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M19",
+      "base": "py-c02-relative-imports",
+      "language": "python",
+      "type": "rename-module-path",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "shop/items2.py",
+        "id": "HALLUCINATED_MODULE"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "shop/items2.py"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "shop/items.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M20",
+      "base": "ts-ctrl-02",
+      "language": "typescript",
+      "type": "rename-module-path",
+      "expectedStatus": "FAIL",
+      "gotStatus": "FAIL",
+      "gotExitCode": 1,
+      "expectedFinding": {
+        "from": "src/models/user2.ts",
+        "id": "HALLUCINATED_MODULE"
+      },
+      "gotFindings": [
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "src/models/user2.ts"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "src/models/user.ts"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M21",
+      "base": "py-c01-basic-imports",
+      "language": "python",
+      "type": "flip-snapshot-hash",
+      "expectedStatus": "INCOMPLETE",
+      "gotStatus": "INCOMPLETE",
+      "gotExitCode": 2,
+      "expectedFinding": null,
+      "gotFindings": [],
+      "snapshotStatus": "STALE_SNAPSHOT",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M22",
+      "base": "ts-ctrl-01",
+      "language": "typescript",
+      "type": "flip-snapshot-hash",
+      "expectedStatus": "INCOMPLETE",
+      "gotStatus": "INCOMPLETE",
+      "gotExitCode": 2,
+      "expectedFinding": null,
+      "gotFindings": [],
+      "snapshotStatus": "STALE_SNAPSHOT",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M23",
+      "base": "go-ctrl-01",
+      "language": "go",
+      "type": "flip-snapshot-hash",
+      "expectedStatus": "INCOMPLETE",
+      "gotStatus": "INCOMPLETE",
+      "gotExitCode": 2,
+      "expectedFinding": null,
+      "gotFindings": [],
+      "snapshotStatus": "STALE_SNAPSHOT",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M24",
+      "base": "py-c02-relative-imports",
+      "language": "python",
+      "type": "flip-snapshot-hash",
+      "expectedStatus": "INCOMPLETE",
+      "gotStatus": "INCOMPLETE",
+      "gotExitCode": 2,
+      "expectedFinding": null,
+      "gotFindings": [],
+      "snapshotStatus": "STALE_SNAPSHOT",
+      "detected": true,
+      "problems": []
+    },
+    {
+      "id": "M25",
+      "base": "go-ctrl-02",
+      "language": "go",
+      "type": "flip-snapshot-hash",
+      "expectedStatus": "INCOMPLETE",
+      "gotStatus": "INCOMPLETE",
+      "gotExitCode": 2,
+      "expectedFinding": null,
+      "gotFindings": [],
+      "snapshotStatus": "STALE_SNAPSHOT",
+      "detected": true,
+      "problems": []
+    }
+  ]
+}

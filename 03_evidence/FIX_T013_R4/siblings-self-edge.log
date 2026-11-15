@@ -1,0 +1,2 @@
+self-edge: prod exit=0 PASS/MATCH findings=[] | oracle exit=0 PASS/MATCH findings=[] gt_edges=[('billing/api.py', 'billing/auth.py'), ('main.py', 'billing/api.py'), ('main.py', 'billing/auth.py')] prod_gt_edges=[('billing/api.py', 'billing/auth.py'), ('main.py', 'billing/api.py'), ('main.py', 'billing/auth.py')]
+  prod error=None oracle error=None

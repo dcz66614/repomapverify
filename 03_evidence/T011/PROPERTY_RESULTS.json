@@ -1,0 +1,38 @@
+{
+  "suite": "T011 property tests",
+  "seed": 20261114,
+  "prng": "mulberry32",
+  "casesPerProperty": 120,
+  "totalCases": 480,
+  "totalPassed": 480,
+  "properties": [
+    {
+      "property": "a-edge-direction-preserved",
+      "seed": 20261114,
+      "cases": 120,
+      "passed": 120,
+      "failed": 0
+    },
+    {
+      "property": "b-duplicate-normalization-idempotent",
+      "seed": 20261114,
+      "cases": 120,
+      "passed": 120,
+      "failed": 0
+    },
+    {
+      "property": "c-input-order-independent",
+      "seed": 20261114,
+      "cases": 120,
+      "passed": 120,
+      "failed": 0
+    },
+    {
+      "property": "d-no-auto-reverse-edges",
+      "seed": 20261114,
+      "cases": 120,
+      "passed": 120,
+      "failed": 0
+    }
+  ]
+}

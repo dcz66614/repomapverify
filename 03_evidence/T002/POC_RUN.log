@@ -1,0 +1,20 @@
+T002 PoC audit run
+seed: P024-REPOMAPVERIFY-S0-2026-11-14
+fixtures: 16 (control PASS 8/8, planted detected 8/8)
+
+py-c01-basic-imports kind=control planted=- modules=4 edges=3 external=0 status=PASS findings=-
+py-c02-relative-imports kind=control planted=- modules=6 edges=9 external=0 status=PASS findings=-
+py-c03-init-reexport kind=control planted=- modules=3 edges=2 external=0 status=PASS findings=-
+py-c04-src-layout kind=control planted=- modules=4 edges=3 external=0 status=PASS findings=-
+py-c05-from-submodule-vs-attr kind=control planted=- modules=5 edges=4 external=0 status=PASS findings=-
+py-c06-conditional-imports kind=control planted=- modules=4 edges=2 external=2 status=PASS findings=-
+py-c07-external-and-stdlib kind=control planted=- modules=3 edges=1 external=4 status=PASS findings=-
+py-c08-multi-entrypoint kind=control planted=- modules=6 edges=4 external=0 status=PASS findings=-
+py-p01-hallucinated-edge kind=planted planted=HALLUCINATED_EDGE modules=4 edges=3 external=0 status=FAIL findings=HALLUCINATED_EDGE|billing/api.py|billing/refunds.py;HALLUCINATED_MODULE|billing/refunds.py|
+py-p02-wrong-entrypoint kind=planted planted=WRONG_ENTRYPOINT modules=3 edges=1 external=0 status=FAIL findings=WRONG_ENTRYPOINT|billing/api.py|
+py-p03-missing-edge kind=planted planted=MISSING_EDGE modules=4 edges=3 external=0 status=FAIL findings=MISSING_EDGE|billing/api.py|billing/auth.py
+py-p04-unclaimed-reachable kind=planted planted=UNCLAIMED_REACHABLE_MODULE modules=4 edges=2 external=0 status=FAIL findings=MISSING_EDGE|billing/api.py|billing/migrations.py;UNCLAIMED_REACHABLE_MODULE|billing/migrations.py|
+py-p05-name-collision kind=planted planted=NAME_COLLISION_CONFUSION modules=6 edges=3 external=0 status=FAIL findings=HALLUCINATED_EDGE|shop/cart.py|lib/utils.py;MISSING_EDGE|shop/cart.py|shop/utils.py;NAME_COLLISION_CONFUSION|shop/cart.py|lib/utils.py
+py-p06-dynamic-import-misread kind=planted planted=DYNAMIC_IMPORT_UNKNOWN modules=3 edges=0 external=1 status=FAIL findings=DYNAMIC_IMPORT_UNKNOWN|loader.py|;HALLUCINATED_EDGE|loader.py|plugins/alpha.py
+py-p07-reexport-misread kind=planted planted=REEXPORT_MISREAD modules=3 edges=2 external=0 status=FAIL findings=HALLUCINATED_EDGE|main.py|pkg/core.py;MISSING_EDGE|main.py|pkg/__init__.py
+py-p08-alias-misparse kind=planted planted=ALIAS_MISPARSE modules=4 edges=3 external=0 status=FAIL findings=HALLUCINATED_EDGE|main.py|utils.py;HALLUCINATED_MODULE|utils.py|;MISSING_EDGE|main.py|pkg/utils.py

@@ -1,0 +1,3 @@
+package winonly
+
+func W() {}

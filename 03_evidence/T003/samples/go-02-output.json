@@ -1,0 +1,97 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "5292bb159bf71064c14a2dba082aa680a98bd13bf63905351bb0bc0b8f601b23",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "0d025799631fd3cc1f32431722a2a3c868400840d5a881aaa8a916850716798c",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/a",
+      "moduleId": "c238d5b976a69c626738ec3c56ab6d14420cb25ccf6b844801fbd8f069df5e7c",
+      "contentSha256": "13b4f9e8f9bfa76de61c399c3aa02ab387606594e1f0caae78bcb90eba119cdd",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "a",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/a/a.go",
+          "contentSha256": "39892441d742460202edbf02333bed9310181a7361a43d5a14a5f201fa26f4de",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/b",
+      "moduleId": "88a0b52f862bef507378c380ec01acf31a845457d03c567930b5eac2a439fef7",
+      "contentSha256": "a419f2dc33262f72bd618084648c7a0f530e761e5bdea5def56d57b0a607c4e5",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "b",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/b/b.go",
+          "contentSha256": "d382c1d39dd6a65570504e1702369028dc68dd46fa20a26e3dcfaa513c5e01e3",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "internal/a",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "c238d5b976a69c626738ec3c56ab6d14420cb25ccf6b844801fbd8f069df5e7c",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 5,
+        "importPath": "example.com/demo/internal/a"
+      }
+    },
+    {
+      "from": "cmd",
+      "to": "internal/b",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "88a0b52f862bef507378c380ec01acf31a845457d03c567930b5eac2a439fef7",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 6,
+        "importPath": "example.com/demo/internal/b"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 1,
+  "unknowns": [],
+  "excludedFiles": [
+    {
+      "relativePath": "internal/a/a_win.go",
+      "reason": "BUILD_EXCLUDED",
+      "detail": "excluded by build constraints under GOOS=linux/GOARCH=amd64"
+    }
+  ],
+  "modulePath": "example.com/demo"
+}

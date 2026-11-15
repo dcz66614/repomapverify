@@ -1,0 +1,696 @@
+{
+  "suite": "T011 golden regression",
+  "total": 68,
+  "matched": 68,
+  "s0": 48,
+  "s0Matched": 48,
+  "boundary": 19,
+  "boundaryMatched": 19,
+  "demo": 1,
+  "demoMatched": 1,
+  "extractorMatched": 68,
+  "graphMatched": 68,
+  "auditMatched": 68,
+  "results": [
+    {
+      "fixture": "py-c01-basic-imports",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c02-relative-imports",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c03-init-reexport",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c04-src-layout",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c05-from-submodule-vs-attr",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c06-conditional-imports",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c07-external-and-stdlib",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-c08-multi-entrypoint",
+      "language": "python",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p01-hallucinated-edge",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p02-wrong-entrypoint",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p03-missing-edge",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p04-unclaimed-reachable",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p05-name-collision",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p06-dynamic-import-misread",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p07-reexport-misread",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "py-p08-alias-misparse",
+      "language": "python",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-01",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-02",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-03",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-04",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-05",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-06",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-07",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ctrl-08",
+      "language": "typescript",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-01",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-02",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-03",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-04",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-05",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-06",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-07",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-plant-08",
+      "language": "typescript",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-01",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-02",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-03",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-04",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-05",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-06",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-07",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-ctrl-08",
+      "language": "go",
+      "kind": "control",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-01",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-02",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-03",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-04",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-05",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-06",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-07",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-plant-08",
+      "language": "go",
+      "kind": "planted",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-buildtags",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-cgo",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-generated",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-generated-dedup",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-package-nodes",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-replace",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-test-files",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-vendor",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "go-vendor-missing",
+      "language": "go",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-dts",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-dyn-import",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-exports-conditions",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-exports-types",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-ext-completion",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-import-equals",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-out-of-scope-alias",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-out-of-scope-extends",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-tsconfig-paths",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "ts-type-imports",
+      "language": "typescript",
+      "kind": "boundary",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    },
+    {
+      "fixture": "demo-shop",
+      "language": "python",
+      "kind": "demo",
+      "extractorMatch": true,
+      "graphMatch": true,
+      "auditMatch": true,
+      "match": true,
+      "problems": []
+    }
+  ]
+}

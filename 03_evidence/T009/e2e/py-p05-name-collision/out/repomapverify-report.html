@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RepoMapVerify report — synthetic-py-p05-name-collision — FAIL</title>
+<style>
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;margin:2em auto;max-width:1100px;padding:0 1em;color:#1a1a1a;background:#fff;line-height:1.5}
+h1{font-size:1.6em}h2{font-size:1.25em;margin-top:2em;border-bottom:1px solid #ddd;padding-bottom:.2em}h3{font-size:1.05em;margin-top:1.5em}
+table{border-collapse:collapse;width:100%;margin:.5em 0}
+th,td{border:1px solid #ccc;padding:.35em .6em;text-align:left;vertical-align:top;font-size:.92em}
+th{background:#f2f2f2}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;word-break:break-all}
+.badge{display:inline-block;padding:.15em .7em;border-radius:1em;color:#fff;font-weight:700}
+.status-PASS{background:#2e7d32}.status-FAIL{background:#c62828}.status-INCOMPLETE{background:#e65100}
+.sev-P1{background:#c62828;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-P2{background:#ef6c00;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-INFO{background:#1565c0;color:#fff;padding:.05em .5em;border-radius:.8em}
+.verified{color:#2e7d32;font-weight:700}
+.hallucinated{color:#c62828;font-weight:700}
+.missing{color:#c62828;font-weight:700}
+.unknown{color:#e65100;font-weight:700}
+.gen-mismatch{color:#e65100;font-weight:700}
+.ok{color:#2e7d32}.bad{color:#c62828}.warn{color:#e65100}
+tr.verified-row{background:#e8f5e9}tr.hallucinated-row{background:#ffebee}tr.missing-row{background:#ffebee}tr.unknown-row{background:#fff8e1}tr.gen-row{background:#fff8e1}
+details{margin:.2em 0}summary{cursor:pointer;font-weight:600}
+.detail{margin:.4em 0 .4em 1.2em;font-size:.92em}
+.muted{color:#666;font-size:.9em}
+nav{margin:1em 0}nav a{margin-right:1em}
+</style>
+</head>
+<body>
+<h1>RepoMapVerify audit report</h1>
+<p><span class="badge status-FAIL">FAIL</span> &nbsp; map <code>synthetic-py-p05-name-collision</code></p>
+<nav>
+<a href="#summary">Summary</a><a href="#findings">Findings</a><a href="#info-findings">Informational findings</a><a href="#modules">Modules</a><a href="#edges">Edges</a><a href="#wrong-entrypoints">Wrong entrypoints</a><a href="#unclaimed-reachable">Unclaimed reachable</a><a href="#isolated">Isolated modules</a><a href="#evidence">Evidence</a>
+</nav>
+
+<section id="summary">
+<h2>Summary</h2>
+<table>
+<tr><th>Ground-truth graph (real)</th><td>6 modules, 3 import edges</td></tr>
+<tr><th>Claimed map</th><td>6 modules, 3 edges</td></tr>
+<tr><th>Coverage</th><td>9 / 10 (90.0%)</td></tr>
+<tr><th>Findings by severity</th><td>P1: 2, P2: 2, INFO: 0 (main findings: 3, informational: 1)</td></tr>
+<tr><th>Completeness mode</th><td>FULL_GRAPH</td></tr>
+<tr><th>Snapshot status</th><td>MATCH</td></tr>
+<tr><th>Canonical semantic hash</th><td><code>0e506b688ebb0c55628d38ec55140efb47a18bcccc0b14039038921af043a2c3</code></td></tr>
+</table>
+<p class="muted">Colors: green = verified, red = fabricated or wrong, yellow = undetermined (dynamic import, unknown, or generated-code only). Click a module or an edge to see its detail.</p>
+</section>
+
+<section id="findings">
+<h2>Findings</h2>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td><code>HALLUCINATED_EDGE</code></td><td><span class="sev-P1">P1</span></td><td><code>shop/cart.py</code></td><td><code>lib/utils.py</code></td><td>claimed edge shop/cart.py -&gt; lib/utils.py does not exist in the ground-truth graph <span class="muted">(edges[2])</span></td></tr>
+<tr><td><code>MISSING_EDGE</code></td><td><span class="sev-P2">P2</span></td><td><code>shop/cart.py</code></td><td><code>shop/utils.py</code></td><td>real edge shop/cart.py -&gt; shop/utils.py is present in the ground-truth graph but unclaimed (FULL_GRAPH only)</td></tr>
+<tr><td><code>NAME_COLLISION_CONFUSION</code></td><td><span class="sev-P1">P1</span></td><td><code>shop/cart.py</code></td><td><code>lib/utils.py</code></td><td>claimed edge shop/cart.py -&gt; lib/utils.py points at a real module with the same basename as the real target of a missing edge from the same source; the claimed map confused two same-named modules</td></tr>
+</table>
+</section>
+
+<section id="info-findings">
+<h2>Informational findings</h2>
+<p class="muted">These findings never change the audit status and are never mixed into the findings list above: isolated modules, entrypoint candidates, and duplicate content are properties of the repo, reported here in their own clearly-labeled section.</p>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td><code>DUPLICATE_CONTENT</code></td><td><span class="sev-P2">P2</span></td><td><code>lib/utils.py</code></td><td><code>shop/utils.py</code></td><td>content_sha256 515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6 is shared by 2 distinct modules (lib/utils.py, shop/utils.py); same content does not imply same module or same semantics</td></tr>
+</table>
+</section>
+
+<section id="modules">
+<h2>Modules — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Module</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>lib/__init__.py</code></summary><div class="detail"><p>Normalized path: <code>lib/__init__.py</code></p>
+<p>Content SHA-256: <code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): (none)</p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>lib/utils.py</code></summary><div class="detail"><p>Normalized path: <code>lib/utils.py</code></p>
+<p>Content SHA-256: <code>515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>main.py</code></p>
+<p>In-edges (claimed): <code>main.py</code>, <code>shop/cart.py</code></p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>main.py</code></summary><div class="detail"><p>Normalized path: <code>main.py</code></p>
+<p>Content SHA-256: <code>05fd0395f3624ca49e350f210d76831293107df912b6490f61538f6b5e328555</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): (none)</p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): <code>lib/utils.py</code>, <code>shop/cart.py</code></p>
+<p>Out-edges (claimed): <code>lib/utils.py</code>, <code>shop/cart.py</code></p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>shop/__init__.py</code></summary><div class="detail"><p>Normalized path: <code>shop/__init__.py</code></p>
+<p>Content SHA-256: <code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): (none)</p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>shop/cart.py</code></summary><div class="detail"><p>Normalized path: <code>shop/cart.py</code></p>
+<p>Content SHA-256: <code>aa7f70a467bc222b1be08283b75b433b7056570eac9af6577fb6f634409e1bfc</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>main.py</code></p>
+<p>In-edges (claimed): <code>main.py</code></p>
+<p>Out-edges (real): <code>shop/utils.py</code></p>
+<p>Out-edges (claimed): <code>lib/utils.py</code></p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>shop/utils.py</code></summary><div class="detail"><p>Normalized path: <code>shop/utils.py</code></p>
+<p>Content SHA-256: <code>515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6</code></p>
+<p>Language: <code>python</code></p>
+<p>Node kind: <code>module</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>shop/cart.py</code></p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+</table>
+</section>
+
+<section id="edges">
+<h2>Edges — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Edge</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>main.py → lib/utils.py</code></summary><div class="detail"><p>Source file: <code>main.py</code></p>
+<p>Line: <code>2</code></p>
+<p>Import statement: <code>from lib.utils import fmt</code></p>
+<p>Claimed-map evidence: <code>edges[1]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>main.py → shop/cart.py</code></summary><div class="detail"><p>Source file: <code>main.py</code></p>
+<p>Line: <code>1</code></p>
+<p>Import statement: <code>from shop.cart import Cart</code></p>
+<p>Claimed-map evidence: <code>edges[0]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="hallucinated-row"><td><details><summary><code>shop/cart.py → lib/utils.py</code></summary><div class="detail"><p>No such import exists in the ground-truth graph — this edge is claimed but not real.</p>
+<p>Claimed-map evidence: <code>edges[2]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="bad">not real</span></td><td><span class="hallucinated">fabricated</span></td></tr>
+<tr class="missing-row"><td><details><summary><code>shop/cart.py → shop/utils.py</code></summary><div class="detail"><p>Source file: <code>shop/cart.py</code></p>
+<p>Line: <code>1</code></p>
+<p>Import statement: <code>from shop.utils import fmt</code></p></div></details></td><td><span class="muted">not claimed</span></td><td><span class="ok">real</span></td><td><span class="missing">missing (unclaimed)</span></td></tr>
+</table>
+</section>
+
+<section id="wrong-entrypoints"><h2>Wrong entrypoints</h2><p class="muted">Claimed entrypoints that are not declared entrypoints. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="unclaimed-reachable"><h2>Unclaimed reachable modules</h2><p class="muted">Real modules reachable from a declared entrypoint that the claimed map never mentions (FULL_GRAPH only). Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="isolated"><h2>Isolated modules</h2><p class="muted">Real modules reachable from no declared entrypoint and unclaimed. Report information only; does not trigger FAIL. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="entrypoint-candidates"><h2>Entrypoint candidates</h2><p class="muted">Graph roots (in-degree 0) when no entrypoint is declared. Hints only — never WRONG_ENTRYPOINT evidence.</p><p class="muted">None.</p></section>
+<section id="duplicate-content">
+<h2>Duplicate content</h2>
+<p class="muted">Distinct modules sharing one content SHA-256. Same content does not imply the same module or the same semantics.</p>
+<ul><li>Content SHA-256 <code>515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6</code> shared by <code>lib/utils.py</code>, <code>shop/utils.py</code> — same content does not imply the same module.</li></ul>
+</section>
+
+<section id="evidence">
+<h2>SHA-256 evidence</h2>
+<p>Repo snapshot SHA-256: <code>045b410b8b49da2cf58584218039c39f281ed4582d9c9a1fc9c672660f1c2e05</code></p>
+<table>
+<tr><th>Module</th><th>Module ID</th><th>Content SHA-256</th></tr>
+<tr><td><code>lib/__init__.py</code></td><td><code>04d3457ac46141ea66978bb845c0d1d6158b56b916a646683670bc4a3e2d2556</code></td><td><code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></td></tr>
+<tr><td><code>lib/utils.py</code></td><td><code>77bfd4a00acfd7a048ec75048c3bade026614a187d027473b256e6a28b804664</code></td><td><code>515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6</code></td></tr>
+<tr><td><code>main.py</code></td><td><code>1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118</code></td><td><code>05fd0395f3624ca49e350f210d76831293107df912b6490f61538f6b5e328555</code></td></tr>
+<tr><td><code>shop/__init__.py</code></td><td><code>2ea1ff6468facf2883d8402ce4dafad84736def6e47ce96ca89a8b5745e8d56e</code></td><td><code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></td></tr>
+<tr><td><code>shop/cart.py</code></td><td><code>f73922ee1b6326b0b3817d4f40f62fc5b68959c61e363151d5bb8fb5560cfc41</code></td><td><code>aa7f70a467bc222b1be08283b75b433b7056570eac9af6577fb6f634409e1bfc</code></td></tr>
+<tr><td><code>shop/utils.py</code></td><td><code>99062547287bc760acfdd5824a57e7f7c021b38fc2070e274d1a78a751cecfc3</code></td><td><code>515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6</code></td></tr>
+</table>
+</section>
+
+<footer><p class="muted">RepoMapVerify — local static report. This file is self-contained and readable offline; it makes no external requests. Canonical semantic hash: <code>0e506b688ebb0c55628d38ec55140efb47a18bcccc0b14039038921af043a2c3</code></p></footer>
+</body>
+</html>

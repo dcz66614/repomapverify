@@ -1,0 +1,151 @@
+{
+  "task": "T007",
+  "fixtures": [
+    {
+      "fixture": "go-buildtags",
+      "language": "go",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-cgo",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-generated",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-generated",
+      "language": "go",
+      "status": "PASS",
+      "findings": [
+        "GENERATED_MISMATCH"
+      ],
+      "match": true
+    },
+    {
+      "fixture": "go-generated-dedup",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-package-nodes",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-replace",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-test-files",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-vendor",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "go-vendor-missing",
+      "language": "go",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-dts",
+      "language": "typescript",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-dyn-import",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [
+        "DYNAMIC_IMPORT_UNKNOWN"
+      ],
+      "match": true
+    },
+    {
+      "fixture": "ts-exports-conditions",
+      "language": "typescript",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-exports-types",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-ext-completion",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-import-equals",
+      "language": "typescript",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-out-of-scope-alias",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-out-of-scope-extends",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-tsconfig-paths",
+      "language": "typescript",
+      "status": "INCOMPLETE",
+      "findings": [],
+      "match": true
+    },
+    {
+      "fixture": "ts-type-imports",
+      "language": "typescript",
+      "status": "PASS",
+      "findings": [],
+      "match": true
+    }
+  ],
+  "total": 20,
+  "passed": 20
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RepoMapVerify report — r4fix-go-ghost — INCOMPLETE</title>
+<style>
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;margin:2em auto;max-width:1100px;padding:0 1em;color:#1a1a1a;background:#fff;line-height:1.5}
+h1{font-size:1.6em}h2{font-size:1.25em;margin-top:2em;border-bottom:1px solid #ddd;padding-bottom:.2em}h3{font-size:1.05em;margin-top:1.5em}
+table{border-collapse:collapse;width:100%;margin:.5em 0}
+th,td{border:1px solid #ccc;padding:.35em .6em;text-align:left;vertical-align:top;font-size:.92em}
+th{background:#f2f2f2}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;word-break:break-all}
+.badge{display:inline-block;padding:.15em .7em;border-radius:1em;color:#fff;font-weight:700}
+.status-PASS{background:#2e7d32}.status-FAIL{background:#c62828}.status-INCOMPLETE{background:#e65100}
+.sev-P1{background:#c62828;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-P2{background:#ef6c00;color:#fff;padding:.05em .5em;border-radius:.8em}
+.sev-INFO{background:#1565c0;color:#fff;padding:.05em .5em;border-radius:.8em}
+.verified{color:#2e7d32;font-weight:700}
+.hallucinated{color:#c62828;font-weight:700}
+.missing{color:#c62828;font-weight:700}
+.unknown{color:#e65100;font-weight:700}
+.gen-mismatch{color:#e65100;font-weight:700}
+.ok{color:#2e7d32}.bad{color:#c62828}.warn{color:#e65100}
+tr.verified-row{background:#e8f5e9}tr.hallucinated-row{background:#ffebee}tr.missing-row{background:#ffebee}tr.unknown-row{background:#fff8e1}tr.gen-row{background:#fff8e1}
+details{margin:.2em 0}summary{cursor:pointer;font-weight:600}
+.detail{margin:.4em 0 .4em 1.2em;font-size:.92em}
+.muted{color:#666;font-size:.9em}
+nav{margin:1em 0}nav a{margin-right:1em}
+</style>
+</head>
+<body>
+<h1>RepoMapVerify audit report</h1>
+<p><span class="badge status-INCOMPLETE">INCOMPLETE</span> &nbsp; map <code>r4fix-go-ghost</code></p>
+<nav>
+<a href="#summary">Summary</a><a href="#findings">Findings</a><a href="#info-findings">Informational findings</a><a href="#modules">Modules</a><a href="#edges">Edges</a><a href="#wrong-entrypoints">Wrong entrypoints</a><a href="#unclaimed-reachable">Unclaimed reachable</a><a href="#isolated">Isolated modules</a><a href="#evidence">Evidence</a>
+</nav>
+
+<section id="summary">
+<h2>Summary</h2>
+<table>
+<tr><th>Ground-truth graph (real)</th><td>3 modules, 2 import edges</td></tr>
+<tr><th>Claimed map</th><td>3 modules, 2 edges</td></tr>
+<tr><th>Coverage</th><td>7 / 7 (100.0%)</td></tr>
+<tr><th>Findings by severity</th><td>P1: 0, P2: 0, INFO: 0 (main findings: 0, informational: 0)</td></tr>
+<tr><th>Completeness mode</th><td>FULL_GRAPH</td></tr>
+<tr><th>Snapshot status</th><td>MATCH</td></tr>
+<tr><th>Canonical semantic hash</th><td><code>2b8ac52fb36671d38b82d2f7be19bff9af3c9b46c34c87f4cd48da9798e31bca</code></td></tr>
+</table>
+<p class="muted">Colors: green = verified, red = fabricated or wrong, yellow = undetermined (dynamic import, unknown, or generated-code only). Click a module or an edge to see its detail.</p>
+</section>
+
+<section id="findings">
+<h2>Findings</h2>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td colspan="5" class="ok">No findings — every claim verified.</td></tr>
+</table>
+</section>
+
+<section id="info-findings">
+<h2>Informational findings</h2>
+<p class="muted">These findings never change the audit status and are never mixed into the findings list above: isolated modules, entrypoint candidates, and duplicate content are properties of the repo, reported here in their own clearly-labeled section.</p>
+<table>
+<tr><th>Type</th><th>Severity</th><th>From</th><th>To</th><th>Detail</th></tr>
+<tr><td colspan="5" class="muted">No informational findings.</td></tr>
+</table>
+</section>
+
+<section id="modules">
+<h2>Modules — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Module</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>cmd/server</code></summary><div class="detail"><p>Normalized path: <code>cmd/server</code></p>
+<p>Content SHA-256: <code>54838abf010f77389af3d508eac15922bd3baad84549623dfab896926ddbaef0</code></p>
+<p>Language: <code>go</code></p>
+<p>Node kind: <code>package</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): (none)</p>
+<p>In-edges (claimed): (none)</p>
+<p>Out-edges (real): <code>internal/app</code></p>
+<p>Out-edges (claimed): <code>internal/app</code></p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>internal/app</code></summary><div class="detail"><p>Normalized path: <code>internal/app</code></p>
+<p>Content SHA-256: <code>440aaf9f2fe978c4abf7f756dabe029284ca15b960e8fb8a76344ae194784a59</code></p>
+<p>Language: <code>go</code></p>
+<p>Node kind: <code>package</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>cmd/server</code></p>
+<p>In-edges (claimed): <code>cmd/server</code></p>
+<p>Out-edges (real): <code>internal/store</code></p>
+<p>Out-edges (claimed): <code>internal/store</code></p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>internal/store</code></summary><div class="detail"><p>Normalized path: <code>internal/store</code></p>
+<p>Content SHA-256: <code>edf514b6c154443df40557c3c4bc839bfd55052143b6782985fb2f989aa1b067</code></p>
+<p>Language: <code>go</code></p>
+<p>Node kind: <code>package</code></p>
+<p>Generated code: <code>no</code></p>
+<p>Parse status: <code>OK</code></p>
+<p>In-edges (real): <code>internal/app</code></p>
+<p>In-edges (claimed): <code>internal/app</code></p>
+<p>Out-edges (real): (none)</p>
+<p>Out-edges (claimed): (none)</p>
+<p>Reachable from entrypoint: yes; isolated: no; claimed: yes</p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+</table>
+</section>
+
+<section id="edges">
+<h2>Edges — claimed (left) vs ground truth (right), aligned</h2>
+<table>
+<tr><th>Edge</th><th>Claimed</th><th>Ground truth</th><th>Status</th></tr>
+<tr class="verified-row"><td><details><summary><code>cmd/server → internal/app</code></summary><div class="detail"><p>Source file: <code>cmd/server/main.go</code></p>
+<p>Line: <code>5</code></p>
+<p>Import statement: <code>import &quot;example.com/demo/internal/app&quot;</code></p>
+<p>Claimed-map evidence: <code>edges[0]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+<tr class="verified-row"><td><details><summary><code>internal/app → internal/store</code></summary><div class="detail"><p>Source file: <code>internal/app/app.go</code></p>
+<p>Line: <code>5</code></p>
+<p>Import statement: <code>import &quot;example.com/demo/internal/store&quot;</code></p>
+<p>Claimed-map evidence: <code>edges[1]</code></p></div></details></td><td><span class="ok">claimed</span></td><td><span class="ok">real</span></td><td><span class="verified">verified</span></td></tr>
+</table>
+</section>
+
+<section id="wrong-entrypoints"><h2>Wrong entrypoints</h2><p class="muted">Claimed entrypoints that are not declared entrypoints. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="unclaimed-reachable"><h2>Unclaimed reachable modules</h2><p class="muted">Real modules reachable from a declared entrypoint that the claimed map never mentions (FULL_GRAPH only). Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="isolated"><h2>Isolated modules</h2><p class="muted">Real modules reachable from no declared entrypoint and unclaimed. Report information only; does not trigger FAIL. Shown here only — never mixed into the edge list.</p><p class="muted">None.</p></section>
+<section id="entrypoint-candidates"><h2>Entrypoint candidates</h2><p class="muted">Graph roots (in-degree 0) when no entrypoint is declared. Hints only — never WRONG_ENTRYPOINT evidence.</p><p class="muted">None.</p></section>
+<section id="duplicate-content">
+<h2>Duplicate content</h2>
+<p class="muted">Distinct modules sharing one content SHA-256. Same content does not imply the same module or the same semantics.</p>
+<p class="muted">None.</p>
+</section>
+
+<section id="evidence">
+<h2>SHA-256 evidence</h2>
+<p>Repo snapshot SHA-256: <code>0b54cbd8bb577df83a1ae9b5b871423390b642b9451fd7d48b494427c2b3722d</code></p>
+<table>
+<tr><th>Module</th><th>Module ID</th><th>Content SHA-256</th></tr>
+<tr><td><code>cmd/server</code></td><td><code>fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab</code></td><td><code>54838abf010f77389af3d508eac15922bd3baad84549623dfab896926ddbaef0</code></td></tr>
+<tr><td><code>internal/app</code></td><td><code>0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e</code></td><td><code>440aaf9f2fe978c4abf7f756dabe029284ca15b960e8fb8a76344ae194784a59</code></td></tr>
+<tr><td><code>internal/store</code></td><td><code>c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490</code></td><td><code>edf514b6c154443df40557c3c4bc839bfd55052143b6782985fb2f989aa1b067</code></td></tr>
+</table>
+</section>
+
+<footer><p class="muted">RepoMapVerify — local static report. This file is self-contained and readable offline; it makes no external requests. Canonical semantic hash: <code>2b8ac52fb36671d38b82d2f7be19bff9af3c9b46c34c87f4cd48da9798e31bca</code></p></footer>
+</body>
+</html>

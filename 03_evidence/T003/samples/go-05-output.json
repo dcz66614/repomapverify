@@ -1,0 +1,82 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "7c3a760a7cfe48f86a9306c2ba8344f74c38eda7a36c42b158682f340b55e4c7",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "12393e266e362264f0a8d1e6a929f834831ef3b6b02b9db0814abd0a2e3d9562",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/app",
+      "moduleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "contentSha256": "69afaa8df6116501f1aab2e922fe6510a8277aaee8981bb4304e95e2bc351cea",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "app",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/app/app.go",
+          "contentSha256": "4c10195fe369dcc9cb88a9c47318cc7dfaceffc1498cf040f52e7963d9fe0c8a",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "internal/app",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 4,
+        "importPath": "example.com/demo/internal/app"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": [
+    {
+      "from": "cmd",
+      "importPath": "example.com/demo/internal/nope",
+      "line": 5,
+      "reason": "TARGET_PACKAGE_NOT_FOUND",
+      "detail": "package directory internal/nope does not exist in the repo"
+    },
+    {
+      "from": "internal/app",
+      "importPath": "",
+      "line": 1,
+      "reason": "UNDECIDABLE_BUILD_CONSTRAINT",
+      "detail": "file internal/app/tagged.go: undecidable build constraint: mytag"
+    }
+  ],
+  "excludedFiles": [
+    {
+      "relativePath": "internal/app/tagged.go",
+      "reason": "UNDECIDABLE_BUILD_CONSTRAINT",
+      "detail": "undecidable build constraint: mytag"
+    }
+  ],
+  "modulePath": "example.com/demo"
+}

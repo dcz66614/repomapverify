@@ -1,0 +1,128 @@
+{
+  "py-ghost-entry": {
+    "production": {
+      "exit": 2,
+      "status": "INCOMPLETE",
+      "findings": [],
+      "snapshotStatus": "MATCH",
+      "gt_entrypoints": [
+        "main.py"
+      ],
+      "gt_snapshot": "16ea36e221395155026cd2218e6aad3a71f178cce4fa0d1d9d50acdb77906b8f",
+      "tail": [
+        "Findings: 0 (P1: 0, P2: 0) + 0 informational",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-entry/prod-out/repomapverify-report.json",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-entry/prod-out/repomapverify-report.html"
+      ]
+    },
+    "oracle": {
+      "status": "PASS",
+      "snapshotStatus": "MATCH",
+      "findings": [],
+      "unresolvedEntrypoints": null,
+      "gt_entrypoints": [
+        "ghost.py",
+        "main.py"
+      ],
+      "gt_snapshot": "16ea36e221395155026cd2218e6aad3a71f178cce4fa0d1d9d50acdb77906b8f"
+    },
+    "agree": false
+  },
+  "py-ghost-ctrl": {
+    "production": {
+      "exit": 1,
+      "status": "FAIL",
+      "findings": [
+        [
+          "WRONG_ENTRYPOINT",
+          "ghost.py",
+          null
+        ]
+      ],
+      "snapshotStatus": "MATCH",
+      "gt_entrypoints": [
+        "main.py"
+      ],
+      "gt_snapshot": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "tail": [
+        "  P1 WRONG_ENTRYPOINT: ghost.py",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-ctrl/prod-out/repomapverify-report.json",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-ctrl/prod-out/repomapverify-report.html"
+      ]
+    },
+    "oracle": {
+      "status": "FAIL",
+      "snapshotStatus": "MATCH",
+      "findings": [
+        [
+          "WRONG_ENTRYPOINT",
+          "ghost.py",
+          null
+        ]
+      ],
+      "unresolvedEntrypoints": null,
+      "gt_entrypoints": [
+        "main.py"
+      ],
+      "gt_snapshot": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404"
+    },
+    "agree": true
+  },
+  "py-ghost-sanity": {
+    "production": {
+      "exit": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH",
+      "gt_entrypoints": [
+        "main.py"
+      ],
+      "gt_snapshot": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "tail": [
+        "Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK \u00a76.1 spells it snake_case, PLAN \u00a74.1 camelCase)",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-sanity/prod-out/repomapverify-report.json",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/py-ghost-sanity/prod-out/repomapverify-report.html"
+      ]
+    },
+    "oracle": {
+      "status": "PASS",
+      "snapshotStatus": "MATCH",
+      "findings": [],
+      "unresolvedEntrypoints": null,
+      "gt_entrypoints": [
+        "main.py"
+      ],
+      "gt_snapshot": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404"
+    },
+    "agree": true
+  },
+  "go-ghost-entry": {
+    "production": {
+      "exit": 2,
+      "status": "INCOMPLETE",
+      "findings": [],
+      "snapshotStatus": "MATCH",
+      "gt_entrypoints": [
+        "cmd/server"
+      ],
+      "gt_snapshot": "0b54cbd8bb577df83a1ae9b5b871423390b642b9451fd7d48b494427c2b3722d",
+      "tail": [
+        "Findings: 0 (P1: 0, P2: 0) + 0 informational",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/go-ghost-entry/prod-out/repomapverify-report.json",
+        "Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R4/agreement-pre/go-ghost-entry/prod-out/repomapverify-report.html"
+      ]
+    },
+    "oracle": {
+      "status": "PASS",
+      "snapshotStatus": "MATCH",
+      "findings": [],
+      "unresolvedEntrypoints": null,
+      "gt_entrypoints": [
+        "cmd/ghost",
+        "cmd/server"
+      ],
+      "gt_snapshot": "0b54cbd8bb577df83a1ae9b5b871423390b642b9451fd7d48b494427c2b3722d"
+    },
+    "agree": false
+  }
+}

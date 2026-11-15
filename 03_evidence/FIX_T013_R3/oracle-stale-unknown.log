@@ -1,0 +1,2 @@
+{'status': 'INCOMPLETE', 'snapshotStatus': 'STALE_SNAPSHOT', 'findings': [], 'unknownImportsPresent': True}
+ORACLE STALE BRANCH: unknownImportsPresent=True (computed from GT), findings=[] -- OK

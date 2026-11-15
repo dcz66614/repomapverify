@@ -1,0 +1,29 @@
+
+> repomapverify@0.1.0 release:build
+> node scripts/release-build.mjs
+
+== release:build ==
+output dir: /home/hatch/workspace/p024-repomapverify/.tmp/release-build
+$ npm run build  (cwd: /home/hatch/workspace/p024-repomapverify/02_source)
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+exit code: 0
+staged source tree: .github, LICENSE, README.md, demo, docs, oracle, package-lock.json, package.json, scripts, src, tests, tsconfig.build.json, tsconfig.json
+staged dist tree: LICENSE, README.md, dist, package-lock.json, package.json
+re-relativized staged symlink: tests/fixtures/regression/py-symlink-snapshot/repo/docs-link.txt -> docs.txt
+reproducible-build timestamp: 1794677333 (2026-11-14T17:28:53.000Z)
+$ zip -qr -X /home/hatch/workspace/p024-repomapverify/.tmp/release-build/source.zip .  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-build/stage-src)
+exit code: 0
+$ zip -qr -X /home/hatch/workspace/p024-repomapverify/.tmp/release-build/dist.zip .  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-build/stage-dist)
+exit code: 0
+$ sha256sum source.zip dist.zip  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-build)
+0f4ba0fcb764feb240fdbd6a44cda8c0be9225bb7529ece3307cd46c69bd7d14  source.zip
+57a96f491fe62f50f8a629618efcbe1384837501487ecbc9fb54d41244d68b3b  dist.zip
+exit code: 0
+source.zip sha256: 0f4ba0fcb764feb240fdbd6a44cda8c0be9225bb7529ece3307cd46c69bd7d14
+dist.zip sha256:   57a96f491fe62f50f8a629618efcbe1384837501487ecbc9fb54d41244d68b3b
+SHA256SUMS.txt:
+0f4ba0fcb764feb240fdbd6a44cda8c0be9225bb7529ece3307cd46c69bd7d14  source.zip
+57a96f491fe62f50f8a629618efcbe1384837501487ecbc9fb54d41244d68b3b  dist.zip
+RELEASE:BUILD PASS: source.zip + dist.zip + SHA256SUMS.txt written.

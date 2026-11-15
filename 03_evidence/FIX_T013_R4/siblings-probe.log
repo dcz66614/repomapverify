@@ -1,0 +1,91 @@
+# FIX T013 R4 — sibling passthrough probes (Rule 8: droppedEdges / conflicts)
+
+## (1) Self-edge — real repo, both CLIs: AGREE
+Probe: py-c01 repo + `import main` in main.py (self-import); map built from
+the production GT. Log: siblings-self-edge.log.
+- Production: exit 0 PASS / MATCH, 0 findings.
+- Oracle: exit 0 PASS / MATCH, 0 findings; GT edges identical on both
+  sides (no self-edge in either GT).
+Production buildGraph drops self-edges (SELF_EDGE, benign, no status
+effect); the Oracle skips them in add_edge (oracle.py: target_rel == rel).
+No divergence.
+
+## (2) droppedEdges UNKNOWN_ENDPOINT — CLI-level (non-root) + unit-level: PROBED
+### CLI route (P2-05 unreadable-file skip), staged as user `nobody`
+Staging: /tmp/r4fix-nobody (copied dist + runtime tree-sitter packages +
+oracle.py; project dirs are 0700/0770 so `nobody` cannot traverse them --
+runuser fails there; unshare -Urn does NOT block a 000 file for root, so
+`runuser -u nobody` was used). Probe repo: ts-ctrl-01 + src/secret.ts
+(chmod 000) imported by src/util.ts. Artifacts: siblings/prod.log,
+prod2.log, prod3.log, oracle.log, gt-nobody.json,
+ts-unreadable-prod-report.json, ts-unreadable-claimed-map.json.
+- `runuser -u nobody -- cat secret.ts` -> Permission denied (staging works).
+- Bound to the as-root snapshot: production exit 2 INCOMPLETE /
+  STALE_SNAPSHOT, 0 findings (the unreadable file drops out of the
+  as-nobody snapshot, so the map is stale before Rule 9 is reached).
+- Map rebound to the as-nobody snapshot, still claiming secret.ts:
+  production exit 1 FAIL, HALLUCINATED_EDGE + HALLUCINATED_MODULE for
+  secret.ts (claimed items for a non-existent module are blamed first;
+  FAIL wins over the Rule 9 INCOMPLETE).
+- Map = as-nobody GT exactly (secret.ts not claimed at all): production
+  exit 2 INCOMPLETE / MATCH, 0 findings, coverage 10/10. The extractor
+  still emits util.ts -> secret.ts (resolution is by file NAME, before
+  the read), buildGraph drops it (UNKNOWN_ENDPOINT -- the only
+  INCOMPLETE-forcing condition left: snapshot MATCH, no unknown imports,
+  all parseStatus OK, entrypoints resolved), so Rule 9 fires
+  status-only. This IS the droppedEdges passthrough firing via the CLI.
+- Oracle as `nobody`: CRASHES before any audit -- PermissionError in
+  TypeScriptOracle.extract (oracle.py, open(full, "rb").read(), no
+  try/except) while reading secret.ts, and snapshot_sha256 would hit
+  the same file. Production degrades to INCOMPLETE/FAIL; the Oracle has
+  no unreadable-file handling at all. NOT fixed here (P2-05 area, out
+  of this task's scope; recorded for the next review, not silently
+  dropped). Note the Oracle crash also means the CLI-level droppedEdges
+  agreement cannot be observed end-to-end for an unreadable file: the
+  Oracle never reaches its audit.
+### Unit-level isolation (check-dropped-edges.mjs + .py)
+- Production (synthetic BuiltGraph, edge to an unregistered moduleId):
+  droppedEdges = [UNKNOWN_ENDPOINT], audit INCOMPLETE / MATCH,
+  0 findings. Log: check-dropped-edges.log.
+- Oracle (equivalent GT: no such edge, no unknown import, same clean
+  map): audit PASS, 0 findings. Log: check-dropped-edges-oracle.log.
+- Conclusion: the Oracle GT schema carries NO droppedEdges counterpart
+  field, so a production dropped edge has no Oracle-side signal. The
+  verdict-level effect is real on the production side (CLI-probed above)
+  and unobservable on the Oracle side (it either agrees by accident
+  when the dropped edge is also an unknown import, or crashes when the
+  route is an unreadable file). The UNKNOWN_ENDPOINT/CONFLICT_DROPPED
+  passthrough therefore remains a known, now-PROBED asymmetry, not a
+  fixed one. No new P1 is filed here because the only CLI route found
+  needs an unreadable file (P2-05, carried) and the Oracle's failure
+  mode there is a crash, not a wrong PASS.
+
+## (3) conflicts — UNREACHABLE via CLI (confirmed from code, not just unprobed)
+Production records a conflict only in IdentityRegistry.register when
+two registrations share one folded identity key AND carry different
+realPaths (registry.ts). That combination cannot be produced via the CLI:
+- Python: listFilesRecursive pushes normalizeRelativePath(...) (NFC) at
+  listing time, so NFC-confusable spellings collapse to ONE listing
+  entry; the contents Map dedupes to one module before registration.
+- TypeScript: listTypeScriptFiles pushes raw names, but fromRepo
+  computes realPath from the NORMALIZED path
+  (tryRealpath(join(repoRoot, m.relativePath))), so both spellings get
+  the SAME realpath and register() merges instead of conflicting.
+- Go: packages are keyed by the normalized directory, one package per
+  normalized dir.
+- The only folding that could disagree with the filesystem is a
+  case-insensitive platform adapter (Foo.py vs foo.py, same folded key,
+  different realpaths) -- and no adapter is ever passed: the CLI calls
+  buildGroundTruthGraphFromRepo(repoRoot) with no options (audit.ts:91,
+  ground-truth.ts:68), fromRepo only forwards options.caseAdapter when
+  given, and detectPlatformAdapter is defined but never called outside
+  tests (P2-07, carried).
+Oracle side: the GT schema carries no conflicts field and
+audit_claimed_map has no conflict handling. The Oracle does NOT dedupe
+NFC spellings before registration (list_repo_files normalizes both
+spellings to the same string and both appear as modules -- the
+reviewer's R4-P2-01 observation, 6 modules with a duplicate
+relativePath), so no conflict is ever recorded there either.
+Conclusion: the `conflicts` passthrough cannot fire through the CLI on
+either side; it stays carried (P2-19), with this code-level
+confirmation recorded.

@@ -1,0 +1,1706 @@
+{
+  "schema": "repomapverify.s0-gate/v1",
+  "seed": "P024-REPOMAPVERIFY-S0-2026-11-14",
+  "verdict": "PASS",
+  "inputCommit": "cb9b920",
+  "generatedAtUtc": "2026-11-14T14:39:08.230Z",
+  "gateHash": "7d4efa1d97798819c2eee29950d57f0d24ffe5961c273f3c9cd37284e7c437cd",
+  "thresholds": {
+    "parity": {
+      "required": "48/48",
+      "actual": "48/48",
+      "pass": true
+    },
+    "plantedDetected": {
+      "required": "24/24",
+      "actual": "24/24",
+      "pass": true
+    },
+    "controlFalseAlarms": {
+      "required": "0/24",
+      "actual": "0/24",
+      "pass": true
+    },
+    "replayHashes": {
+      "required": "1 distinct gate hash over 100 replays",
+      "actual": "1 distinct",
+      "pass": true
+    },
+    "externalRequests": {
+      "required": "0",
+      "actual": "0",
+      "pass": true
+    },
+    "sourceWrites": {
+      "required": "0",
+      "actual": "0",
+      "pass": true
+    },
+    "goldenIntegrity": {
+      "required": "0 changed",
+      "actual": "0",
+      "pass": true
+    }
+  },
+  "counts": {
+    "fixtures": 48,
+    "parityPass": 48,
+    "plantedDetected": 24,
+    "plantedTotal": 24,
+    "controlFalseAlarms": 0,
+    "controlTotal": 24,
+    "oracleReplayDistinct": 1,
+    "productionReplayDistinct": 1,
+    "externalRequests": 0,
+    "sourceWrites": 0,
+    "goldenChanged": 0
+  },
+  "externalRequestProof": {
+    "command": "grep -rn -E \"https?://|\\\\bfetch\\\\s*\\\\(|WebSocket|node:http|node:https|node:net|node:dns|XMLHttpRequest|axios|node-fetch|undici\" src scripts",
+    "cwd": "02_source",
+    "exitCode": 1,
+    "matches": [],
+    "oracleNonStdlibImports": []
+  },
+  "sourceWriteProof": {
+    "fixtureTreesBefore": {
+      "go-ctrl-01": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-ctrl-02": "b4bddf22337a0cae3f37f4fa9e9edca1882aba9c4cfab450e09a526123abb32f",
+      "go-ctrl-03": "6036d2e72567e32523334f04c573f8b4b24217ba250148b5a24c6eaa2fbea58a",
+      "go-ctrl-04": "11c60fc0c532aacf7730da38a27b7e54e4075937446cff4715dae43cd823186a",
+      "go-ctrl-05": "f8f41166d34b6ac46a6fbba85970a8726c35bd5fb02564b7d1df0867a9343725",
+      "go-ctrl-06": "9387a21073b715c779839cb7925c90f72f23fa1d38655af3c083a5e1a266ccab",
+      "go-ctrl-07": "6205950533a457074a6c2244d8be2cd27f18211411814ea5603a865b2a621b65",
+      "go-ctrl-08": "3305c7d99fd14b2606dac8909db12a2c4cade8d9049a4842d4d750aab5b415b8",
+      "go-plant-01": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-02": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-03": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-04": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-05": "8e83dff73e3ba154b2e9fa7e96cb79dfcfbec34824035d26c8fa0b29a27dd2e7",
+      "go-plant-06": "8a138b4a187a6149b31b7dbac164d7204b2d124edf14bf9ac95e9832be1b5ce7",
+      "go-plant-07": "570e1c68aa7bf5f4e9c706d133fa505493b1fd891729c0d288b3d15828fac278",
+      "go-plant-08": "11c60fc0c532aacf7730da38a27b7e54e4075937446cff4715dae43cd823186a",
+      "py-c01-basic-imports": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-c02-relative-imports": "e5ca115c61a4f7c86a871d080d30c45b2778031a0be55a9e873ac6ead7ee9ffb",
+      "py-c03-init-reexport": "019502b67b7ed7ebcb803ed6d03a56197c6ff43aba4a184e1e556f50d9549db1",
+      "py-c04-src-layout": "28876f710bb58a8608b58e326e167e4551106c61dc6c10b28e8be11c47560585",
+      "py-c05-from-submodule-vs-attr": "1cc19ae452208b9ccb569819f2576eeb461fee7e9544a8d9c6828985abfecfaa",
+      "py-c06-conditional-imports": "9de129435ec853b75f85973f99991bf4d8cae5f54b9fd2d6ff6ba18700601ac8",
+      "py-c07-external-and-stdlib": "0a537cee953259a5e6f77f9df29de6d4bfa7f16380d569ac0ad820e65a2a116b",
+      "py-c08-multi-entrypoint": "1698c5bb0697ab8acbf0cb2e427603a7d6b0f8be783d22f4d41037678eb47b87",
+      "py-p01-hallucinated-edge": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-p02-wrong-entrypoint": "bddebc703a58dafa994781154a50be288bdaa4c8d1ed0e3b661f589668799d04",
+      "py-p03-missing-edge": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-p04-unclaimed-reachable": "cc98e4f42ba5cf340cef374106ec1d096930c121dbd605ad70ea0a00415a32f5",
+      "py-p05-name-collision": "045b410b8b49da2cf58584218039c39f281ed4582d9c9a1fc9c672660f1c2e05",
+      "py-p06-dynamic-import-misread": "981acf82bb372255e9d0b275f585366d110ba4e7065e0cbe2c3f8ca0dfa9baa5",
+      "py-p07-reexport-misread": "019502b67b7ed7ebcb803ed6d03a56197c6ff43aba4a184e1e556f50d9549db1",
+      "py-p08-alias-misparse": "d87a402b662761142c9e861a248de8bd2d743f3525456c505e96b5b0e0e9f492",
+      "ts-ctrl-01": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-ctrl-02": "619ba5aecf6eda2c8cbf26be02bdd01987f6ef721415f71261d55b94f4aa6e3f",
+      "ts-ctrl-03": "99f3d34c351c5ca23f98560822c2fe807f34b32062e876705b8bc4c50a37ef1f",
+      "ts-ctrl-04": "8e1ff967917779d60b27262bf3303ab226e501c8375a616193f43123c09aee3a",
+      "ts-ctrl-05": "7e61566de2fa555c41636cb06ff16dc94b7d1454d4417a7fe86f99171ff30754",
+      "ts-ctrl-06": "87516f6fa46df600e0b597c499913ee9297e6ab408388dcfc2c200383c093ee1",
+      "ts-ctrl-07": "5d494ce96668a7d64cdfa23e2a6048269037ca47944fc178586d276b133c028e",
+      "ts-ctrl-08": "334e8835b41239b2d6ce9f6a9fd21cb9aa532600cb50aa5b674e70a1b1ddb366",
+      "ts-plant-01": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-02": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-03": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-04": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-05": "aaf9d2ff118abf9e389a082089324b54b3ff4b0aa64913c480e6c79bb24fd266",
+      "ts-plant-06": "d53a221d135cfcfd8a48d67d70c8808e8e5e827b911f4940c65a2736c3017644",
+      "ts-plant-07": "99f3d34c351c5ca23f98560822c2fe807f34b32062e876705b8bc4c50a37ef1f",
+      "ts-plant-08": "fb7e120ccbf23c5602437f44051aaa27e920e1f338d5e1148e95fbb15cf2933e"
+    },
+    "fixtureTreesAfter": {
+      "go-ctrl-01": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-ctrl-02": "b4bddf22337a0cae3f37f4fa9e9edca1882aba9c4cfab450e09a526123abb32f",
+      "go-ctrl-03": "6036d2e72567e32523334f04c573f8b4b24217ba250148b5a24c6eaa2fbea58a",
+      "go-ctrl-04": "11c60fc0c532aacf7730da38a27b7e54e4075937446cff4715dae43cd823186a",
+      "go-ctrl-05": "f8f41166d34b6ac46a6fbba85970a8726c35bd5fb02564b7d1df0867a9343725",
+      "go-ctrl-06": "9387a21073b715c779839cb7925c90f72f23fa1d38655af3c083a5e1a266ccab",
+      "go-ctrl-07": "6205950533a457074a6c2244d8be2cd27f18211411814ea5603a865b2a621b65",
+      "go-ctrl-08": "3305c7d99fd14b2606dac8909db12a2c4cade8d9049a4842d4d750aab5b415b8",
+      "go-plant-01": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-02": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-03": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-04": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+      "go-plant-05": "8e83dff73e3ba154b2e9fa7e96cb79dfcfbec34824035d26c8fa0b29a27dd2e7",
+      "go-plant-06": "8a138b4a187a6149b31b7dbac164d7204b2d124edf14bf9ac95e9832be1b5ce7",
+      "go-plant-07": "570e1c68aa7bf5f4e9c706d133fa505493b1fd891729c0d288b3d15828fac278",
+      "go-plant-08": "11c60fc0c532aacf7730da38a27b7e54e4075937446cff4715dae43cd823186a",
+      "py-c01-basic-imports": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-c02-relative-imports": "e5ca115c61a4f7c86a871d080d30c45b2778031a0be55a9e873ac6ead7ee9ffb",
+      "py-c03-init-reexport": "019502b67b7ed7ebcb803ed6d03a56197c6ff43aba4a184e1e556f50d9549db1",
+      "py-c04-src-layout": "28876f710bb58a8608b58e326e167e4551106c61dc6c10b28e8be11c47560585",
+      "py-c05-from-submodule-vs-attr": "1cc19ae452208b9ccb569819f2576eeb461fee7e9544a8d9c6828985abfecfaa",
+      "py-c06-conditional-imports": "9de129435ec853b75f85973f99991bf4d8cae5f54b9fd2d6ff6ba18700601ac8",
+      "py-c07-external-and-stdlib": "0a537cee953259a5e6f77f9df29de6d4bfa7f16380d569ac0ad820e65a2a116b",
+      "py-c08-multi-entrypoint": "1698c5bb0697ab8acbf0cb2e427603a7d6b0f8be783d22f4d41037678eb47b87",
+      "py-p01-hallucinated-edge": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-p02-wrong-entrypoint": "bddebc703a58dafa994781154a50be288bdaa4c8d1ed0e3b661f589668799d04",
+      "py-p03-missing-edge": "a80ab95d7bbadab0dd069e36ce15a2fcca301c0a0f0183710accfca287f11404",
+      "py-p04-unclaimed-reachable": "cc98e4f42ba5cf340cef374106ec1d096930c121dbd605ad70ea0a00415a32f5",
+      "py-p05-name-collision": "045b410b8b49da2cf58584218039c39f281ed4582d9c9a1fc9c672660f1c2e05",
+      "py-p06-dynamic-import-misread": "981acf82bb372255e9d0b275f585366d110ba4e7065e0cbe2c3f8ca0dfa9baa5",
+      "py-p07-reexport-misread": "019502b67b7ed7ebcb803ed6d03a56197c6ff43aba4a184e1e556f50d9549db1",
+      "py-p08-alias-misparse": "d87a402b662761142c9e861a248de8bd2d743f3525456c505e96b5b0e0e9f492",
+      "ts-ctrl-01": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-ctrl-02": "619ba5aecf6eda2c8cbf26be02bdd01987f6ef721415f71261d55b94f4aa6e3f",
+      "ts-ctrl-03": "99f3d34c351c5ca23f98560822c2fe807f34b32062e876705b8bc4c50a37ef1f",
+      "ts-ctrl-04": "8e1ff967917779d60b27262bf3303ab226e501c8375a616193f43123c09aee3a",
+      "ts-ctrl-05": "7e61566de2fa555c41636cb06ff16dc94b7d1454d4417a7fe86f99171ff30754",
+      "ts-ctrl-06": "87516f6fa46df600e0b597c499913ee9297e6ab408388dcfc2c200383c093ee1",
+      "ts-ctrl-07": "5d494ce96668a7d64cdfa23e2a6048269037ca47944fc178586d276b133c028e",
+      "ts-ctrl-08": "334e8835b41239b2d6ce9f6a9fd21cb9aa532600cb50aa5b674e70a1b1ddb366",
+      "ts-plant-01": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-02": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-03": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-04": "388a48e06920ed11dd5262ce1b1fb696480449d4f8f9ec8576e2472ce18469bf",
+      "ts-plant-05": "aaf9d2ff118abf9e389a082089324b54b3ff4b0aa64913c480e6c79bb24fd266",
+      "ts-plant-06": "d53a221d135cfcfd8a48d67d70c8808e8e5e827b911f4940c65a2736c3017644",
+      "ts-plant-07": "99f3d34c351c5ca23f98560822c2fe807f34b32062e876705b8bc4c50a37ef1f",
+      "ts-plant-08": "fb7e120ccbf23c5602437f44051aaa27e920e1f338d5e1148e95fbb15cf2933e"
+    },
+    "goldenBefore": {
+      "go-ctrl-01": "da8183cf8ccf4241f1792c2852f38d04c24bb12778cd13beb82ab400aad4d9fb",
+      "go-ctrl-02": "ad917d0a3a3a6a8070494ae5d87ce4fef4db0be344be15f91613b0d91a24f660",
+      "go-ctrl-03": "63b743d89275c5a398580be1625bce8e878ebcf95c6a4137ab135448cc5c4155",
+      "go-ctrl-04": "4bbd7d2e47c56fac575fb82e209ac77743428e627e888fe48d158c808007cfb4",
+      "go-ctrl-05": "16e45f87af949d1c45bf5fae010ef8e9acd366c35d8ec81328ac411d33893a5d",
+      "go-ctrl-06": "8d87fa69b1bd511ee1fe7cdb0138759e100c50e442d4541b2931bb3a441b27ec",
+      "go-ctrl-07": "58a6b2718cc21d0a2bb486c8052915889cb16b0305c2e90e708968e0464f40ba",
+      "go-ctrl-08": "894e4d4acb3727ed8a15dbe6f42fb494d236380a01885c1be913c09eff33707b",
+      "go-plant-01": "3e741158ac5e59e89a19e251ebc48871a05aaf847b5b06e4c2fa3160843d7465",
+      "go-plant-02": "f8897ae158ba3e720ca083d477b19224f1aa7fa454672e46b943ebba07953ec4",
+      "go-plant-03": "c7b6d39ece3b0f8e9b573b771a72601991aa543d945a58e768505188fc5764ee",
+      "go-plant-04": "ff32dd6b6bf12f6fe2785263b93a76a659b1f4ce9e739dc61b475791a12408ac",
+      "go-plant-05": "df61fde6e22fa1754247e2396636f18fe155f7b979668d873b693a6337fe3037",
+      "go-plant-06": "ee06dfbdcf7d12d1c7c08ace05a7fd1fa5b0080d5ecb69bdb8d22362a5d1df89",
+      "go-plant-07": "abfce662d6698b061f7c6482d70ae7a0a59844ceade28a08d5d6cec25a57b5b3",
+      "go-plant-08": "4955963a91f904bd047ca979629ef7f5c76ee8fcc598c54493214aa3fcd3cfac",
+      "py-c01-basic-imports": "21c9ecb2ae83db89d820dc8156e3c74eb1b7191ebe3adefad4fab3344a203db9",
+      "py-c02-relative-imports": "034ac483e76206d77529212d785efc03cca6a4a88e97c3901cc28ef6909cc4de",
+      "py-c03-init-reexport": "0ec87297467976c46dc037f8e9aaea4d733abaa103f303dc15f2da73f4f9573a",
+      "py-c04-src-layout": "932abbdad3e7cf463219be0f1e49828135529d1fce0ee8def3541e1da78d4efa",
+      "py-c05-from-submodule-vs-attr": "365ff4b053093f04f425d825b779fbef45d191fef271b6cbc78ef2c329ef1f3d",
+      "py-c06-conditional-imports": "723152e21507b1b7c53154a5c10e21cfc6a137685069dc99b139cbc1b4d99442",
+      "py-c07-external-and-stdlib": "7889948fd24e128143a1e79ebad681a6e906068fb3125a392ec82b5138b447d4",
+      "py-c08-multi-entrypoint": "afcf31f3ad50275a0eea35673c1b389c71daa05fbd6f17f4287c8a0777927910",
+      "py-p01-hallucinated-edge": "c28e3d56657fcd3651e5823a2aee9e28babd095c644c4837d1554a4935d5273c",
+      "py-p02-wrong-entrypoint": "aaca88c152162320fa00299399477c7920db53dfed271bc3a4e4b73080a03c9d",
+      "py-p03-missing-edge": "ada757dec2d87dfbe1ed3bc0fb2f438151daf0328fed9db5ed1f032f7a3166c2",
+      "py-p04-unclaimed-reachable": "a0fd7878a00ed314d38ca5f5d4e27da591952df4750485e42232eb7cf39d4613",
+      "py-p05-name-collision": "7dd675aea22be212917b863ecedb4558029c6875955e0fb3b75da6b2cd56d1dd",
+      "py-p06-dynamic-import-misread": "89683e2564b5616f4b0d6cd4747e0ca53bcb4608c184b0da2052682b151eeb7d",
+      "py-p07-reexport-misread": "224c9d6dcfe5171fd526deeccb47573616b8ae692a7bec820cf9c0c9fd112499",
+      "py-p08-alias-misparse": "174ccf43cc7d0374d5eac8d8c8dd6ce4e567030945d2f3825fe96c3ef8a5d583",
+      "ts-ctrl-01": "6b94b33b89c85c0bf8e0f152929711ca646e9dca53f82a8e1c4c32c29e135ca6",
+      "ts-ctrl-02": "440add6b2d43fc5b659a64ca132256bd2930a52becf16e5d52dd27464b77261a",
+      "ts-ctrl-03": "825135da1fcc0376a76af91a9a50419cb8c08bcc9158694cd0d78e61207a2c00",
+      "ts-ctrl-04": "a07bf565ed5b74846851f11253ed1ff62fd40dae8893e53127f084e4ea5c0da0",
+      "ts-ctrl-05": "787717f0bdfec9f7202a055a708bdb075038915db7d260686469670109c106db",
+      "ts-ctrl-06": "c00f4c53d6a6c44adcdb791e7f523c2704837742190a023b15385aa73f286b62",
+      "ts-ctrl-07": "aa2cdf847194657cce59b9ceabd29d17f1d75b56d30a16b3c1aa7206a50f57bd",
+      "ts-ctrl-08": "9b6c45485399534ca0c4d9d49c56e9567f476e7457a14e42dc247239fc73ef20",
+      "ts-plant-01": "d4ca15125b6ccef14724319721cbbe08f55a77c6d04b8b58d858872437b3055f",
+      "ts-plant-02": "895b75bcd0de2fbb0e30e92c132e97d6c8b501d1634b1ef5baf64bf3de5ab16c",
+      "ts-plant-03": "e357332db6b6a40ecc2abe53795cae7ad8e19c2396aebef7375686f8c2c6e29e",
+      "ts-plant-04": "2528f14ca4d305566e50ccbabfbb7b4626ce508199029879ffb5c2e47eb8ec1d",
+      "ts-plant-05": "a19647adda108fd5e64183f0006273f2d57d998e04d5c80e3c86791f7d811b43",
+      "ts-plant-06": "0c6dfa8fb141ef1017d964ad244d130a9bca012d2baf8ba7d82cf173bee30a5c",
+      "ts-plant-07": "093ecf0d61943bb6c5d3aaf75c3a15e8c06b4da0ad924ca7d75aefc98f95827d",
+      "ts-plant-08": "c228966aac2e8942974947cafefd25bcc42e8ff47fa2f19862b74c186e039cea"
+    },
+    "goldenAfter": {
+      "go-ctrl-01": "da8183cf8ccf4241f1792c2852f38d04c24bb12778cd13beb82ab400aad4d9fb",
+      "go-ctrl-02": "ad917d0a3a3a6a8070494ae5d87ce4fef4db0be344be15f91613b0d91a24f660",
+      "go-ctrl-03": "63b743d89275c5a398580be1625bce8e878ebcf95c6a4137ab135448cc5c4155",
+      "go-ctrl-04": "4bbd7d2e47c56fac575fb82e209ac77743428e627e888fe48d158c808007cfb4",
+      "go-ctrl-05": "16e45f87af949d1c45bf5fae010ef8e9acd366c35d8ec81328ac411d33893a5d",
+      "go-ctrl-06": "8d87fa69b1bd511ee1fe7cdb0138759e100c50e442d4541b2931bb3a441b27ec",
+      "go-ctrl-07": "58a6b2718cc21d0a2bb486c8052915889cb16b0305c2e90e708968e0464f40ba",
+      "go-ctrl-08": "894e4d4acb3727ed8a15dbe6f42fb494d236380a01885c1be913c09eff33707b",
+      "go-plant-01": "3e741158ac5e59e89a19e251ebc48871a05aaf847b5b06e4c2fa3160843d7465",
+      "go-plant-02": "f8897ae158ba3e720ca083d477b19224f1aa7fa454672e46b943ebba07953ec4",
+      "go-plant-03": "c7b6d39ece3b0f8e9b573b771a72601991aa543d945a58e768505188fc5764ee",
+      "go-plant-04": "ff32dd6b6bf12f6fe2785263b93a76a659b1f4ce9e739dc61b475791a12408ac",
+      "go-plant-05": "df61fde6e22fa1754247e2396636f18fe155f7b979668d873b693a6337fe3037",
+      "go-plant-06": "ee06dfbdcf7d12d1c7c08ace05a7fd1fa5b0080d5ecb69bdb8d22362a5d1df89",
+      "go-plant-07": "abfce662d6698b061f7c6482d70ae7a0a59844ceade28a08d5d6cec25a57b5b3",
+      "go-plant-08": "4955963a91f904bd047ca979629ef7f5c76ee8fcc598c54493214aa3fcd3cfac",
+      "py-c01-basic-imports": "21c9ecb2ae83db89d820dc8156e3c74eb1b7191ebe3adefad4fab3344a203db9",
+      "py-c02-relative-imports": "034ac483e76206d77529212d785efc03cca6a4a88e97c3901cc28ef6909cc4de",
+      "py-c03-init-reexport": "0ec87297467976c46dc037f8e9aaea4d733abaa103f303dc15f2da73f4f9573a",
+      "py-c04-src-layout": "932abbdad3e7cf463219be0f1e49828135529d1fce0ee8def3541e1da78d4efa",
+      "py-c05-from-submodule-vs-attr": "365ff4b053093f04f425d825b779fbef45d191fef271b6cbc78ef2c329ef1f3d",
+      "py-c06-conditional-imports": "723152e21507b1b7c53154a5c10e21cfc6a137685069dc99b139cbc1b4d99442",
+      "py-c07-external-and-stdlib": "7889948fd24e128143a1e79ebad681a6e906068fb3125a392ec82b5138b447d4",
+      "py-c08-multi-entrypoint": "afcf31f3ad50275a0eea35673c1b389c71daa05fbd6f17f4287c8a0777927910",
+      "py-p01-hallucinated-edge": "c28e3d56657fcd3651e5823a2aee9e28babd095c644c4837d1554a4935d5273c",
+      "py-p02-wrong-entrypoint": "aaca88c152162320fa00299399477c7920db53dfed271bc3a4e4b73080a03c9d",
+      "py-p03-missing-edge": "ada757dec2d87dfbe1ed3bc0fb2f438151daf0328fed9db5ed1f032f7a3166c2",
+      "py-p04-unclaimed-reachable": "a0fd7878a00ed314d38ca5f5d4e27da591952df4750485e42232eb7cf39d4613",
+      "py-p05-name-collision": "7dd675aea22be212917b863ecedb4558029c6875955e0fb3b75da6b2cd56d1dd",
+      "py-p06-dynamic-import-misread": "89683e2564b5616f4b0d6cd4747e0ca53bcb4608c184b0da2052682b151eeb7d",
+      "py-p07-reexport-misread": "224c9d6dcfe5171fd526deeccb47573616b8ae692a7bec820cf9c0c9fd112499",
+      "py-p08-alias-misparse": "174ccf43cc7d0374d5eac8d8c8dd6ce4e567030945d2f3825fe96c3ef8a5d583",
+      "ts-ctrl-01": "6b94b33b89c85c0bf8e0f152929711ca646e9dca53f82a8e1c4c32c29e135ca6",
+      "ts-ctrl-02": "440add6b2d43fc5b659a64ca132256bd2930a52becf16e5d52dd27464b77261a",
+      "ts-ctrl-03": "825135da1fcc0376a76af91a9a50419cb8c08bcc9158694cd0d78e61207a2c00",
+      "ts-ctrl-04": "a07bf565ed5b74846851f11253ed1ff62fd40dae8893e53127f084e4ea5c0da0",
+      "ts-ctrl-05": "787717f0bdfec9f7202a055a708bdb075038915db7d260686469670109c106db",
+      "ts-ctrl-06": "c00f4c53d6a6c44adcdb791e7f523c2704837742190a023b15385aa73f286b62",
+      "ts-ctrl-07": "aa2cdf847194657cce59b9ceabd29d17f1d75b56d30a16b3c1aa7206a50f57bd",
+      "ts-ctrl-08": "9b6c45485399534ca0c4d9d49c56e9567f476e7457a14e42dc247239fc73ef20",
+      "ts-plant-01": "d4ca15125b6ccef14724319721cbbe08f55a77c6d04b8b58d858872437b3055f",
+      "ts-plant-02": "895b75bcd0de2fbb0e30e92c132e97d6c8b501d1634b1ef5baf64bf3de5ab16c",
+      "ts-plant-03": "e357332db6b6a40ecc2abe53795cae7ad8e19c2396aebef7375686f8c2c6e29e",
+      "ts-plant-04": "2528f14ca4d305566e50ccbabfbb7b4626ce508199029879ffb5c2e47eb8ec1d",
+      "ts-plant-05": "a19647adda108fd5e64183f0006273f2d57d998e04d5c80e3c86791f7d811b43",
+      "ts-plant-06": "0c6dfa8fb141ef1017d964ad244d130a9bca012d2baf8ba7d82cf173bee30a5c",
+      "ts-plant-07": "093ecf0d61943bb6c5d3aaf75c3a15e8c06b4da0ad924ca7d75aefc98f95827d",
+      "ts-plant-08": "c228966aac2e8942974947cafefd25bcc42e8ff47fa2f19862b74c186e039cea"
+    }
+  },
+  "replayHashes": {
+    "oracleMainHash": "01be7fca15ec1c819a5847c211fd89921d2059e99096e1f0219ad934a3eec37a",
+    "productionMainHash": "afebc49ef2b80a00092752dabb1fa93ba66182ad67e3ab79ac103325feba7ac6",
+    "goldenHash": "32901334c69208dff6618886c780e76c32440e820e89d0ced45dfe5753d2b8e6",
+    "oracleReplayDistinct": 1,
+    "productionReplayDistinct": 1,
+    "oracleReplayMatchesMain": true,
+    "productionReplayMatchesMain": true
+  },
+  "perFixture": [
+    {
+      "fixture": "go-ctrl-01",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-02",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-03",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-04",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-05",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-06",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-07",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-ctrl-08",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "go-plant-01",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "cmd/server",
+          "id": "HALLUCINATED_EDGE",
+          "to": "internal/store"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "cmd/server",
+          "to": "internal/store"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-02",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "wrong-entrypoint",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "internal/app",
+          "id": "WRONG_ENTRYPOINT"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "internal/app"
+        }
+      ],
+      "expectedFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-03",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "missing-edge",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "internal/app",
+          "id": "MISSING_EDGE",
+          "to": "internal/store"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "internal/app",
+          "to": "internal/store"
+        }
+      ],
+      "expectedFindings": [
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-04",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "unclaimed-reachable-module",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "internal/app",
+          "id": "MISSING_EDGE",
+          "to": "internal/store"
+        },
+        {
+          "from": "internal/store",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "internal/app",
+          "to": "internal/store"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "internal/store"
+        }
+      ],
+      "expectedFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-05",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "name-collision",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "internal/b/svc",
+          "id": "HALLUCINATED_EDGE",
+          "to": "internal/a/util"
+        },
+        {
+          "from": "internal/b/svc",
+          "id": "MISSING_EDGE",
+          "to": "internal/b/util"
+        },
+        {
+          "from": "internal/b/svc",
+          "id": "NAME_COLLISION_CONFUSION",
+          "to": "internal/a/util"
+        },
+        {
+          "from": "internal/b/util",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "internal/b/svc",
+          "to": "internal/a/util"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "internal/b/svc",
+          "to": "internal/b/util"
+        },
+        {
+          "id": "NAME_COLLISION_CONFUSION",
+          "from": "internal/b/svc",
+          "to": "internal/a/util"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "internal/b/util"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-06",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "alias-misparse",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "cmd",
+          "id": "HALLUCINATED_EDGE",
+          "to": "third_party/shared"
+        },
+        {
+          "from": "cmd",
+          "id": "MISSING_EDGE",
+          "to": "third_party/shared/util"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "cmd",
+          "to": "third_party/shared"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "cmd",
+          "to": "third_party/shared/util"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-07",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "re-export-misread",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "cmd",
+          "id": "HALLUCINATED_EDGE",
+          "to": "internal/b"
+        },
+        {
+          "from": "cmd",
+          "id": "MISSING_EDGE",
+          "to": "internal/a"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "cmd",
+          "to": "internal/b"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "cmd",
+          "to": "internal/a"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "go-plant-08",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "build-tag-misread",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "internal/plat",
+          "id": "HALLUCINATED_EDGE",
+          "to": "internal/winonly"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "internal/plat",
+          "to": "internal/winonly"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-c01-basic-imports",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c02-relative-imports",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c03-init-reexport",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c04-src-layout",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c05-from-submodule-vs-attr",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c06-conditional-imports",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c07-external-and-stdlib",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-c08-multi-entrypoint",
+      "language": "python",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "py-p01-hallucinated-edge",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "HALLUCINATED_EDGE",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "billing/refunds.py"
+        },
+        {
+          "from": "billing/refunds.py",
+          "id": "HALLUCINATED_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "billing/api.py",
+          "to": "billing/refunds.py"
+        },
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "billing/refunds.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "billing/refunds.py"
+        },
+        {
+          "from": "billing/refunds.py",
+          "id": "HALLUCINATED_MODULE"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p02-wrong-entrypoint",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "WRONG_ENTRYPOINT",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "WRONG_ENTRYPOINT"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "billing/api.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "WRONG_ENTRYPOINT"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p03-missing-edge",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "MISSING_EDGE",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "MISSING_EDGE",
+          "to": "billing/auth.py"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "billing/api.py",
+          "to": "billing/auth.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "MISSING_EDGE",
+          "to": "billing/auth.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p04-unclaimed-reachable",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "UNCLAIMED_REACHABLE_MODULE",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "MISSING_EDGE",
+          "to": "billing/migrations.py"
+        },
+        {
+          "from": "billing/migrations.py",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "billing/api.py",
+          "to": "billing/migrations.py"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "billing/migrations.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "billing/api.py",
+          "id": "MISSING_EDGE",
+          "to": "billing/migrations.py"
+        },
+        {
+          "from": "billing/migrations.py",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p05-name-collision",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "NAME_COLLISION_CONFUSION",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "shop/cart.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "lib/utils.py"
+        },
+        {
+          "from": "shop/cart.py",
+          "id": "MISSING_EDGE",
+          "to": "shop/utils.py"
+        },
+        {
+          "from": "shop/cart.py",
+          "id": "NAME_COLLISION_CONFUSION",
+          "to": "lib/utils.py"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "shop/cart.py",
+          "to": "lib/utils.py"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "shop/cart.py",
+          "to": "shop/utils.py"
+        },
+        {
+          "id": "NAME_COLLISION_CONFUSION",
+          "from": "shop/cart.py",
+          "to": "lib/utils.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "shop/cart.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "lib/utils.py"
+        },
+        {
+          "from": "shop/cart.py",
+          "id": "MISSING_EDGE",
+          "to": "shop/utils.py"
+        },
+        {
+          "from": "shop/cart.py",
+          "id": "NAME_COLLISION_CONFUSION",
+          "to": "lib/utils.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p06-dynamic-import-misread",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "DYNAMIC_IMPORT_UNKNOWN",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "loader.py",
+          "id": "DYNAMIC_IMPORT_UNKNOWN"
+        },
+        {
+          "from": "loader.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "plugins/alpha.py"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "DYNAMIC_IMPORT_UNKNOWN",
+          "from": "loader.py"
+        },
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "loader.py",
+          "to": "plugins/alpha.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "loader.py",
+          "id": "DYNAMIC_IMPORT_UNKNOWN"
+        },
+        {
+          "from": "loader.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "plugins/alpha.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p07-reexport-misread",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "REEXPORT_MISREAD",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "main.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "pkg/core.py"
+        },
+        {
+          "from": "main.py",
+          "id": "MISSING_EDGE",
+          "to": "pkg/__init__.py"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "main.py",
+          "to": "pkg/core.py"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "main.py",
+          "to": "pkg/__init__.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "main.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "pkg/core.py"
+        },
+        {
+          "from": "main.py",
+          "id": "MISSING_EDGE",
+          "to": "pkg/__init__.py"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "py-p08-alias-misparse",
+      "language": "python",
+      "kind": "planted",
+      "plantedClass": "ALIAS_MISPARSE",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "main.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "utils.py"
+        },
+        {
+          "from": "utils.py",
+          "id": "HALLUCINATED_MODULE"
+        },
+        {
+          "from": "main.py",
+          "id": "MISSING_EDGE",
+          "to": "pkg/utils.py"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "main.py",
+          "to": "utils.py"
+        },
+        {
+          "id": "HALLUCINATED_MODULE",
+          "from": "utils.py"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "main.py",
+          "to": "pkg/utils.py"
+        }
+      ],
+      "expectedFindings": [
+        {
+          "from": "main.py",
+          "id": "HALLUCINATED_EDGE",
+          "to": "utils.py"
+        },
+        {
+          "from": "main.py",
+          "id": "MISSING_EDGE",
+          "to": "pkg/utils.py"
+        },
+        {
+          "from": "utils.py",
+          "id": "HALLUCINATED_MODULE"
+        }
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-ctrl-01",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-02",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-03",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-04",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-05",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-06",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-07",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-ctrl-08",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "expectedStatus": "PASS",
+      "oracleAuditStatus": "PASS",
+      "productionAuditStatus": "PASS",
+      "oracleFindings": [],
+      "productionFindings": [],
+      "expectedFindings": [],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": null,
+      "controlClean": true
+    },
+    {
+      "fixture": "ts-plant-01",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "hallucinated-edge",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/main.ts",
+          "id": "HALLUCINATED_EDGE",
+          "to": "src/services/api.ts"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/main.ts",
+          "to": "src/services/api.ts"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-02",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "wrong-entrypoint",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/app.ts",
+          "id": "WRONG_ENTRYPOINT"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "WRONG_ENTRYPOINT",
+          "from": "src/app.ts"
+        }
+      ],
+      "expectedFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-03",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "missing-edge",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/app.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/util.ts"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/app.ts",
+          "to": "src/util.ts"
+        }
+      ],
+      "expectedFindings": [
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-04",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "unclaimed-reachable-module",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/app.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/services/api.ts"
+        },
+        {
+          "from": "src/services/api.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/util.ts"
+        },
+        {
+          "from": "src/services/api.ts",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/app.ts",
+          "to": "src/services/api.ts"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/services/api.ts",
+          "to": "src/util.ts"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "src/services/api.ts"
+        }
+      ],
+      "expectedFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-05",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "name-collision",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/b/worker.ts",
+          "id": "HALLUCINATED_EDGE",
+          "to": "src/a/util.ts"
+        },
+        {
+          "from": "src/b/worker.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/b/util.ts"
+        },
+        {
+          "from": "src/b/worker.ts",
+          "id": "NAME_COLLISION_CONFUSION",
+          "to": "src/a/util.ts"
+        },
+        {
+          "from": "src/b/util.ts",
+          "id": "UNCLAIMED_REACHABLE_MODULE"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/b/worker.ts",
+          "to": "src/a/util.ts"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/b/worker.ts",
+          "to": "src/b/util.ts"
+        },
+        {
+          "id": "NAME_COLLISION_CONFUSION",
+          "from": "src/b/worker.ts",
+          "to": "src/a/util.ts"
+        },
+        {
+          "id": "UNCLAIMED_REACHABLE_MODULE",
+          "from": "src/b/util.ts"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-06",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "dynamic-import-misread",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/main.ts",
+          "id": "DYNAMIC_IMPORT_UNKNOWN"
+        },
+        {
+          "from": "src/main.ts",
+          "id": "HALLUCINATED_EDGE",
+          "to": "src/other.ts"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "DYNAMIC_IMPORT_UNKNOWN",
+          "from": "src/main.ts"
+        },
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/main.ts",
+          "to": "src/other.ts"
+        }
+      ],
+      "expectedFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN",
+        "HALLUCINATED_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-07",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "re-export-misread",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/main.ts",
+          "id": "HALLUCINATED_EDGE",
+          "to": "src/barrel/a.ts"
+        },
+        {
+          "from": "src/main.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/barrel/index.ts"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/main.ts",
+          "to": "src/barrel/a.ts"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/main.ts",
+          "to": "src/barrel/index.ts"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    },
+    {
+      "fixture": "ts-plant-08",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "alias-misparse",
+      "expectedStatus": "FAIL",
+      "oracleAuditStatus": "FAIL",
+      "productionAuditStatus": "FAIL",
+      "oracleFindings": [
+        {
+          "from": "src/main.ts",
+          "id": "HALLUCINATED_EDGE",
+          "to": "src/lib/other.ts"
+        },
+        {
+          "from": "src/main.ts",
+          "id": "MISSING_EDGE",
+          "to": "src/lib/util.ts"
+        }
+      ],
+      "productionFindings": [
+        {
+          "id": "HALLUCINATED_EDGE",
+          "from": "src/main.ts",
+          "to": "src/lib/other.ts"
+        },
+        {
+          "id": "MISSING_EDGE",
+          "from": "src/main.ts",
+          "to": "src/lib/util.ts"
+        }
+      ],
+      "expectedFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "snapshotStatus": "MATCH",
+      "parity": "PASS",
+      "mismatches": [],
+      "plantedDetected": true,
+      "controlClean": null
+    }
+  ]
+}

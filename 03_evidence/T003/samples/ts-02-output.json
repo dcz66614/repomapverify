@@ -1,0 +1,168 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "src/a.ts",
+      "moduleId": "aab0fd2a3db3b70eea83d2b0deb5d4dbd21742de2f92358d9ad785429db21c2c",
+      "contentSha256": "602967f049b48ab0dd84bca27e963fbea4c18cab1a288d6a90c6e38847c37b8c",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/b.ts",
+      "moduleId": "17a3f33a37ee0a03e653de72d7ef3d89c83dc4bbf9b2edaa28f3bbebb6fe35ad",
+      "contentSha256": "69468cefe3694844eb7e062ab87fd6295f25255a5e12f02f2f10dc55dfaa661d",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/c.ts",
+      "moduleId": "32ecad94ed986fb1f38ef66ff1fc5b22d9e11e2df9d7f5e538ba5ede4c081b2f",
+      "contentSha256": "b7defcba5edab38135a5eedb13194e5830780d04d20bfd0f168bd61336cc69aa",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/d.ts",
+      "moduleId": "f54879011fb889e8feaae065e1b4ba340a3dd3f8274a9398a0b22c302c496184",
+      "contentSha256": "b8d81c4c6694f416bdfa8c7177c4eb361ed5428da25d8d1d3f3597a93d0eac23",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/deep/nest/leaf.ts",
+      "moduleId": "375aab9ae59b6ca65b7abbaaeb4cc031beecbe42e76db7f6bcafb9fa3e08ea32",
+      "contentSha256": "54a8a42022ef58fcb725d1615ca989bed6a680b4ff5cc8d254070c2d8435e5ad",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "contentSha256": "ca6c7e74d0a13af77d5700e49abb0c86aa2dfe64f1e53af76526c25fcb2bb9ec",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/side.ts",
+      "moduleId": "43904148f2f8508379ac0bb1259b5d10070975869aea2ad63e37020c607b0e28",
+      "contentSha256": "5581a78ea6ef9073f15efa3eacb923ff71da9e688214688ab2f8dde0fdd9dc97",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/util.ts",
+      "moduleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "contentSha256": "173f17c5be78828c89fdce90e0530dfbbc7f644242f141aa43819db70873b254",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/deep/nest/leaf.ts",
+      "to": "src/util.ts",
+      "fromModuleId": "375aab9ae59b6ca65b7abbaaeb4cc031beecbe42e76db7f6bcafb9fa3e08ea32",
+      "toModuleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/deep/nest/leaf.ts",
+        "line": 1,
+        "specifier": "../../util"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/a.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "aab0fd2a3db3b70eea83d2b0deb5d4dbd21742de2f92358d9ad785429db21c2c",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 1,
+        "specifier": "./a"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/b.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "17a3f33a37ee0a03e653de72d7ef3d89c83dc4bbf9b2edaa28f3bbebb6fe35ad",
+      "typeOnly": false,
+      "kind": "import-equals",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 2,
+        "specifier": "./b"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/c.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "32ecad94ed986fb1f38ef66ff1fc5b22d9e11e2df9d7f5e538ba5ede4c081b2f",
+      "typeOnly": false,
+      "kind": "export-from",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 4,
+        "specifier": "./c"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/d.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "f54879011fb889e8feaae065e1b4ba340a3dd3f8274a9398a0b22c302c496184",
+      "typeOnly": true,
+      "kind": "export-from",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 5,
+        "specifier": "./d"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/side.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "43904148f2f8508379ac0bb1259b5d10070975869aea2ad63e37020c607b0e28",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 3,
+        "specifier": "./side"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": []
+}

@@ -1,0 +1,9 @@
+
+RESULT: PASS
+Ground truth: 4 modules, 3 edges
+Claimed: 4 modules, 3 edges
+Coverage: 8 / 8 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R2/venv-py-dotvenv-prod-out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/03_evidence/FIX_T013_R2/venv-py-dotvenv-prod-out/repomapverify-report.html

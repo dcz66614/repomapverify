@@ -1,0 +1,1 @@
+{"name": "cond-pkg", "version": "0.1.0", "exports": {".": {"types": "./src/index.d.ts", "import": "./src/index.ts", "default": "./src/index.ts"}, "./feat": {"node": {"import": "./src/feat.ts"}}}}

@@ -1,0 +1,13 @@
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+
+module_id api : a9aa09fadfeabdf0ba01da7a2299833b4fc9c3f315d787740e7c25d0ee19b36e
+module_id auth: 42eb6fcee3357108fa061bf8ebe6db80f64259be9551c6567b9e2ebf2bd84861
+same-path same-content content_sha equal: true 8ff436def1451285599a1b1ad70800493b8dcafde2912e1a38345633054e4c26
+different paths -> different module_id: true
+go package hash order-independent: true 892f78547af21debea9df40924e8494bb721cb969e9bad2678afedeefc42f274
+snapshot stale check: STALE_SNAPSHOT
+snapshot match check: MATCH
+toml parse: {"paths":["src/main.ts","src/cli.ts"]}
+aider forces PARTIAL: PARTIAL_SUBGRAPH | graphify forces: undefined

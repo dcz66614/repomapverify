@@ -1,0 +1,73 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "5458624f09166e8bfb190e87617713d609f3ddf1953dbd6a91e08d011aa80a0e",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "efd5cc9c61a4e32d1a15b0378089e6e331578fb1df7f3d3ee03a2c929f00e973",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/plat",
+      "moduleId": "0a84db4a6bc6c9c44a286eee058c5280fe5c1110f49b1dcd32fffe8dd029538d",
+      "contentSha256": "39b2664b48c177e31408a0cf9f9ff4ba429b101e6d3c3a1b49d1c27984e9639f",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "plat",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/plat/multi.go",
+          "contentSha256": "5872c04458cd64dcdaa98c3203b902b3a6e41602d8f3682a671f09f94ed1575c",
+          "isGenerated": false,
+          "isCgo": false
+        },
+        {
+          "relativePath": "internal/plat/new.go",
+          "contentSha256": "ec950c0b3c5cac21a8df942c917838d09d886f209cb24bca6c7a5755dbe27cc9",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "internal/plat",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "0a84db4a6bc6c9c44a286eee058c5280fe5c1110f49b1dcd32fffe8dd029538d",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 5,
+        "importPath": "example.com/demo/internal/plat"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 2,
+  "unknowns": [],
+  "excludedFiles": [
+    {
+      "relativePath": "internal/plat/future.go",
+      "reason": "BUILD_EXCLUDED",
+      "detail": "excluded by build constraints under GOOS=linux/GOARCH=amd64"
+    }
+  ],
+  "modulePath": "example.com/demo"
+}

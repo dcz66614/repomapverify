@@ -1,0 +1,1 @@
+{"name": "smoke", "exports": {".": "./src/index.ts", "./lib/*": "./src/lib/*.ts"}}

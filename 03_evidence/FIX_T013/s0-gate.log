@@ -1,0 +1,90 @@
+
+> repomapverify@0.1.0 s0:gate
+> node scripts/s0-gate.mjs --replays 100
+
+P024 S0 GATE -- seed P024-REPOMAPVERIFY-S0-2026-11-14
+started (UTC): 2026-11-14T16:36:34.034Z
+replays: 100
+
+fixtures: 48 (python 16, typescript 16, go 16)
+fixture repo trees hashed (before): 48/48
+== clean build ==
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+build exit: 0
+== external-request proof (grep) ==
+command: grep -rn -E "https?://|\\bfetch\\s*\\(|WebSocket|node:http|node:https|node:net|node:dns|XMLHttpRequest|axios|node-fetch|undici" src scripts
+grep exit code: 1 (1 = no matches)
+grep matches: (none)
+oracle imports: argparse, ast, hashlib, json, os, re, sys, unicodedata
+oracle non-stdlib imports: (none)
+== independent Oracle ==
+oracle exit: 0
+oracle fixtures: 48, main hash: 01be7fca15ec1c819a5847c211fd89921d2059e99096e1f0219ad934a3eec37a
+oracle replay exit: 0
+oracle replay: 100 runs, distinct hashes: 1
+== production extractors ==
+prod-probe exit: 0
+production fixtures: 48, main hash: afebc49ef2b80a00092752dabb1fa93ba66182ad67e3ab79ac103325feba7ac6
+prod-probe replay exit: 0
+production replay: 100 runs, distinct hashes: 1
+== three-way parity + audits ==
+go-ctrl-01: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-02: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-03: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-04: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-05: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-06: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-07: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-ctrl-08: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+go-plant-01: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-02: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-03: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-04: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-05: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-06: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-07: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+go-plant-08: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-c01-basic-imports: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c02-relative-imports: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c03-init-reexport: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c04-src-layout: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c05-from-submodule-vs-attr: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c06-conditional-imports: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c07-external-and-stdlib: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-c08-multi-entrypoint: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+py-p01-hallucinated-edge: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p02-wrong-entrypoint: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p03-missing-edge: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p04-unclaimed-reachable: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p05-name-collision: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p06-dynamic-import-misread: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p07-reexport-misread: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+py-p08-alias-misparse: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-ctrl-01: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-02: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-03: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-04: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-05: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-06: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-07: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-ctrl-08: parity=PASS oracle=PASS production=PASS expected=PASS mismatches=0
+ts-plant-01: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-02: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-03: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-04: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-05: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-06: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-07: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+ts-plant-08: parity=PASS oracle=FAIL production=FAIL expected=FAIL mismatches=0
+source-dir writes (changed fixture trees): 0
+golden.json files changed: 0
+golden hash: 32901334c69208dff6618886c780e76c32440e820e89d0ced45dfe5753d2b8e6
+gate hash: 7d4efa1d97798819c2eee29950d57f0d24ffe5961c273f3c9cd37284e7c437cd
+replay oracle: distinct=1 matches-main=true
+replay production: distinct=1 matches-main=true
+
+THRESHOLDS: parity 48/48 (need 48/48); planted 24/24 (need 24/24); control false alarms 0/24 (need 0/24); replay distinct=1; external=0; source writes=0; goldens changed=0
+S0 GATE VERDICT: PASS
+evidence written: /home/hatch/workspace/p024-repomapverify/03_evidence/S0/S0_GATE.json, ORACLE_PARITY.json, REPEAT_HASH.json
+S0 GATE VERDICT: PASS (exit 0)

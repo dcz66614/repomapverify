@@ -1,0 +1,179 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "synthetic-go-plant-01",
+  "map_id": "synthetic-go-plant-01",
+  "status": "FAIL",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 3,
+    "edges": 2
+  },
+  "ground_truth": {
+    "modules": 3,
+    "edges": 2
+  },
+  "claimed": {
+    "modules": 3,
+    "edges": 3
+  },
+  "coverage": {
+    "verifiedClaims": 6,
+    "totalClaims": 7,
+    "verified_claims": 6,
+    "total_claims": 7
+  },
+  "findings": [
+    {
+      "id": "HALLUCINATED_EDGE",
+      "severity": "P1",
+      "from": "cmd/server",
+      "to": "internal/store",
+      "detail": "claimed edge cmd/server -> internal/store does not exist in the ground-truth graph",
+      "claimedJsonPath": "edges[1]"
+    }
+  ],
+  "infoFindings": [],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "2bfd7633d66abe4e68a7a50d3a8f1c6a78b6ae116e4a777e691e8637dcbbea08",
+    "modules": [
+      {
+        "path": "cmd/server",
+        "moduleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+        "contentSha256": "54838abf010f77389af3d508eac15922bd3baad84549623dfab896926ddbaef0"
+      },
+      {
+        "path": "internal/app",
+        "moduleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+        "contentSha256": "440aaf9f2fe978c4abf7f756dabe029284ca15b960e8fb8a76344ae194784a59"
+      },
+      {
+        "path": "internal/store",
+        "moduleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+        "contentSha256": "edf514b6c154443df40557c3c4bc839bfd55052143b6782985fb2f989aa1b067"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": []
+  },
+  "modules": [
+    {
+      "path": "cmd/server",
+      "moduleId": "fb983965a7a9526b263f40d7779920f328ab13639628dcb8866b13c908a92eab",
+      "language": "go",
+      "nodeKind": "package",
+      "contentSha256": "54838abf010f77389af3d508eac15922bd3baad84549623dfab896926ddbaef0",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "internal/app"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "internal/app",
+        "internal/store"
+      ]
+    },
+    {
+      "path": "internal/app",
+      "moduleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "language": "go",
+      "nodeKind": "package",
+      "contentSha256": "440aaf9f2fe978c4abf7f756dabe029284ca15b960e8fb8a76344ae194784a59",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "cmd/server"
+      ],
+      "outEdgesReal": [
+        "internal/store"
+      ],
+      "inEdgesClaimed": [
+        "cmd/server"
+      ],
+      "outEdgesClaimed": [
+        "internal/store"
+      ]
+    },
+    {
+      "path": "internal/store",
+      "moduleId": "c9018bcaac386cab7b03f4f8ff633be14d5fc2618a1ed81f6d72033552a00490",
+      "language": "go",
+      "nodeKind": "package",
+      "contentSha256": "edf514b6c154443df40557c3c4bc839bfd55052143b6782985fb2f989aa1b067",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "internal/app"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "cmd/server",
+        "internal/app"
+      ],
+      "outEdgesClaimed": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd/server",
+      "to": "internal/app",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "cmd/server/main.go",
+        "line": 5,
+        "statement": "import \"example.com/demo/internal/app\""
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "cmd/server",
+      "to": "internal/store",
+      "claimed": true,
+      "real": false,
+      "status": "hallucinated",
+      "claimedJsonPath": "edges[1]"
+    },
+    {
+      "from": "internal/app",
+      "to": "internal/store",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "internal/app/app.go",
+        "line": 5,
+        "statement": "import \"example.com/demo/internal/store\""
+      },
+      "claimedJsonPath": "edges[2]"
+    }
+  ],
+  "mapWarnings": [],
+  "canonicalSemanticHash": "106c8c52c79cb95b2e7d63c86ae551b85fccbadd8de2aa8fb3d00abca0496711"
+}

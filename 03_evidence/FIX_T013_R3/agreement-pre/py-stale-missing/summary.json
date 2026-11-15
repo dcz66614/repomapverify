@@ -1,0 +1,20 @@
+{
+ "production": {
+  "exit": 2,
+  "status": "INCOMPLETE",
+  "findings": [],
+  "snapshotStatus": "STALE_SNAPSHOT"
+ },
+ "oracle": {
+  "status": "FAIL",
+  "snapshotStatus": "STALE_SNAPSHOT",
+  "findings": [
+   [
+    "MISSING_EDGE",
+    "extra.py",
+    "billing/api.py"
+   ]
+  ],
+  "unknownImportsPresent": false
+ }
+}

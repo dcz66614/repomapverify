@@ -1,0 +1,10 @@
+file: .github/workflows/repomapverify.yml
+YAML parse: OK (PyYAML safe_load, no error)
+name: repomapverify
+on: {'push': None, 'pull_request': None}
+runs-on: ubuntu-latest
+setup-node action: actions/setup-node@v4 node-version: 24 (pinned Node 24)
+audit command present: True
+install steps: True && build present: True
+env ALLOW_INCOMPLETE default: 'false'
+steps: ['Check out', 'Set up Node.js 24', 'Install dependencies', 'Build', 'Audit claimed repo map', 'Upload report']

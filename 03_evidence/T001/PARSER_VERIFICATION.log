@@ -1,0 +1,27 @@
+== packages ==
+  web-tree-sitter@0.27.2  license=MIT
+PASS  package web-tree-sitter is MIT — 0.27.2
+  tree-sitter-python@0.25.0  license=MIT
+PASS  package tree-sitter-python is MIT — 0.25.0
+  tree-sitter-typescript@0.23.2  license=MIT
+PASS  package tree-sitter-typescript is MIT — 0.23.2
+  tree-sitter-go@0.25.0  license=MIT
+PASS  package tree-sitter-go is MIT — 0.25.0
+== runtime initialised (web-tree-sitter WASM) ==
+PASS  python: parses without error — (module (import_statement name: (dotted_name (identifier))) (import_statement name: (dotted_name (identifier) (identifie
+PASS  python: finds 2 import_statement nodes
+PASS  python: finds 4 import_from_statement nodes
+  python sexp: (module (import_statement name: (dotted_name (identifier))) (import_statement name: (dotted_name (identifier) (identifier))) (import_from_statement module_name: (dotted_name (identifier) (identifier))
+PASS  typescript: parses without error — (program (import_statement (import_clause (named_imports (import_specifier name: (identifier)))) source: (string (string
+PASS  typescript: finds 3 import_statement nodes
+PASS  typescript: finds 1 export_statement node
+  typescript sexp: (program (import_statement (import_clause (named_imports (import_specifier name: (identifier)))) source: (string (string_fragment))) (import_statement (import_clause (identifier)) source: (string (str
+PASS  tsx: parses without error — (program (import_statement (import_clause (identifier)) source: (string (string_fragment))) (import_statement (import_cl
+PASS  tsx: finds 2 import_statement nodes
+PASS  go: parses without error — (source_file (package_clause (package_identifier)) (import_declaration (import_spec_list (import_spec path: (interpreted
+PASS  go: finds 1 import_declaration node
+PASS  go: finds 3 import_spec nodes
+  go sexp: (source_file (package_clause (package_identifier)) (import_declaration (import_spec_list (import_spec path: (interpreted_string_literal (interpreted_string_literal_content))) (import_spec path: (inter
+PASS  python: broken sample reports an error — (module (function_definition name: (identifier) parameters: (parameters (MISSING ")")) body: (block (import_statement na
+
+== result: ALL CHECKS PASSED ==

@@ -1,0 +1,61 @@
+{
+  "language": "go",
+  "modules": [
+    {
+      "path": "cmd",
+      "moduleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "contentSha256": "2b0eeb6778b0a5ed76ca1881a7240458744a690d26ca77664625a21e09d50eff",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "main",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "cmd/main.go",
+          "contentSha256": "45fbf48b6f218950fd1a062e2db3a49fb77da6031c9d1dbc3b84f0f08ab50230",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    },
+    {
+      "path": "internal/app",
+      "moduleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "contentSha256": "55eebf0a5a6ce78db36414451834d56abfd1c7d1440ee0a51b068fbbffb0266e",
+      "nodeKind": "package",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "packageName": "app",
+      "hasCgo": false,
+      "files": [
+        {
+          "relativePath": "internal/app/app.go",
+          "contentSha256": "0fdf6093501ffb27bfc0a3350c562143d60f00ad5f4ef454daf584ca4fcd5211",
+          "isGenerated": false,
+          "isCgo": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "cmd",
+      "to": "internal/app",
+      "fromModuleId": "c9f7e973c3ba254fa4eae62a4596ed5e6d393a378e6725dc3984a025ac404541",
+      "toModuleId": "0f7254ee87f1a9007888b7c9473aed72abe7fe0b475bc90459c1fd9145afa38e",
+      "evidence": {
+        "file": "cmd/main.go",
+        "line": 6,
+        "importPath": "example.com/demo/internal/app"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 2,
+  "unknowns": [],
+  "excludedFiles": [],
+  "modulePath": "example.com/demo"
+}

@@ -1,0 +1,76 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/hatch/workspace/p024-repomapverify/02_source[39m
+
+ [32m✓[39m tests/e2e/e2e.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 5794[2mms[22m[39m
+     [33m[2m✓[22m[39m control fixture py-c01 audits to PASS, exit 0 [33m 512[2mms[22m[39m
+     [33m[2m✓[22m[39m planted fixture 'python' ('python/py-p01-hallucinated-edge') audits to FAIL, exit 1 [33m 512[2mms[22m[39m
+     [33m[2m✓[22m[39m planted fixture 'typescript' ('typescript/ts-plant-01') audits to FAIL, exit 1 [33m 863[2mms[22m[39m
+     [33m[2m✓[22m[39m planted fixture 'go' ('go/go-plant-01') audits to FAIL, exit 1 [33m 677[2mms[22m[39m
+     [33m[2m✓[22m[39m demo repo audits to FAIL, exit 1, with the README findings [33m 736[2mms[22m[39m
+     [33m[2m✓[22m[39m ground-truth JSON matches golden counts for python/py-c01-basic-imports [33m 477[2mms[22m[39m
+     [33m[2m✓[22m[39m ground-truth JSON matches golden counts for python/py-p01-hallucinated-edge [33m 488[2mms[22m[39m
+     [33m[2m✓[22m[39m ground-truth JSON matches golden counts for typescript/ts-plant-01 [33m 497[2mms[22m[39m
+     [33m[2m✓[22m[39m ground-truth JSON matches golden counts for go/go-plant-01 [33m 541[2mms[22m[39m
+     [33m[2m✓[22m[39m ground-truth --lang filter matches the full-repo counts [33m 485[2mms[22m[39m
+ [32m✓[39m tests/offline/offline.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 2671[2mms[22m[39m
+     [33m[2m✓[22m[39m demo audit offline exits 1 with the identical report hash [33m 1199[2mms[22m[39m
+     [33m[2m✓[22m[39m control fixture audits to PASS (exit 0) inside the namespace [33m 702[2mms[22m[39m
+     [33m[2m✓[22m[39m code-level proof: no network-call token in src/ or scripts/ [33m 399[2mms[22m[39m
+ [32m✓[39m tests/performance/performance.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 9487[2mms[22m[39m
+     [33m[2m✓[22m[39m extraction ≤ 30 s, audit ≤ 60 s, peak RSS ≤ 512 MB [33m 9484[2mms[22m[39m
+ [32m✓[39m tests/cli/cli.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 11681[2mms[22m[39m
+     [33m[2m✓[22m[39m --help exits 0 and prints usage [33m 371[2mms[22m[39m
+     [33m[2m✓[22m[39m no args prints usage, exit 0 [33m 310[2mms[22m[39m
+     [33m[2m✓[22m[39m unknown command exits 3 with a clear message, no stack trace [33m 307[2mms[22m[39m
+     [33m[2m✓[22m[39m audit without --repo exits 3 [33m 384[2mms[22m[39m
+     [33m[2m✓[22m[39m audit without --map exits 3 [33m 384[2mms[22m[39m
+     [33m[2m✓[22m[39m unknown flag exits 3 [33m 415[2mms[22m[39m
+     [33m[2m✓[22m[39m bad --format exits 3 [33m 309[2mms[22m[39m
+     [33m[2m✓[22m[39m bad --lang exits 3 [33m 378[2mms[22m[39m
+     [33m[2m✓[22m[39m control fixture py-c01: exit 0 + PASS [33m 796[2mms[22m[39m
+     [33m[2m✓[22m[39m planted python py-p01: exit 1 + FAIL with the golden findings [33m 606[2mms[22m[39m
+     [33m[2m✓[22m[39m planted typescript ts-plant-01: exit 1 + FAIL [33m 695[2mms[22m[39m
+     [33m[2m✓[22m[39m planted go go-plant-01: exit 1 + FAIL [33m 608[2mms[22m[39m
+     [33m[2m✓[22m[39m INCOMPLETE: dynamic import with a matching map -> exit 2 [33m 811[2mms[22m[39m
+     [33m[2m✓[22m[39m input errors exit 3: missing repo, missing map, bad schema [33m 898[2mms[22m[39m
+     [33m[2m✓[22m[39m prints only the ground-truth JSON, exit 0 [33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m --lang python filters to python modules only [33m 605[2mms[22m[39m
+     [33m[2m✓[22m[39m missing repo exits 3 [33m 409[2mms[22m[39m
+     [33m[2m✓[22m[39m json writes only the JSON report [33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m html writes only the HTML report [33m 407[2mms[22m[39m
+     [33m[2m✓[22m[39m ts-ctrl-08 (no toml): ENTRYPOINT_CANDIDATE in JSON + HTML own section [33m 669[2mms[22m[39m
+     [33m[2m✓[22m[39m py-p05: DUPLICATE_CONTENT lives in infoFindings, not main findings [33m 611[2mms[22m[39m
+     [33m[2m✓[22m[39m single file, zero external references; edge shows file, line, statement [33m 326[2mms[22m[39m
+     [33m[2m✓[22m[39m no absolute path or username leaks into either report [33m 576[2mms[22m[39m
+ [32m✓[39m tests/golden/golden.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1385[2mms[22m[39m
+     [33m[2m✓[22m[39m S0 python fixtures (16): extractor + graph + audit vs golden.json [33m 550[2mms[22m[39m
+     [33m[2m✓[22m[39m S0 typescript fixtures (16): extractor + graph + audit vs golden.json [33m 334[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1225[2mms[22m[39m
+     [33m[2m✓[22m[39m python fixtures (16): exact status + exact finding sets [33m 396[2mms[22m[39m
+     [33m[2m✓[22m[39m typescript fixtures (16): exact status + exact finding classes [33m 575[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1006[2mms[22m[39m
+     [33m[2m✓[22m[39m python fixtures (16): modules, edges, reachable/isolated, snapshot [33m 413[2mms[22m[39m
+ [32m✓[39m tests/golden/regression-t013.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 3783[2mms[22m[39m
+     [33m[2m✓[22m[39m go-dotvenv [33m 780[2mms[22m[39m
+     [33m[2m✓[22m[39m go-venv [33m 409[2mms[22m[39m
+ [32m✓[39m tests/property/property.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 791[2mms[22m[39m
+ [32m✓[39m tests/report/report.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 718[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical-t008.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 800[2mms[22m[39m
+     [33m[2m✓[22m[39m canonical snapshot == extractor snapshot == graph snapshot on all 16 Python fixtures [33m 709[2mms[22m[39m
+ [32m✓[39m tests/mutation/mutation.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 1071[2mms[22m[39m
+     [33m[2m✓[22m[39m 25 mutations across python/typescript/go (5 per type): all detected [33m 1057[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 366[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 693[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 498[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 103[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m tests/adapters/adapters-t008.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m tests/io/claimed-map-validation.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32m✓[39m tests/privacy/redact.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m21 passed[39m[22m[90m (21)[39m
+[2m      Tests [22m [1m[32m270 passed[39m[22m[90m (270)[39m
+[2m   Start at [22m 16:56:00
+[2m   Duration [22m 20.09s[2m (transform 3.42s, setup 0ms, import 6.07s, tests 42.40s, environment 4ms)[22m
+

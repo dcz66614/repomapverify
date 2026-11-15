@@ -1,0 +1,11 @@
+import def, { a, type T } from "./a";
+import type { U } from "./types";
+import * as ns from "@/lib/b";
+import "./side";
+import "smoke/lib/c";
+import "react";
+import { x } from "./plain.js";
+const d = require("./d");
+const e = await import("./e");
+const f = await import(someVar);
+export const v = 1;

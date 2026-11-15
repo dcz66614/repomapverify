@@ -1,0 +1,245 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "src/a.ts",
+      "moduleId": "aab0fd2a3db3b70eea83d2b0deb5d4dbd21742de2f92358d9ad785429db21c2c",
+      "contentSha256": "037ecd1db38c230c248787e60fd7bfc0cb0101b187b59535b6e7483be762d350",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/d.ts",
+      "moduleId": "f54879011fb889e8feaae065e1b4ba340a3dd3f8274a9398a0b22c302c496184",
+      "contentSha256": "a4e8f74b14ac55ac55ed4082368dd0068270352bfc38877bc6ca98e6709e25c2",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/e.ts",
+      "moduleId": "24b9cc0d2af63c690c7107a519e7bed9719467409262f042036a8d62dbfbcc25",
+      "contentSha256": "1dd44134ac18eee21a9292355cd3463b495c8eed0a53ed497288156cae5fd30f",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/index.ts",
+      "moduleId": "20c715552b64c80ac23ef8bed55f0197857fffdba2dbf5dc04e62382c4913d7e",
+      "contentSha256": "53c9ba8037a8c251dae3c6f6f77ca2fe4f713f49270455423ed73fb8e04abbaa",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/legacy.d.ts",
+      "moduleId": "96f83a943c9aee52ac48f6cee2fb3260725a6b5e4917c0abba1c6cae13622a68",
+      "contentSha256": "b4a1d5754ab8ae2713742e559cd3d88515bc2c6366e53b8a977aa098c7f72048",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": true
+    },
+    {
+      "path": "src/lib/b.ts",
+      "moduleId": "5ff46fa10aa38a00417c05c8d40d0d18bd524e50b5e2dc71ac43078ac7c2aba8",
+      "contentSha256": "4d6c305aa3866c1d56beb6a3b2394fe9dc4b3ce5f3756a2357139efefbd969d0",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/lib/c.ts",
+      "moduleId": "84fcf07b407916f37df37ce2333e898a161581c627a60d9de0d61ce621b50b77",
+      "contentSha256": "b7defcba5edab38135a5eedb13194e5830780d04d20bfd0f168bd61336cc69aa",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "contentSha256": "a2846c11b880b65556387a0b7626891cc8c8ea0d23a2206c2c7f8c0741526ede",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/plain.ts",
+      "moduleId": "402f46807c49d45a9f6cf733de174b7e423c320512158a37875951e910d811b2",
+      "contentSha256": "b40dedde60828bf61d1fadbfc3bb7ea2e0421e9511d22f1b5fb44ae5ba07dbb3",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/side.ts",
+      "moduleId": "43904148f2f8508379ac0bb1259b5d10070975869aea2ad63e37020c607b0e28",
+      "contentSha256": "5581a78ea6ef9073f15efa3eacb923ff71da9e688214688ab2f8dde0fdd9dc97",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/types.ts",
+      "moduleId": "0c33485d56da9a0179df5a53bacf3220256773d4d0d4829bc75a73e0d755e9b9",
+      "contentSha256": "d317ee83cb825f89df851b36738f1722ae61f03871eb6f0a8d171b0a2e883af2",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/index.ts",
+      "to": "src/lib/c.ts",
+      "fromModuleId": "20c715552b64c80ac23ef8bed55f0197857fffdba2dbf5dc04e62382c4913d7e",
+      "toModuleId": "84fcf07b407916f37df37ce2333e898a161581c627a60d9de0d61ce621b50b77",
+      "typeOnly": false,
+      "kind": "export-from",
+      "evidence": {
+        "file": "src/index.ts",
+        "line": 1,
+        "specifier": "./lib/c"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/a.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "aab0fd2a3db3b70eea83d2b0deb5d4dbd21742de2f92358d9ad785429db21c2c",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 1,
+        "specifier": "./a"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/d.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "f54879011fb889e8feaae065e1b4ba340a3dd3f8274a9398a0b22c302c496184",
+      "typeOnly": false,
+      "kind": "require",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 8,
+        "specifier": "./d"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/e.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "24b9cc0d2af63c690c7107a519e7bed9719467409262f042036a8d62dbfbcc25",
+      "typeOnly": false,
+      "kind": "dynamic-import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 9,
+        "specifier": "./e"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/lib/b.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "5ff46fa10aa38a00417c05c8d40d0d18bd524e50b5e2dc71ac43078ac7c2aba8",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 3,
+        "specifier": "@/lib/b"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/lib/c.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "84fcf07b407916f37df37ce2333e898a161581c627a60d9de0d61ce621b50b77",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 5,
+        "specifier": "smoke/lib/c"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/plain.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "402f46807c49d45a9f6cf733de174b7e423c320512158a37875951e910d811b2",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 7,
+        "specifier": "./plain.js"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/side.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "43904148f2f8508379ac0bb1259b5d10070975869aea2ad63e37020c607b0e28",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 4,
+        "specifier": "./side"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/types.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "0c33485d56da9a0179df5a53bacf3220256773d4d0d4829bc75a73e0d755e9b9",
+      "typeOnly": true,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 2,
+        "specifier": "./types"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 1,
+  "unknowns": [
+    {
+      "from": "src/main.ts",
+      "specifier": "someVar",
+      "line": 10,
+      "reason": "DYNAMIC_IMPORT_UNKNOWN",
+      "detail": "dynamic import() with a non-literal argument cannot be resolved statically"
+    }
+  ]
+}

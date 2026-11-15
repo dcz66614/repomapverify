@@ -1,0 +1,89 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "src/App.tsx",
+      "moduleId": "99fbde19a64e42cf7286cab00f3168fa6a92fc6db4872a4db903fd84d6dd5cc0",
+      "contentSha256": "b0337c29f215c31e72b867de86cc220d7c59f2d10dc3a55983fa72828cf02ca9",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/cfg.mts",
+      "moduleId": "ee2d32c84b3dd2995f70636b6af3df9c8219feef5f52b7193284f332de82f826",
+      "contentSha256": "22642f5c99842b97ae582d8b72c6a56433a00f383378536ed6892c49cad76a3e",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/main.mts",
+      "moduleId": "4d4cee6371a7f6ea9d9df2f6a373dfaa9d2b24b3c8aff7cc461a1af614a27327",
+      "contentSha256": "57369c151a7df57359152b9ac014d31837b76c47cd2072cf4a781dde955b5874",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/util.ts",
+      "moduleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "contentSha256": "f84e3bfc50406bec2a44b3e4781e9919a625839d00d06f9bc91775537a9cb6da",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/App.tsx",
+      "to": "src/util.ts",
+      "fromModuleId": "99fbde19a64e42cf7286cab00f3168fa6a92fc6db4872a4db903fd84d6dd5cc0",
+      "toModuleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/App.tsx",
+        "line": 1,
+        "specifier": "./util"
+      }
+    },
+    {
+      "from": "src/main.mts",
+      "to": "src/App.tsx",
+      "fromModuleId": "4d4cee6371a7f6ea9d9df2f6a373dfaa9d2b24b3c8aff7cc461a1af614a27327",
+      "toModuleId": "99fbde19a64e42cf7286cab00f3168fa6a92fc6db4872a4db903fd84d6dd5cc0",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.mts",
+        "line": 1,
+        "specifier": "./App"
+      }
+    },
+    {
+      "from": "src/main.mts",
+      "to": "src/cfg.mts",
+      "fromModuleId": "4d4cee6371a7f6ea9d9df2f6a373dfaa9d2b24b3c8aff7cc461a1af614a27327",
+      "toModuleId": "ee2d32c84b3dd2995f70636b6af3df9c8219feef5f52b7193284f332de82f826",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.mts",
+        "line": 2,
+        "specifier": "./cfg.mts"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": []
+}

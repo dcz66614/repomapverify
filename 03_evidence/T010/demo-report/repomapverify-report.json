@@ -1,0 +1,288 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "demo-shop-agent-run-001",
+  "map_id": "demo-shop-agent-run-001",
+  "status": "FAIL",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 5,
+    "edges": 5
+  },
+  "ground_truth": {
+    "modules": 5,
+    "edges": 5
+  },
+  "claimed": {
+    "modules": 5,
+    "edges": 5
+  },
+  "coverage": {
+    "verifiedClaims": 10,
+    "totalClaims": 11,
+    "verified_claims": 10,
+    "total_claims": 11
+  },
+  "findings": [
+    {
+      "id": "HALLUCINATED_EDGE",
+      "severity": "P1",
+      "from": "auth.py",
+      "to": "pricing.py",
+      "detail": "claimed edge auth.py -> pricing.py does not exist in the ground-truth graph",
+      "claimedJsonPath": "edges[4]"
+    },
+    {
+      "id": "MISSING_EDGE",
+      "severity": "P2",
+      "from": "cart.py",
+      "to": "pricing.py",
+      "detail": "real edge cart.py -> pricing.py is present in the ground-truth graph but unclaimed (FULL_GRAPH only)"
+    }
+  ],
+  "infoFindings": [],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "bdda9dbb42f6db5c88e45214c88bf78f69fc18f0e1abc2c5d9d45e4000d12a19",
+    "modules": [
+      {
+        "path": "api.py",
+        "moduleId": "0b483cb86c3dbd7f1dbd54f29ca8b25e2a0b81658381ab0f20f13e0d75c73456",
+        "contentSha256": "f17648492d8974cd1d9c5fbf4dbba7cb26bd220c6fedfbc2d909622c90bb4a40"
+      },
+      {
+        "path": "auth.py",
+        "moduleId": "4276a91dc118e8f733d0a218701b5d9bdac9b9b9641821bd0ff7f2caf3144c55",
+        "contentSha256": "2ba01552c56e16baf75978c84f710d7ff27692d27b0934ec68727a268c61506c"
+      },
+      {
+        "path": "cart.py",
+        "moduleId": "e7b22f8e4fd2350a8d64d150f48704bfb92754f2bba92f5dd594f05c2b8291e9",
+        "contentSha256": "3ceb7aed57e8f80949f8002f4e1e51b231311b36571090bf170b3ef6829e1764"
+      },
+      {
+        "path": "main.py",
+        "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+        "contentSha256": "1f8fdfc14f49cdd7b0b4b55900ad3329981e1be943ec8d904e3e50b8c49e307b"
+      },
+      {
+        "path": "pricing.py",
+        "moduleId": "6dfc7c8e21c27c7c1b20049323bfed8b8e88d73e39aba14f447c48a5639de8c7",
+        "contentSha256": "0ca6812e4acef5200beeecf67ec1c4557db42c66e4a76a0c918893712673a020"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": []
+  },
+  "modules": [
+    {
+      "path": "api.py",
+      "moduleId": "0b483cb86c3dbd7f1dbd54f29ca8b25e2a0b81658381ab0f20f13e0d75c73456",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "f17648492d8974cd1d9c5fbf4dbba7cb26bd220c6fedfbc2d909622c90bb4a40",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [
+        "auth.py",
+        "cart.py"
+      ],
+      "inEdgesClaimed": [
+        "main.py"
+      ],
+      "outEdgesClaimed": [
+        "auth.py",
+        "cart.py"
+      ]
+    },
+    {
+      "path": "auth.py",
+      "moduleId": "4276a91dc118e8f733d0a218701b5d9bdac9b9b9641821bd0ff7f2caf3144c55",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "2ba01552c56e16baf75978c84f710d7ff27692d27b0934ec68727a268c61506c",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "api.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "api.py"
+      ],
+      "outEdgesClaimed": [
+        "pricing.py"
+      ]
+    },
+    {
+      "path": "cart.py",
+      "moduleId": "e7b22f8e4fd2350a8d64d150f48704bfb92754f2bba92f5dd594f05c2b8291e9",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "3ceb7aed57e8f80949f8002f4e1e51b231311b36571090bf170b3ef6829e1764",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "api.py",
+        "main.py"
+      ],
+      "outEdgesReal": [
+        "pricing.py"
+      ],
+      "inEdgesClaimed": [
+        "api.py",
+        "main.py"
+      ],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "main.py",
+      "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "1f8fdfc14f49cdd7b0b4b55900ad3329981e1be943ec8d904e3e50b8c49e307b",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "api.py",
+        "cart.py"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "api.py",
+        "cart.py"
+      ]
+    },
+    {
+      "path": "pricing.py",
+      "moduleId": "6dfc7c8e21c27c7c1b20049323bfed8b8e88d73e39aba14f447c48a5639de8c7",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "0ca6812e4acef5200beeecf67ec1c4557db42c66e4a76a0c918893712673a020",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "cart.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "auth.py"
+      ],
+      "outEdgesClaimed": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "api.py",
+      "to": "auth.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "api.py",
+        "line": 2,
+        "statement": "import auth"
+      },
+      "claimedJsonPath": "edges[2]"
+    },
+    {
+      "from": "api.py",
+      "to": "cart.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "api.py",
+        "line": 3,
+        "statement": "import cart"
+      },
+      "claimedJsonPath": "edges[3]"
+    },
+    {
+      "from": "auth.py",
+      "to": "pricing.py",
+      "claimed": true,
+      "real": false,
+      "status": "hallucinated",
+      "claimedJsonPath": "edges[4]"
+    },
+    {
+      "from": "cart.py",
+      "to": "pricing.py",
+      "claimed": false,
+      "real": true,
+      "status": "missing",
+      "evidence": {
+        "file": "cart.py",
+        "line": 2,
+        "statement": "import pricing"
+      }
+    },
+    {
+      "from": "main.py",
+      "to": "api.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 2,
+        "statement": "import api"
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "main.py",
+      "to": "cart.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 3,
+        "statement": "import cart"
+      },
+      "claimedJsonPath": "edges[1]"
+    }
+  ],
+  "mapWarnings": [],
+  "canonicalSemanticHash": "dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369"
+}

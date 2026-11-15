@@ -1,0 +1,14 @@
+{
+ "production": {
+  "exit": 2,
+  "status": "INCOMPLETE",
+  "findings": [],
+  "snapshotStatus": "STALE_SNAPSHOT"
+ },
+ "oracle": {
+  "status": "INCOMPLETE",
+  "snapshotStatus": "STALE_SNAPSHOT",
+  "findings": [],
+  "unknownImportsPresent": false
+ }
+}

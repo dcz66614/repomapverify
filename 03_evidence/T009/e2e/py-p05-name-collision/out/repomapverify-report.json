@@ -1,0 +1,298 @@
+{
+  "schema": "repomapverify.report/v1",
+  "mapId": "synthetic-py-p05-name-collision",
+  "map_id": "synthetic-py-p05-name-collision",
+  "status": "FAIL",
+  "completeness": "FULL_GRAPH",
+  "snapshotStatus": "MATCH",
+  "groundTruth": {
+    "modules": 6,
+    "edges": 3
+  },
+  "ground_truth": {
+    "modules": 6,
+    "edges": 3
+  },
+  "claimed": {
+    "modules": 6,
+    "edges": 3
+  },
+  "coverage": {
+    "verifiedClaims": 9,
+    "totalClaims": 10,
+    "verified_claims": 9,
+    "total_claims": 10
+  },
+  "findings": [
+    {
+      "id": "HALLUCINATED_EDGE",
+      "severity": "P1",
+      "from": "shop/cart.py",
+      "to": "lib/utils.py",
+      "detail": "claimed edge shop/cart.py -> lib/utils.py does not exist in the ground-truth graph",
+      "claimedJsonPath": "edges[2]"
+    },
+    {
+      "id": "MISSING_EDGE",
+      "severity": "P2",
+      "from": "shop/cart.py",
+      "to": "shop/utils.py",
+      "detail": "real edge shop/cart.py -> shop/utils.py is present in the ground-truth graph but unclaimed (FULL_GRAPH only)"
+    },
+    {
+      "id": "NAME_COLLISION_CONFUSION",
+      "severity": "P1",
+      "from": "shop/cart.py",
+      "to": "lib/utils.py",
+      "detail": "claimed edge shop/cart.py -> lib/utils.py points at a real module with the same basename as the real target of a missing edge from the same source; the claimed map confused two same-named modules"
+    }
+  ],
+  "infoFindings": [
+    {
+      "id": "DUPLICATE_CONTENT",
+      "severity": "P2",
+      "from": "lib/utils.py",
+      "to": "shop/utils.py",
+      "detail": "content_sha256 515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6 is shared by 2 distinct modules (lib/utils.py, shop/utils.py); same content does not imply same module or same semantics"
+    }
+  ],
+  "evidenceSha256": {
+    "repoSnapshotSha256": "045b410b8b49da2cf58584218039c39f281ed4582d9c9a1fc9c672660f1c2e05",
+    "modules": [
+      {
+        "path": "lib/__init__.py",
+        "moduleId": "04d3457ac46141ea66978bb845c0d1d6158b56b916a646683670bc4a3e2d2556",
+        "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "lib/utils.py",
+        "moduleId": "77bfd4a00acfd7a048ec75048c3bade026614a187d027473b256e6a28b804664",
+        "contentSha256": "515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6"
+      },
+      {
+        "path": "main.py",
+        "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+        "contentSha256": "05fd0395f3624ca49e350f210d76831293107df912b6490f61538f6b5e328555"
+      },
+      {
+        "path": "shop/__init__.py",
+        "moduleId": "2ea1ff6468facf2883d8402ce4dafad84736def6e47ce96ca89a8b5745e8d56e",
+        "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "shop/cart.py",
+        "moduleId": "f73922ee1b6326b0b3817d4f40f62fc5b68959c61e363151d5bb8fb5560cfc41",
+        "contentSha256": "aa7f70a467bc222b1be08283b75b433b7056570eac9af6577fb6f634409e1bfc"
+      },
+      {
+        "path": "shop/utils.py",
+        "moduleId": "99062547287bc760acfdd5824a57e7f7c021b38fc2070e274d1a78a751cecfc3",
+        "contentSha256": "515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6"
+      }
+    ]
+  },
+  "sections": {
+    "wrongEntrypoints": [],
+    "unclaimedReachableModules": [],
+    "isolatedModules": [],
+    "entrypointCandidates": [],
+    "duplicateContent": [
+      {
+        "paths": [
+          "lib/utils.py",
+          "shop/utils.py"
+        ],
+        "contentSha256": "515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "path": "lib/__init__.py",
+      "moduleId": "04d3457ac46141ea66978bb845c0d1d6158b56b916a646683670bc4a3e2d2556",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "lib/utils.py",
+      "moduleId": "77bfd4a00acfd7a048ec75048c3bade026614a187d027473b256e6a28b804664",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [
+        "main.py",
+        "shop/cart.py"
+      ],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "main.py",
+      "moduleId": "1a82a89ecb0e488cbee202039c6d096fb10a2a02d5386fa179bf7351f3064118",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "05fd0395f3624ca49e350f210d76831293107df912b6490f61538f6b5e328555",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [
+        "lib/utils.py",
+        "shop/cart.py"
+      ],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": [
+        "lib/utils.py",
+        "shop/cart.py"
+      ]
+    },
+    {
+      "path": "shop/__init__.py",
+      "moduleId": "2ea1ff6468facf2883d8402ce4dafad84736def6e47ce96ca89a8b5745e8d56e",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": []
+    },
+    {
+      "path": "shop/cart.py",
+      "moduleId": "f73922ee1b6326b0b3817d4f40f62fc5b68959c61e363151d5bb8fb5560cfc41",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "aa7f70a467bc222b1be08283b75b433b7056570eac9af6577fb6f634409e1bfc",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "main.py"
+      ],
+      "outEdgesReal": [
+        "shop/utils.py"
+      ],
+      "inEdgesClaimed": [
+        "main.py"
+      ],
+      "outEdgesClaimed": [
+        "lib/utils.py"
+      ]
+    },
+    {
+      "path": "shop/utils.py",
+      "moduleId": "99062547287bc760acfdd5824a57e7f7c021b38fc2070e274d1a78a751cecfc3",
+      "language": "python",
+      "nodeKind": "module",
+      "contentSha256": "515eb4f916310347503dc42c2988d5aad8c11cb1eefecda286cb1c60a95b9fe6",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": [],
+      "claimed": true,
+      "inGroundTruth": true,
+      "reachable": true,
+      "isolated": false,
+      "inEdgesReal": [
+        "shop/cart.py"
+      ],
+      "outEdgesReal": [],
+      "inEdgesClaimed": [],
+      "outEdgesClaimed": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "main.py",
+      "to": "lib/utils.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 2,
+        "statement": "from lib.utils import fmt"
+      },
+      "claimedJsonPath": "edges[1]"
+    },
+    {
+      "from": "main.py",
+      "to": "shop/cart.py",
+      "claimed": true,
+      "real": true,
+      "status": "verified",
+      "evidence": {
+        "file": "main.py",
+        "line": 1,
+        "statement": "from shop.cart import Cart"
+      },
+      "claimedJsonPath": "edges[0]"
+    },
+    {
+      "from": "shop/cart.py",
+      "to": "lib/utils.py",
+      "claimed": true,
+      "real": false,
+      "status": "hallucinated",
+      "claimedJsonPath": "edges[2]"
+    },
+    {
+      "from": "shop/cart.py",
+      "to": "shop/utils.py",
+      "claimed": false,
+      "real": true,
+      "status": "missing",
+      "evidence": {
+        "file": "shop/cart.py",
+        "line": 1,
+        "statement": "from shop.utils import fmt"
+      }
+    }
+  ],
+  "mapWarnings": [
+    "map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)"
+  ],
+  "canonicalSemanticHash": "0e506b688ebb0c55628d38ec55140efb47a18bcccc0b14039038921af043a2c3"
+}

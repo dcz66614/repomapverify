@@ -1,0 +1,76 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "src/feat.ts",
+      "moduleId": "0eb5ca0fbc738f7e2e782747f3ddfd52d88dd23fa065f24b3a65bffd192f81f7",
+      "contentSha256": "b0fb8f13235a247065d99ffa88aa073df17b201eb7d795db86eafe5f82926f87",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/index.d.ts",
+      "moduleId": "51d45f929599836e695c84034eb5f73431939b9b2610651b0cbe1f62ebc0b612",
+      "contentSha256": "a644539d432778892d352644b38a3bea5d5f367bfe39fd1c5875bff4c2ad6160",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": true
+    },
+    {
+      "path": "src/index.ts",
+      "moduleId": "20c715552b64c80ac23ef8bed55f0197857fffdba2dbf5dc04e62382c4913d7e",
+      "contentSha256": "3bd2e6aff3a3494c5b3e78276704bd4046a7c31b9f96413e851c535ed971fd5b",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "contentSha256": "b3ecde1a350f853ab84f3617913e29e6c451288568b3a09fc63d3f518905fdd6",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/main.ts",
+      "to": "src/feat.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "0eb5ca0fbc738f7e2e782747f3ddfd52d88dd23fa065f24b3a65bffd192f81f7",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 2,
+        "specifier": "cond-pkg/feat"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/index.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "20c715552b64c80ac23ef8bed55f0197857fffdba2dbf5dc04e62382c4913d7e",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 1,
+        "specifier": "cond-pkg"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": []
+}

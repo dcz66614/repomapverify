@@ -1,0 +1,392 @@
+{
+  "schema": "repomapverify.oracle-parity/v1",
+  "seed": "P024-REPOMAPVERIFY-S0-2026-11-14",
+  "gateHash": "7d4efa1d97798819c2eee29950d57f0d24ffe5961c273f3c9cd37284e7c437cd",
+  "parity": "48/48",
+  "perFixture": [
+    {
+      "fixture": "go-ctrl-01",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-02",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-03",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-04",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-05",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-06",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-07",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-ctrl-08",
+      "language": "go",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-01",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-02",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-03",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-04",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-05",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-06",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-07",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "go-plant-08",
+      "language": "go",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c01-basic-imports",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c02-relative-imports",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c03-init-reexport",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c04-src-layout",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c05-from-submodule-vs-attr",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c06-conditional-imports",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c07-external-and-stdlib",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-c08-multi-entrypoint",
+      "language": "python",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p01-hallucinated-edge",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p02-wrong-entrypoint",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p03-missing-edge",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p04-unclaimed-reachable",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p05-name-collision",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p06-dynamic-import-misread",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p07-reexport-misread",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "py-p08-alias-misparse",
+      "language": "python",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-01",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-02",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-03",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-04",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-05",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-06",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-07",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-08",
+      "language": "typescript",
+      "kind": "control",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-01",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-02",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-03",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-04",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-05",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-06",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-07",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    },
+    {
+      "fixture": "ts-plant-08",
+      "language": "typescript",
+      "kind": "planted",
+      "parity": "PASS",
+      "mismatchCount": 0,
+      "mismatches": []
+    }
+  ]
+}

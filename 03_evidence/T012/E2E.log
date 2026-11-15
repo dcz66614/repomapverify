@@ -1,0 +1,143 @@
+### T012 E2E full chain — 2026-11-14T16:11:01Z
+### repo root: /home/hatch/workspace/p024-repomapverify
+$ git -C /home/hatch/workspace/p024-repomapverify rev-parse HEAD
+d9d92d64ca79b910f6653e101d783476dda12979
+exit code: 0
+$ git -C /home/hatch/workspace/p024-repomapverify status --short
+?? 02_source/scripts/release-rehearsal.mjs
+?? 02_source/tests/e2e/
+?? 02_source/tests/offline/
+?? 02_source/tests/performance/
+?? 03_evidence/T012/
+exit code: 0
+### node: v24.22.1  npm: 10.9.4
+### lockfile sha256:
+2e42c63626527c5f27c1ecd810ce315dcc05c99f12858e653ee8fa6ae4c5b3d5  /home/hatch/workspace/p024-repomapverify/02_source/package-lock.json
+### == Part A: vitest E2E suite (real built CLI, main tree) ==
+$ npm --prefix /home/hatch/workspace/p024-repomapverify/02_source run build
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+
+exit code: 0
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/hatch/workspace/p024-repomapverify/02_source[39m
+
+ [32m✓[39m tests/e2e/e2e.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 2048[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m10 passed[39m[22m[90m (10)[39m
+[2m   Start at [22m 16:11:06
+[2m   Duration [22m 2.32s[2m (transform 53ms, setup 0ms, import 72ms, tests 2.05s, environment 0ms)[22m
+
+vitest e2e exit code: 0
+### == Part B: fresh checkout -> npm ci -> build -> audits ==
+$ git -C /home/hatch/workspace/p024-repomapverify worktree add --detach /home/hatch/workspace/p024-repomapverify/.tmp/fresh-checkout HEAD
+Preparing worktree (detached HEAD d9d92d6)
+HEAD is now at d9d92d6 Control: T011 PASS (44d7fae), T012 IN_PROGRESS
+exit code: 0
+$ git -C /home/hatch/workspace/p024-repomapverify/.tmp/fresh-checkout rev-parse HEAD
+d9d92d64ca79b910f6653e101d783476dda12979
+exit code: 0
+### fresh checkout: npm ci from the packaged lockfile
+
+added 51 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+npm ci exit code: 0
+### fresh checkout: npm run build
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+
+npm run build exit code: 0
+-rw-rw---- 1 root root 312 Nov 14 16:11 /home/hatch/workspace/p024-repomapverify/.tmp/fresh-checkout/02_source/dist/cli.js
+### audit: control py-c01
+
+RESULT: PASS
+Ground truth: 4 modules, 3 edges
+Claimed: 4 modules, 3 edges
+Coverage: 8 / 8 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-control_py-c01/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-control_py-c01/repomapverify-report.html
+exit code: 0
+CHECK PASS: control py-c01 exit code (expected 0, got 0)
+status=PASS groundTruth={'modules': 4, 'edges': 3} claimed={'modules': 4, 'edges': 3} coverage=8/8 findings=0 hash=1dab7bc51fce7578...
+### audit: planted py-p01
+
+RESULT: FAIL
+Ground truth: 4 modules, 3 edges
+Claimed: 5 modules, 4 edges
+Coverage: 8 / 10 (80.0%)
+Findings: 2 (P1: 2, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+  P1 HALLUCINATED_EDGE: billing/api.py -> billing/refunds.py
+  P1 HALLUCINATED_MODULE: billing/refunds.py
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_py-p01/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_py-p01/repomapverify-report.html
+exit code: 1
+CHECK PASS: planted py-p01 exit code (expected 1, got 1)
+status=FAIL groundTruth={'modules': 4, 'edges': 3} claimed={'modules': 5, 'edges': 4} coverage=8/10 findings=2 hash=88a4d7f9c753567b...
+  finding: HALLUCINATED_EDGE billing/api.py -> billing/refunds.py
+  finding: HALLUCINATED_MODULE billing/refunds.py -> 
+### audit: planted ts-plant-01
+
+RESULT: FAIL
+Ground truth: 4 modules, 5 edges
+Claimed: 4 modules, 6 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: src/main.ts -> src/services/api.ts
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_ts-plant-01/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_ts-plant-01/repomapverify-report.html
+exit code: 1
+CHECK PASS: planted ts-plant-01 exit code (expected 1, got 1)
+status=FAIL groundTruth={'modules': 4, 'edges': 5} claimed={'modules': 4, 'edges': 6} coverage=10/11 findings=1 hash=25cbfb0a329b30c8...
+  finding: HALLUCINATED_EDGE src/main.ts -> src/services/api.ts
+### audit: planted go-plant-01
+
+RESULT: FAIL
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 3 edges
+Coverage: 6 / 7 (85.7%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: cmd/server -> internal/store
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_go-plant-01/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-planted_go-plant-01/repomapverify-report.html
+exit code: 1
+CHECK PASS: planted go-plant-01 exit code (expected 1, got 1)
+status=FAIL groundTruth={'modules': 3, 'edges': 2} claimed={'modules': 3, 'edges': 3} coverage=6/7 findings=1 hash=106c8c52c79cb95b...
+  finding: HALLUCINATED_EDGE cmd/server -> internal/store
+### audit: demo
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-demo/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/e2e-demo/repomapverify-report.html
+exit code: 1
+CHECK PASS: demo exit code (expected 1, got 1)
+status=FAIL groundTruth={'modules': 5, 'edges': 5} claimed={'modules': 5, 'edges': 5} coverage=10/11 findings=2 hash=dfee636eeae469d1...
+  finding: HALLUCINATED_EDGE auth.py -> pricing.py
+  finding: MISSING_EDGE cart.py -> pricing.py
+### ground-truth JSON vs fixture golden counts
+ground-truth python exit code: 0
+modules=4 (expected 4) edges=3 (expected 3) -> PASS
+ground-truth typescript exit code: 0
+modules=4 (expected 4) edges=5 (expected 5) -> PASS
+ground-truth go exit code: 0
+modules=3 (expected 3) edges=2 (expected 2) -> PASS
+### cleanup: remove fresh worktree
+$ git -C /home/hatch/workspace/p024-repomapverify worktree remove --force /home/hatch/workspace/p024-repomapverify/.tmp/fresh-checkout
+exit code: 0
+$ git -C /home/hatch/workspace/p024-repomapverify worktree list
+/home/hatch/workspace/p024-repomapverify  d9d92d6 [master]
+exit code: 0
+### T012 E2E full chain done. Log: /home/hatch/workspace/p024-repomapverify/03_evidence/T012/E2E.log

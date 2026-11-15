@@ -1,0 +1,4 @@
+py-ghost-entry: prod exit=2 INCOMPLETE/MATCH findings=[] gt_entrypoints=['main.py'] | oracle PASS/MATCH findings=[] unresolved=None gt_entrypoints=['ghost.py', 'main.py'] -> DIVERGE
+py-ghost-ctrl: prod exit=1 FAIL/MATCH findings=[('WRONG_ENTRYPOINT', 'ghost.py', None)] gt_entrypoints=['main.py'] | oracle FAIL/MATCH findings=[('WRONG_ENTRYPOINT', 'ghost.py', None)] unresolved=None gt_entrypoints=['main.py'] -> AGREE
+py-ghost-sanity: prod exit=0 PASS/MATCH findings=[] gt_entrypoints=['main.py'] | oracle PASS/MATCH findings=[] unresolved=None gt_entrypoints=['main.py'] -> AGREE
+go-ghost-entry: prod exit=2 INCOMPLETE/MATCH findings=[] gt_entrypoints=['cmd/server'] | oracle PASS/MATCH findings=[] unresolved=None gt_entrypoints=['cmd/ghost', 'cmd/server'] -> DIVERGE

@@ -1,0 +1,4 @@
+AGREE py-stale-missing: prod exit=2 INCOMPLETE (STALE_SNAPSHOT) | oracle INCOMPLETE (STALE_SNAPSHOT) findings prod=[] oracle=[]
+AGREE py-stale-halluc: prod exit=2 INCOMPLETE (STALE_SNAPSHOT) | oracle INCOMPLETE (STALE_SNAPSHOT) findings prod=[] oracle=[]
+AGREE ts-stale-missing: prod exit=2 INCOMPLETE (STALE_SNAPSHOT) | oracle INCOMPLETE (STALE_SNAPSHOT) findings prod=[] oracle=[]
+TOTAL agree=3 diverge=0

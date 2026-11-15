@@ -1,0 +1,162 @@
+=== T010 README command verification — 2026-11-14T15:46:00Z ===
+--- 1. node --version (README: Node 24 required) ---
+v24.22.1
+--- 2. npm ci --dry-run? no: check lockfile install state (node_modules present) ---
+esbuild
+nanoid
+node-gyp-build
+node-gyp-build-optional
+node-gyp-build-test
+--- 3. npm run build ---
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+
+build exit=0
+--- 4. repomapverify --help (npx form) ---
+repomapverify — verify an agent's claimed repo map against the real static import graph
+
+Usage:
+  repomapverify audit --repo <path> --map <claimed-map.json> [--out <dir>] [--format json|html]
+  repomapverify ground-truth --repo <path> [--lang python|typescript|go]
+  repomapverify --help
+
+audit: one command runs end-to-end (validate map, build ground truth, compare, write report).
+  --repo <path>     repo to audit (must exist and be a directory)
+  --map <file>      claimed map JSON (repomapverify.claimed-map/v1)
+  --out <dir>       report directory (default: current directory)
+  --format <fmt>    json | html (default: both files are written)
+  Exit codes: PASS 0, FAIL 1, INCOMPLETE 2, usage/input error 3.
+
+ground-truth: print only the ground-truth JSON (debugging / Oracle comparison).
+  --repo <path>     repo to scan
+  --lang <lang>     python | typescript | go (default: all languages)
+  Exit code: 0 on success, 3 on usage/input error.
+help exit=0
+--- 5. demo one-liner: npm run demo ---
+
+> repomapverify@0.1.0 demo
+> node scripts/demo.mjs
+
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.html
+
+demo: audit finished in 0.3s, exit code 1
+demo: report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.json
+demo: report: /home/hatch/workspace/p024-repomapverify/02_source/demo/out/repomapverify-report.html
+demo: expected outcome -- the demo map is intentionally wrong (FAIL).
+demo: to see a PASS, remove the auth.py -> pricing.py edge and add
+demo: the cart.py -> pricing.py edge in demo/claimed-map.json.
+demo exit=1 (1 = FAIL, expected)
+--- 6. ground-truth ---
+modules: 5 edges: 5 snapshot: bdda9dbb42f6...
+--- 7. STALE_SNAPSHOT: demo map with one hex char of the snapshot changed ---
+
+RESULT: INCOMPLETE
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 0 / 11 (0.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Snapshot: STALE_SNAPSHOT — the map describes a different tree; no blame findings reported.
+Report: /tmp/stale-out/repomapverify-report.json
+Report: /tmp/stale-out/repomapverify-report.html
+stale exit=2 (2 = INCOMPLETE, expected)
+snapshotStatus: STALE_SNAPSHOT status: INCOMPLETE findings: []
+--- 8. PARTIAL_SUBGRAPH: same demo map, completeness flipped ---
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+Report: /tmp/partial-out/repomapverify-report.json
+Report: /tmp/partial-out/repomapverify-report.html
+partial exit=1 (1 = FAIL, expected)
+findings: [('HALLUCINATED_EDGE', 'auth.py', 'pricing.py')]
+--- 9. Dynamic import INCOMPLETE (T009 fixture) ---
+Error: repo path does not exist: "../../03_evidence/T009/e2e/py-dynamic-incomplete/repo"
+Run `repomapverify --help` for usage.
+dynamic exit=3 (2 = INCOMPLETE, expected)
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/dyn-out/repomapverify-report.json'
+--- 10. Bad map exit 3 ---
+Error: claimed map file does not exist: "../../03_evidence/T009/e2e/bad-map.json"
+Run `repomapverify --help` for usage.
+bad-map exit=3 (3, expected)
+--- 11. npm pack dry-run (is global install shippable yet?) ---
+npm notice 5.7kB tests/privacy/redact.test.ts
+npm notice 10.7kB tests/report/report.test.ts
+npm notice 201B tsconfig.build.json
+npm notice 419B tsconfig.json
+npm notice Tarball Details
+npm notice name: repomapverify
+npm notice version: 0.1.0
+npm notice filename: repomapverify-0.1.0.tgz
+npm notice package size: 321.6 kB
+npm notice unpacked size: 1.4 MB
+npm notice shasum: ed2ef22b7423047ce14412770f906f0416942c3c
+npm notice integrity: sha512-wCquzIbyQv+xW[...]bJPSKRMA58jGw==
+npm notice total files: 748
+npm notice
+repomapverify-0.1.0.tgz
+--- 9 (retry). Dynamic import INCOMPLETE (T009 fixture, correct path) ---
+
+RESULT: INCOMPLETE
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 2 edges
+Coverage: 6 / 6 (100.0%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 DYNAMIC_IMPORT_UNKNOWN: loader.py
+Report: /tmp/dyn-out/repomapverify-report.json
+Report: /tmp/dyn-out/repomapverify-report.html
+dynamic exit=2 (2 = INCOMPLETE, expected)
+status: INCOMPLETE findings: [('DYNAMIC_IMPORT_UNKNOWN', 'loader.py')]
+--- 10 (retry). Bad map exit 3 ---
+Error: invalid claimed map: schema: must be exactly repomapverify.claimed-map/v1, got not-a-claimed-map; repo: missing required field repo; completeness: missing required field completeness (FULL_GRAPH | PARTIAL_SUBGRAPH) — never guessed; repoSnapshotSha256: missing required field repoSnapshotSha256 (full working-tree snapshot SHA-256) — never guessed; modules: missing required field modules; entrypoints: missing required field entrypoints; edges: missing required field edges
+Run `repomapverify --help` for usage.
+bad-map exit=3 (3, expected)
+--- 11b. dist/ in npm pack? ---
+0
+dist/ file count in pack listing: 0 (grep found none in log)
+119
+--- 12. Global install from local tarball (proves the npm i -g path mechanics) ---
+repomapverify-0.1.0.tgz
+-rw-rw---- 1 root root 321555 Nov 14 15:46 repomapverify-0.1.0.tgz
+
+added 8 packages in 5s
+/bin/bash: line 6: repomapverify: command not found
+global-install audit exit=127 (1 = FAIL, expected)
+removed 8 packages in 646ms
+ls: cannot access 'repomapverify-0.1.0.tgz': No such file or directory
+tarball cleaned
+--- 12 (retry). Global install with the npm-global bin dir on PATH ---
+repomapverify-0.1.0.tgz
+added 8 packages in 4s
+/home/hatch/.npm-global/bin/repomapverify
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /tmp/global-out/repomapverify-report.json
+Report: /tmp/global-out/repomapverify-report.html
+global-install audit exit=1 (1 = FAIL, expected)
+global help exit=0
+removed 8 packages in 877ms
+--- 13. Corrected demo map (hallucinated edge removed, missing edge added) -> PASS ---
+corrected map edges: [('main.py', 'api.py'), ('main.py', 'cart.py'), ('api.py', 'auth.py'), ('api.py', 'cart.py'), ('cart.py', 'pricing.py')]
+RESULT: PASS / Ground truth: 5 modules, 5 edges / Claimed: 5 modules, 5 edges / Coverage: 11 / 11 (100.0%) / Findings: 0
+corrected-map exit=0 (0 = PASS, expected)

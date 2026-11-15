@@ -1,0 +1,137 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/hatch/workspace/p024-repomapverify/02_source[39m
+
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-buildtags[32m 284[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-cgo[32m 100[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-generated[32m 100[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-generated-dedup[32m 17[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-package-nodes[32m 86[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: entrypoints only from the declaration[2m > [22mgraph roots are candidates, never entrypoints; reachability follows the declaration[32m 6[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: entrypoints only from the declaration[2m > [22mno declaration => no entrypoints, everything isolated, no WRONG_ENTRYPOINT signal[32m 1[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: entrypoints only from the declaration[2m > [22mdeclared entrypoint that resolves to no module is recorded, never guessed[32m 1[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: entrypoints only from the declaration[2m > [22mmultiple entrypoints all seed the BFS[32m 4[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: BFS over core edges[2m > [22mconditional and type-only edges traverse; cycles terminate[32m 2[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: BFS over core edges[2m > [22mPython package-init closure: ancestor __init__.py reachable without an edge[32m 1[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: edges and identity[2m > [22mduplicate edges collapse to one (strongest flags win); unknown endpoints and self-edges are dropped, not silent[32m 4[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: edges and identity[2m > [22mGo nodes are packages; a root file entrypoint maps to the '.' package[32m 1[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: edges and identity[2m > [22mduplicate content is reported as a signal, not merged[32m 1[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mbuildGraph: edges and identity[2m > [22msymlinked spellings merge in the graph; edges remap to the canonical module[32m 4[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mS0 fixtures: graph matches the hand-written goldens (48/48)[2m > [22mpython fixtures (16): modules, edges, reachable/isolated, snapshot[33m 673[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-replace[32m 11[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-test-files[32m 23[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-vendor[32m 57[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mgo-vendor-missing[32m 8[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts[2m > [22mS0 fixtures: comparator reproduces the hand-written goldens (48/48)[2m > [22mpython fixtures (16): exact status + exact finding sets[33m 797[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-dts[32m 106[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-dyn-import[32m 79[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-exports-conditions[32m 18[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-exports-types[32m 12[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-ext-completion[32m 78[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-import-equals[32m 5[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-out-of-scope-alias[32m 7[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-out-of-scope-extends[32m 9[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-tsconfig-paths[32m 65[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mT007 boundary fixtures (extractor + graph + audit)[2m > [22mts-type-imports[32m 12[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mresolveExportsTarget: value imports never resolve via `types`[2m > [22mtypes-only condition object -> undefined for a value import[32m 1[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mresolveExportsTarget: value imports never resolve via `types`[2m > [22mnested types-only condition object -> undefined for a value import[32m 0[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mresolveExportsTarget: value imports never resolve via `types`[2m > [22mnested condition with import + types -> import target for a value import[32m 0[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mresolveExportsTarget: value imports never resolve via `types`[2m > [22mtypes-only condition object -> types target for a type-only import[32m 0[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mresolveExportsTarget: value imports never resolve via `types`[2m > [22mcondition order import > require > default for a value import[32m 0[2mms[22m[39m
+ [32m✓[39m tests/extractors/boundary.test.ts[2m > [22mknown boundary (T005 note, recorded not worked around)[2m > [22msymlinked .go file inside a package dir is not a package constituent[32m 5[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mS0 fixtures: graph matches the hand-written goldens (48/48)[2m > [22mtypescript fixtures (16): modules, edges, reachable/isolated vs golden BFS[33m 712[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts[2m > [22mS0 fixtures: comparator reproduces the hand-written goldens (48/48)[2m > [22mtypescript fixtures (16): exact status + exact finding classes[33m 706[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22mS0 fixtures: graph matches the hand-written goldens (48/48)[2m > [22mgo fixtures (16): packages, edges, reachable/isolated vs golden BFS[33m 372[2mms[22m[39m
+ [32m✓[39m tests/graph/graph.test.ts[2m > [22msymlink end-to-end (real Python repo)[2m > [22min-repo symlink merges, outside symlink is never a module[32m 10[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts[2m > [22mS0 fixtures: comparator reproduces the hand-written goldens (48/48)[2m > [22mgo fixtures (16): exact status + exact finding classes[32m 293[2mms[22m[39m
+ [32m✓[39m tests/comparator/golden.test.ts[2m > [22mS0 fixtures: comparator reproduces the hand-written goldens (48/48)[2m > [22mno-toml controls: no WRONG_ENTRYPOINT, candidates are info-only[32m 11[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mparse error => PARSE_ERROR, no edges from that file[32m 192[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mgenerated module: listed, but its edges leave the core set[32m 6[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mrelative import escaping the package tree => UNKNOWN, no edge[32m 3[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mwildcard import => edge to the base module only[32m 5[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22m__import__ literal resolves; variable => DYNAMIC_IMPORT_UNKNOWN[32m 6[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mimportlib literal resolves; exec(import-string) => dynamic; exec('x=1') ignored[32m 5[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22munresolvable repo-local import => UNKNOWN, never an edge or external[32m 70[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mduplicate imports collapse to one edge per (from, to) pair[32m 28[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22msrc/root shadowing: repo-root file wins the dotted name[32m 4[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mnamespace package without __init__.py does not resolve (frozen scope)[32m 2[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mimport inside a function body is still extracted[32m 2[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mno .repomapverify.toml => no entrypoints, everything isolated[32m 50[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mfile over the 1 MiB cap => TOO_LARGE, no edges[32m 14[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mfrom-import of an attribute of a plain module => no sub-edge[32m 8[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/extractor-units.test.ts[2m > [22mT002 extractor edge rules[2m > [22mself-import via `from . import x` inside __init__ skips the self edge[32m 5[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mmodule_id / content_sha256 separation[2m > [22msame-name different-path modules stay separate[32m 5[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mmodule_id / content_sha256 separation[2m > [22mchanging file content changes ONLY content_sha256, never module_id[32m 2[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mmodule_id / content_sha256 separation[2m > [22midentical content in different paths is still two modules (+ DUPLICATE_CONTENT signal)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mmodule_id / content_sha256 separation[2m > [22mGo root package: relativePath '.' has module_id over ''[32m 0[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mpath normalization[2m > [22mUnicode NFC first: NFD and NFC spellings are one identity[32m 1[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mpath normalization[2m > [22mnormalization is idempotent and order-independent (property-style sweep)[32m 2[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mpath normalization[2m > [22mcase handling comes only from the adapter, never guessed[32m 1[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22mpath normalization[2m > [22mplatform detection + live probe agree on this Linux VM[32m 1[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22msymlinks[2m > [22msame physical file via multiple in-repo paths merges to ONE module, alias retained[32m 6[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22msymlinks[2m > [22msymlinks pointing OUTSIDE the repo are never followed; the link is not a module[32m 6[2mms[22m[39m
+ [32m✓[39m tests/identity/identity.test.ts[2m > [22msymlinks[2m > [22mbroken symlinks are reported, not silently dropped[32m 1[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c01-basic-imports[32m 186[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c02-relative-imports[32m 21[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c03-init-reexport[32m 7[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c04-src-layout[32m 69[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c05-from-submodule-vs-attr[32m 9[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c06-conditional-imports[32m 12[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c07-external-and-stdlib[32m 3[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-c08-multi-entrypoint[32m 5[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p01-hallucinated-edge[32m 61[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p02-wrong-entrypoint[32m 7[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p03-missing-edge[32m 5[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p04-unclaimed-reachable[32m 16[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p05-name-collision[32m 6[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p06-dynamic-import-misread[32m 5[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p07-reexport-misread[32m 2[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mpy-p08-alias-misparse[32m 55[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 Python PoC audit — 16 fixtures[2m > [22mfixture count is 16 (8 control + 8 planted)[32m 2[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 adapter PoC mappings[2m > [22mgraphify: only EXTRACTED edges pass through[32m 3[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 adapter PoC mappings[2m > [22mgraphify: missing completeness / snapshot is an error, not a guess[32m 1[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 adapter PoC mappings[2m > [22munderstand-anything: only static-origin edges pass through[32m 1[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 adapter PoC mappings[2m > [22maider: text map forces PARTIAL_SUBGRAPH, asserts no edges[32m 1[2mms[22m[39m
+ [32m✓[39m tests/fixtures/s0/python/poc-audit.test.ts[2m > [22mT002 adapter PoC mappings[2m > [22maider: JSON input claiming FULL_GRAPH is still forced PARTIAL_SUBGRAPH[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mcontrol: exact match passes[2m > [22mFULL_GRAPH exact match => PASS, 0 findings, full coverage[32m 8[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mhallucination[2m > [22mclaimed edge + module that do not exist => HALLUCINATED_EDGE + HALLUCINATED_MODULE, FAIL[32m 2[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mhallucination[2m > [22mclaimed path that does not exist is HALLUCINATED, never UNKNOWN[32m 2[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mhallucination[2m > [22mclaimed './'-prefixed path resolves; unsafe '..' path is hallucinated, not normalized into the repo[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mhallucination[2m > [22mduplicate claimed modules/edges are deduplicated, not double-reported[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mentrypoints[2m > [22mclaimed entrypoint not declared => WRONG_ENTRYPOINT, FAIL[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mentrypoints[2m > [22mno declaration => no WRONG_ENTRYPOINT; candidates are info findings only[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mentrypoints[2m > [22mGo root package claimed as '.' matches the real '.' module (go-ctrl-08)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mentrypoints[2m > [22mGo: claimed package dir and claimed toml file path both agree with the declaration[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22momissions: FULL_GRAPH vs PARTIAL_SUBGRAPH[2m > [22mFULL_GRAPH: unclaimed real edge + unclaimed reachable module => MISSING_EDGE + UNCLAIMED_REACHABLE_MODULE, FAIL[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22momissions: FULL_GRAPH vs PARTIAL_SUBGRAPH[2m > [22mPARTIAL_SUBGRAPH: the same omissions produce no MISSING_EDGE / UNCLAIMED_REACHABLE_MODULE[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mstale snapshot[2m > [22msnapshot mismatch => STALE_SNAPSHOT / INCOMPLETE with no blame findings, even with hallucinated claims[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mstale snapshot[2m > [22mmissing declared snapshot => STALE_SNAPSHOT[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mUNKNOWN never yields PASS[2m > [22mdynamic import unknown alone => INCOMPLETE, finding listed, no FAIL[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mUNKNOWN never yields PASS[2m > [22mdynamic unknown + hallucinated edge => FAIL carrying the UNKNOWN finding (FAIL+INCOMPLETE)[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mUNKNOWN never yields PASS[2m > [22mTypeScript-style unknown import with reason DYNAMIC_IMPORT_UNKNOWN => DYNAMIC finding[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mUNKNOWN never yields PASS[2m > [22munresolvable repo-local import => INCOMPLETE with no invented finding[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mUNKNOWN never yields PASS[2m > [22munreadable / too-large / parse-failed source => SOURCE_NOT_ENUMERATED + INCOMPLETE[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mname-collision confusion (T004-evidence rule)[2m > [22mhallucinated target is a REAL module with the same basename as the missing target => collision fires[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mname-collision confusion (T004-evidence rule)[2m > [22mhallucinated target does not exist at all => plain HALLUCINATED, no collision[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mname-collision confusion (T004-evidence rule)[2m > [22mPARTIAL_SUBGRAPH: no MISSING_EDGE, so no collision can fire[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mgenerated code and duplicate content[2m > [22mclaimed edge that exists only in generated code => GENERATED_MISMATCH, not HALLUCINATED_EDGE[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mgenerated code and duplicate content[2m > [22mduplicate content in the repo => DUPLICATE_CONTENT (P2) in info findings, report stays PASS[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mgenerated code and duplicate content[2m > [22mtwo EMPTY files sharing the empty-content hash are not DUPLICATE_CONTENT anywhere (py-c05)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mBuiltGraph passthroughs[2m > [22midentity conflict => NAME_COLLISION_CONFUSION with the verbatim conflict detail[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mBuiltGraph passthroughs[2m > [22mdropped UNKNOWN_ENDPOINT edge => INCOMPLETE; dropped SELF_EDGE is benign[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mBuiltGraph passthroughs[2m > [22munresolved declared entrypoint => INCOMPLETE, no WRONG_ENTRYPOINT invented[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22minformational findings[2m > [22misolated unclaimed module => ISOLATED_MODULE info finding, report stays PASS[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22minformational findings[2m > [22misolated module that IS claimed gets no ISOLATED_MODULE finding[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22minformational findings[2m > [22mwith a declaration there are no ENTRYPOINT_CANDIDATE info findings[32m 0[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mfinding severities: all 12 types carry their spec defaults[2m > [22mone builder per type, severity matches FINDING_DEFAULT_SEVERITY[32m 1[2mms[22m[39m
+ [32m✓[39m tests/comparator/comparator.test.ts[2m > [22mdeterminism and ordering[2m > [22msame inputs twice => identical reports; findings sorted by (id, from, to)[32m 51[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts[2m > [22mcanonical graph hash[2m > [22msame semantic graph -> same hash regardless of input file order[32m 8[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts[2m > [22mcanonical graph hash[2m > [22mNFD vs NFC spellings of the same graph hash identically[32m 1[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts[2m > [22mcanonical graph hash[2m > [22mcontent change moves the hash but never any module_id[32m 2[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts[2m > [22mcanonical graph hash[2m > [22mcanonical JSON is key-sorted (deterministic encoding)[32m 2[2mms[22m[39m
+ [32m✓[39m tests/canonical/canonical.test.ts[2m > [22mcanonical snapshot hash[2m > [22mmatches an independent computation; order-independent; content-sensitive[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[32m128 passed[39m[22m[90m (128)[39m
+[2m   Start at [22m 15:12:45
+[2m   Duration [22m 5.19s[2m (transform 2.24s, setup 0ms, import 3.83s, tests 5.76s, environment 4ms)[22m
+

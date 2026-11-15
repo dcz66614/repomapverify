@@ -1,0 +1,66 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "lib/x.ts",
+      "moduleId": "9d9464f01c1e856b343a775b830ffe24116b20adb5ac4ed0793ba780382e9615",
+      "contentSha256": "b40dedde60828bf61d1fadbfc3bb7ea2e0421e9511d22f1b5fb44ae5ba07dbb3",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/local.ts",
+      "moduleId": "0042859a64885f5269f4423bbcb5c6d47b78de1a72e59d6f0b6787f22c38dbdd",
+      "contentSha256": "5ab7ac5312eb208d9ee0f2f62e1e6fb432690f61d4a5e269454ead1c821ec3b3",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "contentSha256": "a24e1389809e7ee6dafbed0b950d73284c06fdb581bfbef826d5188cfe6fb8d2",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/main.ts",
+      "to": "lib/x.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "9d9464f01c1e856b343a775b830ffe24116b20adb5ac4ed0793ba780382e9615",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 1,
+        "specifier": "lib/x"
+      }
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/local.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "0042859a64885f5269f4423bbcb5c6d47b78de1a72e59d6f0b6787f22c38dbdd",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 2,
+        "specifier": "./local"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": []
+}

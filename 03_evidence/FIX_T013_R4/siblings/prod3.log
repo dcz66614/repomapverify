@@ -1,0 +1,8 @@
+
+RESULT: INCOMPLETE
+Ground truth: 4 modules, 5 edges
+Claimed: 4 modules, 5 edges
+Coverage: 10 / 10 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Report: /tmp/r4fix-nobody/out/prod-out3/repomapverify-report.json
+Report: /tmp/r4fix-nobody/out/prod-out3/repomapverify-report.html

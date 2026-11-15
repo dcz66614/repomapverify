@@ -1,0 +1,107 @@
+{
+  "schema": "repomapverify.ground-truth/v1",
+  "modules": [
+    {
+      "moduleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+      "language": "typescript",
+      "nodeKind": "module",
+      "relativePath": "src/app.ts",
+      "contentSha256": "118ea75fd335f4401b97974aae88417a6548375ee8e9beca83d3aff4acce5572",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "language": "typescript",
+      "nodeKind": "module",
+      "relativePath": "src/main.ts",
+      "contentSha256": "c30307062d47dcd6f434487ad17cf07d2656242d6a9b81b7b63cea72ee0275c8",
+      "isGenerated": false,
+      "isEntrypoint": true,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "ffb1203f5339b60d2916d77e7866acb05fd2b1225a75d6d300791868f2a9eb14",
+      "language": "typescript",
+      "nodeKind": "module",
+      "relativePath": "src/services/api.ts",
+      "contentSha256": "7ef5f24ddf569314b56617336e0253bf0ba8dc02caa444927070bb8258930f03",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    },
+    {
+      "moduleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "language": "typescript",
+      "nodeKind": "module",
+      "relativePath": "src/util.ts",
+      "contentSha256": "341898984df640636415d1c653733df5d1ba64728fdc1a5dcd7b06de64d596cc",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/app.ts",
+      "to": "src/services/api.ts",
+      "fromModuleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+      "toModuleId": "ffb1203f5339b60d2916d77e7866acb05fd2b1225a75d6d300791868f2a9eb14",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "src/app.ts",
+      "to": "src/util.ts",
+      "fromModuleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+      "toModuleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/app.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "3462a4eac40370c08a8cb53e83f0a8dccb25912b88df142faa5b78cdc85bb90d",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "src/main.ts",
+      "to": "src/util.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "conditional": false,
+      "typeOnly": false
+    },
+    {
+      "from": "src/services/api.ts",
+      "to": "src/util.ts",
+      "fromModuleId": "ffb1203f5339b60d2916d77e7866acb05fd2b1225a75d6d300791868f2a9eb14",
+      "toModuleId": "de654fce64281e23adb46b8e41d08021e188057cbd415bf26f40f1bffc1c102c",
+      "conditional": false,
+      "typeOnly": false
+    }
+  ],
+  "entrypoints": [
+    "src/main.ts"
+  ],
+  "reachableFromEntrypoints": [
+    "src/app.ts",
+    "src/main.ts",
+    "src/services/api.ts",
+    "src/util.ts"
+  ],
+  "isolatedModules": [],
+  "entrypointCandidates": [
+    "src/main.ts"
+  ],
+  "duplicateContent": [],
+  "externalImportCount": 0,
+  "repoSnapshotSha256": "999625e22775f14a9d98c5b85dbc2f10ccd904fa6a91d1bbda8d98ca46972e21"
+}

@@ -1,0 +1,444 @@
+{
+  "generatedAt": "2026-11-14T14:19:26.317Z",
+  "fixturesDir": "/home/hatch/workspace/p024-repomapverify/02_source/tests/fixtures/s0",
+  "totals": {
+    "total": 32,
+    "parityPass": 32,
+    "auditPass": 32,
+    "ctrlPass": 16,
+    "ctrlTotal": 16,
+    "plantDetected": 16,
+    "plantTotal": 16
+  },
+  "results": [
+    {
+      "fixture": "ts-ctrl-01",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-02",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-03",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-04",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-05",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-06",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-07",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-ctrl-08",
+      "language": "typescript",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-01",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "hallucinated-edge",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-02",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "wrong-entrypoint",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-03",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "missing-edge",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-04",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "unclaimed-reachable-module",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-05",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "name-collision",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-06",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "dynamic-import-misread",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "DYNAMIC_IMPORT_UNKNOWN",
+        "HALLUCINATED_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-07",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "re-export-misread",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "ts-plant-08",
+      "language": "typescript",
+      "kind": "planted",
+      "plantedClass": "alias-misparse",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-01",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-02",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-03",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-04",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-05",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-06",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-07",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-ctrl-08",
+      "language": "go",
+      "kind": "control",
+      "plantedClass": null,
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "PASS",
+      "auditFindings": [],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-01",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "hallucinated-edge",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-02",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "wrong-entrypoint",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "WRONG_ENTRYPOINT"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-03",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "missing-edge",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-04",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "unclaimed-reachable-module",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "MISSING_EDGE",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-05",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "name-collision",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE",
+        "NAME_COLLISION_CONFUSION",
+        "UNCLAIMED_REACHABLE_MODULE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-06",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "alias-misparse",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-07",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "re-export-misread",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE",
+        "MISSING_EDGE"
+      ],
+      "auditMismatches": []
+    },
+    {
+      "fixture": "go-plant-08",
+      "language": "go",
+      "kind": "planted",
+      "plantedClass": "build-tag-misread",
+      "parity": "PASS",
+      "parityMismatches": [],
+      "audit": "PASS",
+      "auditStatus": "FAIL",
+      "auditFindings": [
+        "HALLUCINATED_EDGE"
+      ],
+      "auditMismatches": []
+    }
+  ]
+}

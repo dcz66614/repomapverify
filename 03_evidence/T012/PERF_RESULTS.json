@@ -1,0 +1,31 @@
+{
+  "repo": "synthetic 1,000 modules / 5,000 edges (py 400 / ts 300 / go 300)",
+  "generator": "tests/performance/generate-perf-repo.mjs (deterministic, fixed offsets)",
+  "machine": {
+    "node": "v24.22.1",
+    "platform": "linux/x64",
+    "cpus": 4,
+    "cpuModel": "AMD EPYC 9D25 126-Core Processor",
+    "totalMemMb": 7934
+  },
+  "groundTruth": {
+    "modules": 1000,
+    "edges": 5000,
+    "wallSec": 1.939,
+    "peakRssMb": 140,
+    "peakRssSource": "VmHWM",
+    "targetSec": 30,
+    "withinTarget": true
+  },
+  "audit": {
+    "status": "PASS",
+    "findings": 0,
+    "wallSec": 7.776,
+    "peakRssMb": 237,
+    "peakRssSource": "VmHWM",
+    "targetSec": 60,
+    "withinTarget": true
+  },
+  "rssTargetMb": 512,
+  "rssWithinTarget": true
+}

@@ -1,0 +1,47 @@
+--- py-venv
+  prod : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit exit=0 status=PASS
+  orac : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit status=PASS findings=[]
+  AGREE: True
+--- py-dotvenv
+  prod : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit exit=0 status=PASS
+  orac : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit status=PASS findings=[]
+  AGREE: True
+--- py-pycache
+  prod : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit exit=0 status=PASS
+  orac : 4 modules ['billing/__init__.py', 'billing/api.py', 'billing/auth.py', 'main.py'] snap=a80ab95d7bba audit status=PASS findings=[]
+  AGREE: True
+--- ts-venv
+  prod : 4 modules ['src/app.ts', 'src/main.ts', 'src/services/api.ts', 'src/util.ts'] snap=388a48e06920 audit exit=0 status=PASS
+  orac : 4 modules ['src/app.ts', 'src/main.ts', 'src/services/api.ts', 'src/util.ts'] snap=388a48e06920 audit status=PASS findings=[]
+  AGREE: True
+--- ts-nodemod
+  prod : 4 modules ['src/app.ts', 'src/main.ts', 'src/services/api.ts', 'src/util.ts'] snap=388a48e06920 audit exit=0 status=PASS
+  orac : 4 modules ['src/app.ts', 'src/main.ts', 'src/services/api.ts', 'src/util.ts'] snap=388a48e06920 audit status=PASS findings=[]
+  AGREE: True
+--- go-nodemod
+  prod : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit exit=0 status=PASS
+  orac : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit status=PASS findings=[]
+  AGREE: True
+--- go-venv
+  prod : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit exit=0 status=PASS
+  orac : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit status=PASS findings=[]
+  AGREE: True
+--- go-pycache
+  prod : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit exit=0 status=PASS
+  orac : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=2bfd7633d66a audit status=PASS findings=[]
+  AGREE: True
+--- go-testdata
+  prod : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=5350423403d7 audit exit=0 status=PASS
+  orac : 3 modules ['cmd/server', 'internal/app', 'internal/store'] snap=5350423403d7 audit status=PASS findings=[]
+  AGREE: True
+
+SUMMARY:
+  A py-venv: AGREE
+  A2 py-dotvenv: AGREE
+  E py-pycache-py: AGREE
+  B ts-venv: AGREE
+  F ts-nodemod: AGREE
+  C go-nodemod: AGREE
+  G go-venv: AGREE
+  H go-pycache: AGREE
+  D go-testdata: AGREE

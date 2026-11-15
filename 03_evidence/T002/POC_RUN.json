@@ -1,0 +1,243 @@
+{
+  "task": "T002",
+  "seed": "P024-REPOMAPVERIFY-S0-2026-11-14",
+  "fixtures": [
+    {
+      "fixture": "py-c01-basic-imports",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 4,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c02-relative-imports",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 6,
+      "edges": 9,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c03-init-reexport",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 3,
+      "edges": 2,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c04-src-layout",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 4,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c05-from-submodule-vs-attr",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 5,
+      "edges": 4,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c06-conditional-imports",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 4,
+      "edges": 2,
+      "externalImportCount": 2,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c07-external-and-stdlib",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 3,
+      "edges": 1,
+      "externalImportCount": 4,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-c08-multi-entrypoint",
+      "kind": "control",
+      "plantedClass": null,
+      "modules": 6,
+      "edges": 4,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "PASS",
+      "findings": [],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p01-hallucinated-edge",
+      "kind": "planted",
+      "plantedClass": "HALLUCINATED_EDGE",
+      "modules": 4,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "HALLUCINATED_EDGE|billing/api.py|billing/refunds.py",
+        "HALLUCINATED_MODULE|billing/refunds.py|"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p02-wrong-entrypoint",
+      "kind": "planted",
+      "plantedClass": "WRONG_ENTRYPOINT",
+      "modules": 3,
+      "edges": 1,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "WRONG_ENTRYPOINT|billing/api.py|"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p03-missing-edge",
+      "kind": "planted",
+      "plantedClass": "MISSING_EDGE",
+      "modules": 4,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "MISSING_EDGE|billing/api.py|billing/auth.py"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p04-unclaimed-reachable",
+      "kind": "planted",
+      "plantedClass": "UNCLAIMED_REACHABLE_MODULE",
+      "modules": 4,
+      "edges": 2,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "MISSING_EDGE|billing/api.py|billing/migrations.py",
+        "UNCLAIMED_REACHABLE_MODULE|billing/migrations.py|"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p05-name-collision",
+      "kind": "planted",
+      "plantedClass": "NAME_COLLISION_CONFUSION",
+      "modules": 6,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "HALLUCINATED_EDGE|shop/cart.py|lib/utils.py",
+        "MISSING_EDGE|shop/cart.py|shop/utils.py",
+        "NAME_COLLISION_CONFUSION|shop/cart.py|lib/utils.py"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p06-dynamic-import-misread",
+      "kind": "planted",
+      "plantedClass": "DYNAMIC_IMPORT_UNKNOWN",
+      "modules": 3,
+      "edges": 0,
+      "externalImportCount": 1,
+      "unknownImports": 0,
+      "dynamicUnknown": 1,
+      "status": "FAIL",
+      "findings": [
+        "DYNAMIC_IMPORT_UNKNOWN|loader.py|",
+        "HALLUCINATED_EDGE|loader.py|plugins/alpha.py"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p07-reexport-misread",
+      "kind": "planted",
+      "plantedClass": "REEXPORT_MISREAD",
+      "modules": 3,
+      "edges": 2,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "HALLUCINATED_EDGE|main.py|pkg/core.py",
+        "MISSING_EDGE|main.py|pkg/__init__.py"
+      ],
+      "snapshotStatus": "MATCH"
+    },
+    {
+      "fixture": "py-p08-alias-misparse",
+      "kind": "planted",
+      "plantedClass": "ALIAS_MISPARSE",
+      "modules": 4,
+      "edges": 3,
+      "externalImportCount": 0,
+      "unknownImports": 0,
+      "dynamicUnknown": 0,
+      "status": "FAIL",
+      "findings": [
+        "HALLUCINATED_EDGE|main.py|utils.py",
+        "HALLUCINATED_MODULE|utils.py|",
+        "MISSING_EDGE|main.py|pkg/utils.py"
+      ],
+      "snapshotStatus": "MATCH"
+    }
+  ],
+  "totals": {
+    "fixtures": 16,
+    "controlPass": "8/8",
+    "plantedDetected": "8/8"
+  }
+}

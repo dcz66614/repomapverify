@@ -1,0 +1,58 @@
+{
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "src/main.ts",
+      "moduleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "contentSha256": "b5f8ff325a364ad7d940562917cc15d4fb95b3434790aa153477ae6ed4e1cb51",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    },
+    {
+      "path": "src/real.ts",
+      "moduleId": "a8f0f641a8c61fc2113a038fbede993470e345d14de266fe11523064ccc5b997",
+      "contentSha256": "b7defcba5edab38135a5eedb13194e5830780d04d20bfd0f168bd61336cc69aa",
+      "nodeKind": "module",
+      "isGenerated": false,
+      "isEntrypoint": false,
+      "parseStatus": "OK",
+      "isDeclarationFile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "src/main.ts",
+      "to": "src/real.ts",
+      "fromModuleId": "f6276235d2d210a55622dec7ae60aa76a0b68323057c09341c119e74e029a76a",
+      "toModuleId": "a8f0f641a8c61fc2113a038fbede993470e345d14de266fe11523064ccc5b997",
+      "typeOnly": false,
+      "kind": "import",
+      "evidence": {
+        "file": "src/main.ts",
+        "line": 3,
+        "specifier": "./real"
+      }
+    }
+  ],
+  "generatedEdges": [],
+  "externalImportCount": 0,
+  "unknowns": [
+    {
+      "from": "src/main.ts",
+      "specifier": "@/missing",
+      "line": 1,
+      "reason": "ALIAS_NOT_RESOLVED",
+      "detail": "specifier \"@/missing\" could not be resolved within the frozen scope"
+    },
+    {
+      "from": "src/main.ts",
+      "specifier": "./does-not-exist",
+      "line": 2,
+      "reason": "TARGET_NOT_FOUND",
+      "detail": "specifier \"./does-not-exist\" could not be resolved within the frozen scope"
+    }
+  ]
+}

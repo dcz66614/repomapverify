@@ -1,0 +1,42 @@
+=== Workflow audit-step simulation (verbatim bash from .github/workflows/repomapverify.yml) ===
+--- A. defaults: ALLOW_INCOMPLETE=false, demo map (FAIL) -> step must exit 1 ---
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /tmp/wf-a-report/repomapverify-report.json
+Report: /tmp/wf-a-report/repomapverify-report.html
+repomapverify exit code: 1
+::error::repomapverify: claimed map is not PASS (exit 1).
+workflow step exit: 1 (expect 1)
+--- B. ALLOW_INCOMPLETE=true, dynamic-import fixture (INCOMPLETE) -> step must exit 0 ---
+
+RESULT: INCOMPLETE
+Ground truth: 3 modules, 2 edges
+Claimed: 3 modules, 2 edges
+Coverage: 6 / 6 (100.0%)
+Findings: 1 (P1: 1, P2: 0) + 0 informational
+  P1 DYNAMIC_IMPORT_UNKNOWN: loader.py
+Report: /tmp/wf-b-report/repomapverify-report.json
+Report: /tmp/wf-b-report/repomapverify-report.html
+repomapverify exit code: 2
+Map INCOMPLETE, accepted because ALLOW_INCOMPLETE=true.
+workflow step exit: 0 (expect 0)
+--- C. ALLOW_INCOMPLETE=true, demo map (FAIL) -> step must STILL exit 1 ---
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /tmp/wf-c-report/repomapverify-report.json
+Report: /tmp/wf-c-report/repomapverify-report.html
+repomapverify exit code: 1
+::error::repomapverify: claimed map is not PASS (exit 1).
+workflow step exit: 1 (expect 1)

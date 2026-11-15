@@ -1,0 +1,38 @@
+
+> repomapverify@0.1.0 release:verify
+> node scripts/release-verify.mjs
+
+== release:verify ==
+packages dir: /home/hatch/workspace/p024-repomapverify/.tmp/release-build
+work dir: /home/hatch/workspace/p024-repomapverify/.tmp/release-verify
+baseline demo: exit 1 status FAIL findings 2 hash dfee636eeae469d1...
+baseline control py-c01: exit 0 status PASS findings 0 hash 1dab7bc51fce7578...
+baseline planted py-p01: exit 1 status FAIL findings 2 hash 88a4d7f9c753567b...
+$ unzip -q /home/hatch/workspace/p024-repomapverify/.tmp/release-build/source.zip -d /home/hatch/workspace/p024-repomapverify/.tmp/release-verify/verify-src  (cwd: /home/hatch/workspace/p024-repomapverify/02_source)
+exit code: 0
+$ npm ci  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-verify/verify-src)
+
+added 51 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+exit code: 0
+$ npm run build  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-verify/verify-src)
+
+> repomapverify@0.1.0 build
+> tsc -p tsconfig.build.json
+exit code: 0
+verify-src demo: exit 1 status FAIL findings 2 hash dfee636eeae469d1...
+verify-src control py-c01: exit 0 status PASS findings 0 hash 1dab7bc51fce7578...
+verify-src planted py-p01: exit 1 status FAIL findings 2 hash 88a4d7f9c753567b...
+$ unzip -q /home/hatch/workspace/p024-repomapverify/.tmp/release-build/dist.zip -d /home/hatch/workspace/p024-repomapverify/.tmp/release-verify/verify-dist  (cwd: /home/hatch/workspace/p024-repomapverify/02_source)
+exit code: 0
+$ npm ci  (cwd: /home/hatch/workspace/p024-repomapverify/.tmp/release-verify/verify-dist)
+
+added 51 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+exit code: 0
+verify-dist demo: exit 1 status FAIL findings 2 hash dfee636eeae469d1...
+RELEASE:VERIFY PASS: exit codes and canonicalSemanticHash values identical in all verifications.

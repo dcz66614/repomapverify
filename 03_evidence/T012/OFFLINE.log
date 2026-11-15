@@ -1,0 +1,58 @@
+### T012 offline proof — 2026-11-14T16:11:25Z
+### method: unshare -n (network namespace, loopback only, DOWN)
+### node: v24.22.1
+unshare -n probe exit code: 0
+### == (1) the namespace has no usable network ==
+$ unshare -n cat /proc/net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+$ unshare -n node -e fetch('http://example.com/') ...
+UNREACHABLE:EADDRNOTAVAIL
+fetch probe exit code: 0
+### == (2) demo audit: online vs offline hash comparison ==
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-demo-online/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-demo-online/repomapverify-report.html
+online audit exit code: 1
+status=FAIL findings=2 hash=dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369
+
+RESULT: FAIL
+Ground truth: 5 modules, 5 edges
+Claimed: 5 modules, 5 edges
+Coverage: 10 / 11 (90.9%)
+Findings: 2 (P1: 1, P2: 1) + 0 informational
+  P1 HALLUCINATED_EDGE: auth.py -> pricing.py
+  P2 MISSING_EDGE: cart.py -> pricing.py
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-demo-offline/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-demo-offline/repomapverify-report.html
+offline audit exit code: 1
+status=FAIL findings=2 hash=dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369
+online hash:  dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369
+offline hash: dfee636eeae469d131798a2fdb1bfc7399d9adb5bb9b0d4e327a94a4b7ebe369
+hashes identical: True
+findings identical: True
+statuses: FAIL vs FAIL
+### == (3) control fixture py-c01 inside the namespace ==
+
+RESULT: PASS
+Ground truth: 4 modules, 3 edges
+Claimed: 4 modules, 3 edges
+Coverage: 8 / 8 (100.0%)
+Findings: 0 (P1: 0, P2: 0) + 0 informational
+Warning: map_id: snake_case alias map_id used; canonical field is mapId (PROJECT_BOOK §6.1 spells it snake_case, PLAN §4.1 camelCase)
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-control/repomapverify-report.json
+Report: /home/hatch/workspace/p024-repomapverify/.tmp/offline-control/repomapverify-report.html
+offline audit exit code: 0
+status=PASS findings=0 hash=1dab7bc51fce7578b1aa54386b981a0fedd3435c94986bce0d5c5fab7d1e5a55
+### == (4) code-level proof: S0 gate network grep, re-run ==
+$ grep -rn -E <NET_PATTERN> src scripts   (pattern from scripts/s0-gate.mjs)
+grep exit code: 1  (1 = no matches, the required outcome)
+### T012 offline proof done. Log: /home/hatch/workspace/p024-repomapverify/03_evidence/T012/OFFLINE.log
